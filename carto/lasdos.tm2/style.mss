@@ -1,7 +1,7 @@
 // Common Colors //
 
 @land: #f4efe1;
-@water: #cdd;
+@water: #00AAFF;
 @water_dark: #185869;  // for the inline/shadow
 @crop: #eeeed4;
 @grass: #e7ebd1;
