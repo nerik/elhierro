@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="MyGPSFiles" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <trk>
+    <name>NewTrack</name>
+    <desc>Total: 2.4km</desc>
+    <trkseg>
+      <trkpt lat="27.798444" lon="-17.986299">
+        <ele>119</ele>
+      </trkpt>
+      <trkpt lat="27.800376" lon="-17.98419">
+        <ele>239.09</ele>
+      </trkpt>
+      <trkpt lat="27.805918" lon="-17.983418">
+        <ele>295.5</ele>
+      </trkpt>
+      <trkpt lat="27.812979" lon="-17.984619">
+        <ele>377.5</ele>
+      </trkpt>
+      <trkpt lat="27.81783" lon="-17.986765">
+        <ele>318.26</ele>
+      </trkpt>
+      <trkpt lat="27.818627" lon="-17.986593">
+        <ele>306.12</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
