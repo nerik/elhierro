@@ -2,7 +2,6 @@ node_modules
 dist
 .tmp
 .sass-cache
-bower_components
-test/bower_components
 tests
 raw/photos
+app/styles/_leaflet.scss
