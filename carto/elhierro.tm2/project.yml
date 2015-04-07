@@ -1,8 +1,8 @@
 _prefs: 
   baselayer: ''
-  mapid: lrqdo.50ce49e8
+  mapid: lrqdo.0c289a18
   print: true
-  saveCenter: true
+  saveCenter: false
 _properties: {}
 attribution: "<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>"
 bounds: 
@@ -11,9 +11,9 @@ bounds:
   - 180
   - 85.0511
 center: 
-  - -18.1295
-  - 27.7859
-  - 11
+  - 0
+  - 20
+  - 2
 description: ''
 format: "png8:m=h:c=128"
 interactivity_layer: ''
@@ -43,10 +43,10 @@ layers:
   - waterway_label
   - housenum_label
   - contour.label
-maxzoom: 19
-minzoom: 11
-name: lasdos
-source: "mapbox:///mapbox.mapbox-terrain-v1,mapbox.mapbox-streets-v5"
+maxzoom: 21
+minzoom: 0
+name: elhierro
+source: "mapbox:///mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v5"
 styles: 
   - style.mss
   - road.mss
