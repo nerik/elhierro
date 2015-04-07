@@ -46,9 +46,13 @@ gulp.task('cssToSass', function () {
         .pipe(gulp.dest('./app/styles/'));
 });
 
-gulp.task('build', ['sass','js'], function () {
+gulp.task('html', function(){
     return gulp.src('./app/index.html')
         .pipe(gulp.dest(config.dist));
+});
+
+gulp.task('build', ['sass','js','html'], function () {
+
 });
 
 gulp.task('serve', ['build'], function() {
@@ -63,6 +67,7 @@ gulp.task('serve', ['build'], function() {
 
     gulp.watch("app/styles/**/*.scss", ['sass']);
     gulp.watch("app/js/**/*.js", ['js']);
+    gulp.watch("app/**/*.html", ['html']);
 
     gulp.watch("dist/*").on('change', browserSync.reload);
 });

@@ -1,6 +1,12 @@
 @import 'leaflet';
 
 body {
-	color: red;
+	overflow:hidden;
+	width:100%;
 }
 
+#map {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
