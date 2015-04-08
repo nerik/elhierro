@@ -55,6 +55,24 @@ Promise.all([
 });
 
 
+
+
+var videoTpl = _.template( document.querySelector('.tpl-video').firstChild.nodeValue );
+
+var videoContainer = new L.Popup({
+							maxWidth: 400,
+							maxHeight: 300,
+							autoPan: false,
+							offset: new L.Point(0,0)
+						})
+						.setLatLng([27.7, -17.9])
+						.setContent(videoTpl())
+						.openOn(map);
+var video = document.querySelector('.video-player');
+// video.ap
+
+
+
 var totalScroll = 2200;
 document.addEventListener('scroll', function (e) {
 	// console.log(window.scrollY);
@@ -69,7 +87,7 @@ document.addEventListener('scroll', function (e) {
 
 	console.log(window.scrollY);
 
-var elem = document.querySelector('.test');
+	var elem = document.querySelector('.test');
 	if (window.scrollY>1700 && elem.style.position !== 'fixed') {
 		elem.style.top = elem.getBoundingClientRect().top + 'px';
 		elem.style.position = "fixed";
@@ -78,7 +96,13 @@ var elem = document.querySelector('.test');
 		elem.style.top = 0;
 		elem.style.position = "relative";
 	}
+
+	// console.log(video.seekable.start(), video.seekable.end() );
+	// video.currentTime = scrollR * video.duration;
+	video.currentTime = scrollR * video.duration;
+
 });
+
 
 
 
