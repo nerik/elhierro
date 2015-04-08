@@ -8,6 +8,8 @@ babelify      = require('babelify'),
 browserify    = require('browserify'),
 rename        = require('gulp-rename'),
 browserSync   = require('browser-sync'),
+buffer = require('vinyl-buffer'),
+sourcemaps = require('gulp-sourcemaps'),
 source        = require('vinyl-source-stream');
 
 var config = {
@@ -18,13 +20,17 @@ var config = {
 gulp.task('js', function() {
     return browserify({
         entries: './app/js/main.js',
-        debug: true
+        debug: true,
+        transform: [babelify]
     })
-    .transform(babelify)
     .bundle()
     .pipe(source('./app/js/main.js'))
-    .pipe(rename('main.js'))
-    // .pipe(uglify())
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
+        // Add transformation tasks to the pipeline here.
+        // .pipe(uglify())
+        // .on('error', gutil.log)
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist'));
 });
 
@@ -51,7 +57,12 @@ gulp.task('html', function(){
         .pipe(gulp.dest(config.dist));
 });
 
-gulp.task('build', ['sass','js','html'], function () {
+gulp.task('data', function(){
+    return gulp.src('./app/data/**/*')
+        .pipe(gulp.dest(config.dist+'/data'));
+});
+
+gulp.task('build', ['sass','js','html', 'data'], function () {
 
 });
 
@@ -61,13 +72,14 @@ gulp.task('serve', ['build'], function() {
         server: {
             baseDir: config.dist,
         },
-        open   : true,
+        open   : false,
         port   : 7777
     });
 
     gulp.watch("app/styles/**/*.scss", ['sass']);
     gulp.watch("app/js/**/*.js", ['js']);
     gulp.watch("app/**/*.html", ['html']);
+    gulp.watch("app/data/*", ['data']);
 
-    gulp.watch("dist/*").on('change', browserSync.reload);
+    gulp.watch(config.dist+"/**/*").on('change', browserSync.reload);
 });
