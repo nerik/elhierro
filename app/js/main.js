@@ -69,17 +69,34 @@ var videoContainer = new L.Popup({
 						.openOn(map);
 // var video = document.querySelector('.video-player');
 
+var numImages = 1026;
+var targetWidth = 256;
+var sheetWidth = 2048;
 
-var images = [];
+var targetHeight = targetWidth*.75;
+var gridCols = sheetWidth/targetWidth;
+var gridRows = Math.floor(gridCols/.75);
+var spritesInSheet = gridCols * gridRows;
+var numSS = Math.ceil(numImages/spritesInSheet);
+
+var spritesheets = [];
+var currentSpriteSheetIndex, currentSpriteSheetContainer;
 var img;
 
-for (var i = 0; i < 1027; i++) {
-	img = document.createElement('img');
-	img.src = 'data/6/timelapse/' + i + '.jpg'; 
-	images.push(img);
+var timelapse = document.querySelector('.timelapse');
+
+for (var i = 0; i < numSS; i++) {
+	img = document.createElement('div');
+	img.style.backgroundImage = 'url(data/6/timelapse/spritesheet_' + i + '.jpg)'; 
+	img.style.display = 'none'; 
+	spritesheets.push(img);
+	timelapse.appendChild(img);
 }
 
-console.log(images.length)
+
+
+
+
 
 var totalScroll = 2200;
 document.addEventListener('scroll', function (e) {
@@ -109,9 +126,32 @@ document.addEventListener('scroll', function (e) {
 	// video.currentTime = scrollR * video.duration;
 	// video.currentTime = scrollR * video.duration;
 
-	var imgIndex = Math.floor(scrollR * images.length);
+	// var imgIndex = Math.floor(scrollR * images.length);
+	// console.log(imgIndex);
+	// videoContainer.setContent( images[ imgIndex ] );
+
+	var imgIndex = Math.floor(scrollR * numImages);
+	var spritesheetIndex = Math.floor( imgIndex / spritesInSheet );
+
+	//check against current ss index
+	if (spritesheetIndex !== currentSpriteSheetIndex) {
+		if (currentSpriteSheetContainer) currentSpriteSheetContainer.style.display = 'none';
+		currentSpriteSheetIndex = spritesheetIndex;
+		currentSpriteSheetContainer = document.querySelector('.timelapse :nth-child('+ (spritesheetIndex+1) +')');
+		currentSpriteSheetContainer.style.display = 'block';
+	}
+
+	//get position
+	var indexInSheet = imgIndex % spritesInSheet;
+	var col = Math.floor( indexInSheet / gridCols );
+	var row = indexInSheet % gridCols;
+
+	var posX = col * targetWidth;
+	var posY = row * targetHeight;
+
+	currentSpriteSheetContainer.style.backgroundPosition = '-'+posX+'px -' + posY + 'px';
 	console.log(imgIndex);
-	videoContainer.setContent( images[ imgIndex ] );
+	
 
 });
 
