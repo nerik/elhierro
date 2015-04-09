@@ -57,7 +57,7 @@ Promise.all([
 
 
 
-var videoTpl = _.template( document.querySelector('.tpl-video').firstChild.nodeValue );
+// var videoTpl = _.template( document.querySelector('.tpl-video').firstChild.nodeValue );
 
 var videoContainer = new L.Popup({
 							maxWidth: 400,
@@ -66,12 +66,20 @@ var videoContainer = new L.Popup({
 							offset: new L.Point(0,0)
 						})
 						.setLatLng([27.7, -17.9])
-						.setContent(videoTpl())
 						.openOn(map);
-var video = document.querySelector('.video-player');
-// video.ap
+// var video = document.querySelector('.video-player');
 
 
+var images = [];
+var img;
+
+for (var i = 0; i < 1027; i++) {
+	img = document.createElement('img');
+	img.src = 'data/6/timelapse/' + i + '.jpg'; 
+	images.push(img);
+}
+
+console.log(images.length)
 
 var totalScroll = 2200;
 document.addEventListener('scroll', function (e) {
@@ -85,7 +93,7 @@ document.addEventListener('scroll', function (e) {
 
 	testPath.setLatLngs( testCoords.slice(0, Math.floor( scrollR*testCoords.length ) ) );
 
-	console.log(window.scrollY);
+	// console.log(window.scrollY);
 
 	var elem = document.querySelector('.test');
 	if (window.scrollY>1700 && elem.style.position !== 'fixed') {
@@ -99,7 +107,11 @@ document.addEventListener('scroll', function (e) {
 
 	// console.log(video.seekable.start(), video.seekable.end() );
 	// video.currentTime = scrollR * video.duration;
-	video.currentTime = scrollR * video.duration;
+	// video.currentTime = scrollR * video.duration;
+
+	var imgIndex = Math.floor(scrollR * images.length);
+	console.log(imgIndex);
+	videoContainer.setContent( images[ imgIndex ] );
 
 });
 

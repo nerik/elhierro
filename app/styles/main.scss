@@ -18,3 +18,8 @@ body {
   	width: 200px;
   	margin-bottom: 1000px;
 }
+
+.leaflet-popup-content {
+	transform: scale(2)
+}
+
