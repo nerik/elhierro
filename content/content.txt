@@ -93,7 +93,7 @@ trace GPS (trajet en voiture jusqu’à Sabinosa)
 Sabinosa, adorable petit village perché, a des allures de bout du monde au bout du monde. Comme beaucoup d’endroits sur El Hierro. 
 
 [
-peephole sur Sabinosa
+telescope sur Sabinosa
 avec coordonnées GPS ( 27°44′50″N 18°05′48″O )
 ]
 
@@ -126,13 +126,24 @@ début du premier timelapse
 En redescendant sur le versant Sud-Ouest, le brouillard se lève et je me retrouve subitement dans un monde radicalement différent, faits de barrancos de roches rouges, de sécheresse et de genevriers tordus par le vent.
 
 
- À partir du moment ou le chemin cesse d’exister, j’utilise une technique professionnelle d’orientation complexe, trop longue à expliquer ici mais qu’on pourrait résumer par “si ça descend, c’est bon” aka “plein pot dans l’barranco”.
+À partir du moment ou le chemin cesse d’exister, j’utilise une technique professionnelle d’orientation complexe, trop longue à expliquer ici mais qu’on pourrait résumer par “si ça descend, c’est bon” aka “plein pot dans l’barranco”.
 
 Je finis donc par tomber sur la route qui serpente à flanc de falaise, que je descendrais en courant, autant pour me défouler après avoir galéré dans le barranco, que pour trouver la chaleur sur le littoral - en laissant définitivement derrière moi les corbeaux.
 
-Petit bain de pieds en compagnie des crabes furtifs - 
+On se trouve en fait sur une immense coulée de lave séchée. Le résultat : un bout de littoral fait de basalte noir acéré à perte de vue. Pas évident, mais je me trouve une petit coin pour un bain de pieds, en compagnie d’une tribu de crabes furtifs.
+
+[
+   Photo full screen Arenas Blancas
+	La seule plage de sable blanc de l’île
+]
 
 
+
+
+[ 
+slide au dessus de la carte par le bas
+photo full screen +titre
+] 
 
 ---
 Jour  3, 26 janvier
@@ -140,7 +151,16 @@ Jour  3, 26 janvier
 Prendre des risques
 Risco de los Herreños / Las Playas → Isora
 
+[
+trace GPS normale
+]
 
+/Panique : pas moyen de redescendre par la route prévue, pour retrouver la voiture - comment redescendre avant la tombée de la nuit?/
+
+[
+montrer le chemin possible pour redescendre
+àjouter l’heure à la trace GPS
+]
 
 
 La casquette Bajada de la Virgen
@@ -153,10 +173,30 @@ Prendre l'eau
 Charco Manso  → La Restinga  → Bahia de Naos
 
 [
-Travesia Las Calmas : montrer le parcours, la distance
+montrer la tâche de CO2 (photo satellite wiki) - évolution dans le temps?
+http://es.wikipedia.org/wiki/Erupci%C3%B3n_de_El_Hierro_de_2011
+
+http://www.ign.es/ign/resources/volcanologia/jpg/HI_SIS_eventos_2011-2015.jpg
+
+VIDEO --> heatmap
+
+http://sociedad.elpais.com/sociedad/2011/10/10/actualidad/1318197605_850215.html
+
+chronologie des évenements :
+-> 20 sept : ditributuon de prospectus - magnitude non ressentie
+20 -27 sept : premières secousses ressenties (foyers: El Golfo et Las Calmas
+27 sept - 10 oct : glissements de terrain et déplacements de population. Fermeture du túnel de Los Roquillos reliant les 2 principales agglos de l’île
+8 oct : magnitude de 4,4, maximum de l’éruption (18º 00' 45 27º 37' 43)
+- eruption sous marine
+
 ]
 
+Plongée
 
+
+[
+Travesia Las Calmas : montrer le parcours, la distance
+]
 
 [
 Visualisation 3D de l'île : la topographie d'El Golfo
@@ -169,6 +209,9 @@ Jour 5, 28 janvier
 ---
 Prendre son pied
 El Golfo
+
+
+
 
 [
 visualisation en 3D du parcours sur un "ruban"
