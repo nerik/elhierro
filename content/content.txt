@@ -5,8 +5,12 @@ Sous l'eau, sur terre, et en l'air
 quelques photos full screen de l'Île
 ]
 
-El Hierro est une île dont j'avais décidé de tomber amoureux avant même d'en fouler le sol.  Un roc perdu au milieu de l'Atlantique Nord,  difficile d'accès, battu par les vents. Un petit paradis d'écologie réaliste : l'île sera bientôt la première au monde à être autonome en énergie. Comme tout le monde, je cherche mon île déserte. El Hierro paraît être la candidate idéale.
 
+El Hierro est une île dont j'avais décidé de tomber amoureux avant même d'en fouler le sol.  Un roc perdu au milieu de l'Atlantique Nord,  difficile d'accès, battu par les vents. Un petit paradis d'écologie réaliste : l'île sera bientôt la première au monde à être autonome en énergie. 
+
+Comme tout le monde, je cherche mon île déserte. El Hierro paraît être la candidate idéale.
+
+El Hierro c’est aussi un monument de la nature. Une crête qui culmine à 1500m au dessus de l’océan, un immense demi-cratère, des pentes abrupts de basalt hérissées de cônes volcaniques. Et donc, une topographie tortueuse qui est un peu le point de départ de ce que vous avez sous les yeux : un webdoc cartographique.
 
 El Hierro est un volcan, pas si éteint que ça, qui insuffle son intensité à celui qui y met le pied, qui plonge au large de ses côtes, qui survole ses flancs abrupts.
 
@@ -31,9 +35,16 @@ Jour 1, 24 janvier
 **Prendre la mesure**
 Valverde → El Pinar → Tacoronte
 
+[
+texte d’intro
+]
 Les herreños prennent l’avion comme on prend le métro. À la fraiche. Tout le monde se connaît, on se fait la bise entre hôtesses et passagers... Et tout le monde reste décontracté et rigolard quand le petit ATR-72 tangue sérieusement. Tellement canarien.
 
-Pour ce premier jour, j’avalerais une sérieuse quantité de bitume des lacets de l’île. Histoire d’avoir une idée de ou je mets les pieds.
+[ 
+apparition de la carte
+]
+
+Pour ce premier jour, j’avalerais une sérieuse quantité de bitume des lacets de l’île - pour l’instant en voiture. Histoire d’avoir une idée de ou je mets les pieds.
 
 [
 début trace GPS
@@ -55,6 +66,7 @@ Ce réservoir est une réserve d’énergie hydraulique, activée lors d’absen
 
 [
 retour à la trace GPS
+scroll -> passage d’une photo géolocalisée à une autre
 ]
 
 À San Andrès (1050m d’altitude), on se trouve surpris, de trouver des arbres sans feuilles. Et puis on se rappelle qu’on est en Janvier, qu’on est entouré d’une brume épaisse, et que les panneaux sur la route recommandent la vigilance (“attention, route de montagne”)
@@ -97,7 +109,7 @@ telescope sur Sabinosa
 avec coordonnées GPS ( 27°44′50″N 18°05′48″O )
 ]
 
-Ses 300 âmes sont les plus occidentales de tout l’archipel des Canaries, dans une zone d’El Hierro extrêmement sauvage.
+Ses 300 âmes sont les plus occidentales de tout l’archipel des Canaries, dans une zone d’El Hierro quasiment pas habitée.
 Ce sera le point de départ de ma première aventure à pied sur l’île.
 
 [
@@ -105,21 +117,27 @@ début de la trace GPS à pied
 scroll -> passage d’une photo géolocalisée à une autre
 ]
 
-La première partie : le camino de la Dehesa, sur le flanc nord. Première grimpette de 700m sous une pluie fine, sur un étroit sentier fendant une quasi-jungle. 
+La première partie : le camino de la Dehesa, sur le flanc nord. Première grimpette de 700m sous une pluie fine et dans la brume, sur un étroit sentier fendant une quasi-jungle. 
 
 À l’arrivée au sommet, sur la crête, la récompense consiste en un froid glacial, pas prévu malgré mon expérience des climats canariens (pourtant simple : chaud en bas, froid en haut).
 
-J’y croise la seule présence humaine du parcours. Un trailer hyper équipé et complètement congelé. Pour le reste, le comité d’accueil consiste en quelques moutons dodus, qui servent de perchoir à une armée de corbeaux.  Qui daigneront à peine, à mon approche, s’envoler paresseusement dans la brume, en ne manquant pas de me signaler bruyamment que je n’ai rien à faire là.
-
+J’y croise la seule présence humaine du parcours. Un trailer hyper équipé et complètement congelé. 
 
 [
 Photo plein écran du trailer avec citation: 
 “Olà. Puta frio ! “
 ]
 
+Pour le reste, le comité d’accueil consiste en quelques moutons joufflus, qui servent de perchoirs à une armée de corbeaux.  Qui daigneront à peine, à mon approche, s’envoler paresseusement dans la brume, en ne manquant pas de me signaler bruyamment que je n’ai rien à faire là.
+
 J’apprendrais plus tard que le chemin emprunté fait partie du parcours du “Maraton del Méridiano”, version locale des mythiques 42km. Un tracé assurément moins “roulant” que nos petites courses dans le Bois de Vincennes.
 
+[
+tracé du marathon sur la carte
+]
+
 [ 
+suite trace GPS
 début du premier timelapse
 ]
 
@@ -152,18 +170,53 @@ Prendre des risques
 Risco de los Herreños / Las Playas → Isora
 
 [
-trace GPS normale
+trace GPS voiture
 ]
 
-/Panique : pas moyen de redescendre par la route prévue, pour retrouver la voiture - comment redescendre avant la tombée de la nuit?/
+Aujourd’hui trek autour du Golfe de Las Playas. Un autre bout du monde dans son genre. On y arrive après une longue route cotiêre, une base militaire et deux étroits tunnels.
+
+Au bout, la route s’arrête brusquement et mon petit périple commence. Sous un soleil brutal : à défaut de mieux, je me fabrique un keffieh de fortune avec un pull trempé dans la mer. La première imprudence de la journée.
 
 [
-montrer le chemin possible pour redescendre
-àjouter l’heure à la trace GPS
+trace GPS à pied
+scroll -> passage d’une photo géolocalisée à une autre
 ]
 
+L’ascenscion est difficile. Un petit kilomètre vertical sur un mince sentier pas toujours facile à identifier, très raide. Mais l’endroit est à couper le souffle. Aride et vertigineux.
 
-La casquette Bajada de la Virgen
+Certains passage sont ensevelis sous des éboulis. Je suis content d’avoir à monter cette partie plutôt qu’a la descendre, et aussi un poil inquiet pour la redescente à venir, par l’autre côté du golfe.
+
+La montée se casse subitement et devient plus douce, la pente aride fait place à la version canarienne du jardin d’Eden, faite de petits murs de pierre basaltique, d’un tapis de verdure luxuriant, de pins, d’amandiers en fleurs. Le tout baigné d’un soleil froid.
+
+[ 
+modale plein écran avec photo “sendero cerrado”
+]
+Le jour commence à faiblir sur le plateau, quand j’arrive au début du sentier censé me permettre de redescendre dans le Golfe pour rejoindre mon véhicule. 
+
+Sentier fermé pour cause d’éboulis.
+
+[
+retour à la carte
+] 
+
+Après une petite sueur froide, je contemple mes options :
+1. tenter de passer quand même : les éboulis seront moins un problème que de rester sur le sentier; je risque de finir en roulant; [ affichage chemin hypothétique sur la carte  ]
+2. retour par ou je suis arrivé : pas très motivant, dangereux en descente et à la tombée de la nuit;  [ affichage chemin hypothétique sur la carte  ]
+3. faire un grand détour par un autre sentier et un très long bout de route. Dont un passage dans un tunnel interdit au piétons  [ affichage chemin hypothétique sur la carte  ]
+4. me préparer un petit nid dans les cactus et attendre le lendemain.
+
+Dans la précipitation, l’option 3 semble viable. Je pars donc en flèche avec l’espoir d’arriver avant la nuit.
+
+[
+trace GPS avec contre la montre. Puis arrivée à La Cuesta.
+]
+
+Il me faut 30 minutes et l’arrivée d’un gros nuage bien froid, pour réaliser l’ineptie de mon projet. Je finirais donc par appeler un taxi au milieu de nulle part. J’arriverais donc à bon port, mais avec un porte monnaie allégé et surtout un orgueil d’aventurier en herbe mis à mal. Un aventurier bourgeois  somme toute.
+
+[ 
+trace GPS taxi, puis voiture
+]
+
 
 
 ---
@@ -181,6 +234,8 @@ http://www.ign.es/ign/resources/volcanologia/jpg/HI_SIS_eventos_2011-2015.jpg
 VIDEO --> heatmap
 
 http://sociedad.elpais.com/sociedad/2011/10/10/actualidad/1318197605_850215.html
+
+http://www.01.ign.es/ign/layoutIn/sismoFormularioCatalogo.do
 
 chronologie des évenements :
 -> 20 sept : ditributuon de prospectus - magnitude non ressentie
@@ -273,7 +328,7 @@ Bien évidemment cet évenement festif et jovial a lieu en été, et là, en jan
 Le vent humide et glacial aura rapidement raison de mon peu de volonté, et mon épopée s'arrêtera au Raya de Binto (1442m), presque aussi haut que le Malpaso, donc sur du plat, mais tellement loin : encore quelques kilomètres sur la crête lunaire et battue par les vents.
 
 [oeuilleton Raya de Binto/Malpaso]
-
+ 
 Je savoure ma quasi victoire sur le sommet de l'île pendant environ huit secondes, puis j'entame ma redescente. Alors c'est sûr après on philosophe, on fait le malin, on se dit que c'est le lot du randonneur, mais sur le moment on se demande vraiment ce qu'on fout là. Gris uniforme du brouillard, basalte noir et humide sous les pieds, la goutte au nez, tout seule.
  
 
@@ -301,6 +356,9 @@ Jour 7, 30 janvier
 Prendre le départ
 
  
+[
+photos objets fétiches du séjour : casquette, Tomtom, Gopro, boîte de haricots...
+
 [
 Fondu au blanc
 ] 
