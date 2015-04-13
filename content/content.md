@@ -100,7 +100,8 @@ Une idée des (longues) distances à parcourir sur ce petit bout de terre.
 Jour 2, 25 janvier
 ---
 **Prendre froid**
-Sabinosa → El Sabinar →  Punta del Verodal → Arenas Blancas
+
+*Sabinosa → El Sabinar →  Punta del Verodal → Arenas Blancas*
 
 
 	slide au dessus de la carte par le haut
@@ -141,11 +142,11 @@ J’apprendrais plus tard que le chemin emprunté fait partie du parcours du “
 
 	tracé du marathon sur la carte
 
+---
 
-[ 
-suite trace GPS
-début du premier timelapse
-]
+	suite trace GPS
+	début du premier timelapse
+
 
 En redescendant sur le versant Sud-Ouest, le brouillard se lève et je me retrouve subitement dans un monde radicalement différent, faits de barrancos de roches rouges, de sécheresse et de genevriers tordus par le vent.
 
@@ -156,170 +157,179 @@ Je finis donc par tomber sur la route qui serpente à flanc de falaise, que je d
 
 On se trouve en fait sur une immense coulée de lave séchée. Le résultat : un bout de littoral fait de basalte noir acéré à perte de vue. Pas évident, mais je me trouve une petit coin pour un bain de pieds, en compagnie d’une tribu de crabes furtifs.
 
-[
-   Photo full screen Arenas Blancas
-	La seule plage de sable blanc de l’île
-]
+
+	Fin du timelapse
+	Photo full screen Arenas Blancas
+	(La seule plage de sable blanc de l’île)
 
 
-
-
-[ 
-slide au dessus de la carte par le bas
-photo full screen +titre
-] 
+---
+	slide au dessus de la carte par le bas
+	photo full screen + titre
+ 
 
 ---
 Jour  3, 26 janvier
 ---
-Prendre des risques
-Risco de los Herreños / Las Playas → Isora
+**Prendre des risques**
 
-[
-trace GPS voiture
-]
+*Risco de los Herreños / Las Playas → Isora*
+
+
+	trace GPS voiture
+
 
 Aujourd’hui trek autour du Golfe de Las Playas. Un autre bout du monde dans son genre. On y arrive après une longue route cotiêre, une base militaire et deux étroits tunnels.
 
-Au bout, la route s’arrête brusquement et mon petit périple commence. Sous un soleil brutal : à défaut de mieux, je me fabrique un keffieh de fortune avec un pull trempé dans la mer. La première imprudence de la journée.
+Au bout, la route s’arrête brusquement et mon petit périple commence. Sous un soleil brutal : à défaut de mieux, je me fabrique un keffieh de fortune avec un pull trempé dans la mer. Première imprudence de la journée.
 
-[
-trace GPS à pied
-scroll -> passage d’une photo géolocalisée à une autre
-]
+	
+	trace GPS à pied
+	scroll -> passage d’une photo géolocalisée à une autre
+
 
 L’ascenscion est difficile. Un petit kilomètre vertical sur un mince sentier pas toujours facile à identifier, très raide. Mais l’endroit est à couper le souffle. Aride et vertigineux.
 
-Certains passage sont ensevelis sous des éboulis. Je suis content d’avoir à monter cette partie plutôt qu’a la descendre, et aussi un poil inquiet pour la redescente à venir, par l’autre côté du golfe.
+Certains passage sont ensevelis sous des éboulis. Je suis content d’avoir à monter cette partie plutôt qu’a la descendre, et aussi un poil inquiet pour la redescente à venir - par l’autre côté du golfe.
 
-La montée se casse subitement et devient plus douce, la pente aride fait place à la version canarienne du jardin d’Eden, faite de petits murs de pierre basaltique, d’un tapis de verdure luxuriant, de pins, d’amandiers en fleurs. Le tout baigné d’un soleil froid.
+La montée se casse subitement et devient plus douce, la pente aride fait place à une version canarienne du jardin d’Eden, faite de petits murs de pierre basaltique, d’un tapis de verdure luxuriant, de pins, d’amandiers en fleurs. Le tout baigné d’un soleil froid et d'une quiétude apaisante.
 
-[ 
-modale plein écran avec photo “sendero cerrado”
-]
+
+	plein écran avec photo “sendero cerrado”
+
+![](http://s17.postimg.org/t4togwj3j/GOPR6101.jpg)
+
 Le jour commence à faiblir sur le plateau, quand j’arrive au début du sentier censé me permettre de redescendre dans le Golfe pour rejoindre mon véhicule. 
 
 Sentier fermé pour cause d’éboulis.
 
-[
-retour à la carte
-] 
+
+	retour à la carte
+
 
 Après une petite sueur froide, je contemple mes options :
-1. tenter de passer quand même : les éboulis seront moins un problème que de rester sur le sentier; je risque de finir en roulant; [ affichage chemin hypothétique sur la carte  ]
-2. retour par ou je suis arrivé : pas très motivant, dangereux en descente et à la tombée de la nuit;  [ affichage chemin hypothétique sur la carte  ]
-3. faire un grand détour par un autre sentier et un très long bout de route. Dont un passage dans un tunnel interdit au piétons  [ affichage chemin hypothétique sur la carte  ]
+
+1. tenter de passer quand même : les éboulis seront moins un problème que de rester sur le sentier; je risque de finir en roulant; ``` affichage chemin hypothétique sur la carte ```
+
+2. retour par ou je suis arrivé : pas très motivant, dangereux en descente et à la tombée de la nuit;  ``` affichage chemin hypothétique sur la carte ```
+
+3. faire un grand détour par un autre sentier et un très long bout de route. Dont un passage dans un tunnel interdit au piétons ``` affichage chemin hypothétique sur la carte ```
+
 4. me préparer un petit nid dans les cactus et attendre le lendemain.
 
 Dans la précipitation, l’option 3 semble viable. Je pars donc en flèche avec l’espoir d’arriver avant la nuit.
 
-[
-trace GPS avec contre la montre. Puis arrivée à La Cuesta.
-]
 
-Il me faut 30 minutes et l’arrivée d’un gros nuage bien froid, pour réaliser l’ineptie de mon projet. Je finirais donc par appeler un taxi au milieu de nulle part. J’arriverais donc à bon port, mais avec un porte monnaie allégé et surtout un orgueil d’aventurier en herbe mis à mal. Un aventurier bourgeois  somme toute.
+	trace GPS avec "contre la montre". Puis arrivée à La Cuesta.
 
-[ 
-trace GPS taxi, puis voiture
-]
+
+Il me faut 30 minutes et l’arrivée d’un gros nuage bien menaçant, pour réaliser l’ineptie de mon projet. Je finirais donc par appeler un taxi, au milieu de nulle part. J’arriverais donc à bon port, mais avec un porte monnaie allégé et surtout un orgueil d’aventurier en herbe mis à mal. Un aventurier bourgeois somme toute.
+
+	
+	trace GPS taxi, puis voiture
+
 
 
 
 ---
 Jour 4, 27 janvier
 ---
-Prendre l'eau
-Charco Manso  → La Restinga  → Bahia de Naos
+**Prendre l'eau**
 
-[
-montrer la tâche de CO2 (photo satellite wiki) - évolution dans le temps?
-http://es.wikipedia.org/wiki/Erupci%C3%B3n_de_El_Hierro_de_2011
+*Charco Manso  → La Restinga  → Bahia de Naos*
 
-http://www.digital-geography.com/how-to-find-geospatial-data-for-spain/
-
-http://www.ign.es/ign/resources/volcanologia/jpg/HI_SIS_eventos_2011-2015.jpg
-
-VIDEO --> heatmap
-
-http://sociedad.elpais.com/sociedad/2011/10/10/actualidad/1318197605_850215.html
-
-http://www.01.ign.es/ign/layoutIn/sismoFormularioCatalogo.do
-
-chronologie des évenements :
--> 20 sept : ditributuon de prospectus - magnitude non ressentie
-20 -27 sept : premières secousses ressenties (foyers: El Golfo et Las Calmas
-27 sept - 10 oct : glissements de terrain et déplacements de population. Fermeture du túnel de Los Roquillos reliant les 2 principales agglos de l’île
-8 oct : magnitude de 4,4, maximum de l’éruption (18º 00' 45 27º 37' 43)
-- eruption sous marine
-
-]
-
-Plongée
+Jour de plongée.
 
 
-[
-Travesia Las Calmas : montrer le parcours, la distance
-]
+	Eruption volcanique de 2011
 
-[
-Visualisation 3D de l'île : la topographie d'El Golfo
-]
+	montrer la tâche de CO2 (photo satellite wiki) - évolution dans le temps?
+	http://es.wikipedia.org/wiki/Erupci%C3%B3n_de_El_Hierro_de_2011
+
+	http://www.digital-geography.com/how-to-find-geospatial-data-for-spain/
+
+	http://www.ign.es/ign/resources/volcanologia/jpg/HI_SIS_eventos_2011-2015.jpg
+
+	VIDEO --> heatmap
+
+	http://sociedad.elpais.com/sociedad/2011/10/10/actualidad/1318197605_850215.html
+
+	http://www.01.ign.es/ign/layoutIn/sismoFormularioCatalogo.do
+
+	chronologie des évenements :
+	-> 20 sept : ditributuon de prospectus - magnitude non ressentie
+	20 -27 sept : premières secousses ressenties (foyers: El Golfo et Las Calmas
+	27 sept - 10 oct : glissements de terrain et déplacements de population. Fermeture du túnel de Los Roquillos reliant les 2 principales agglos de l’île
+	8 oct : magnitude de 4,4, maximum de l’éruption (18º 00' 45 27º 37' 43)
+	- eruption sous marine
+
+
+
+Chemin le long de la côte vers La Restinga
+
+	Timelapse (pas sûr de le garder)
+
+
+---
+
+	Travesia Las Calmas :
+	traversée annuelle à la nage de la Mar de las Calmas
+	montrer le parcours, la distance
 
 
 
 ---
 Jour 5, 28 janvier
 ---
-Prendre son pied
-El Golfo
+**Prendre son pied**
+
+*El Golfo*
 
 Conditions climatiques et topologie idéales : El Hierro est un petit paradis du parapente ; un des rares endroits au monde où on peut voler au bord de la mer. 
 
 Un joyeux petit monde de casse-cous se retrouve donc tous les ans en mai sur l’île, et ça donne ça :
 
-[
-video
+	video
 https://www.youtube.com/watch?v=abhQlcOjNCc
-]
+
 
 Difficile de résister. Je suis donc en contact avec avec Andrès du club Guelillas, et attends depuis mon arrivée les conditions de vent nécéssaires pour voler en biplace. La veille au soir, SMS d’Andrès : “Creo es posible volar mañana. Estas disponible? “
 
-[
-début trace à pied GPS Las Puntas
-]
+	
+	début trace à pied GPS Las Puntas
 
-Ce matin pas de nouvelles, je tue le temps et trompe mon impatience en me baladant vers Las Puntas. 
+
+Ce matin, pas de nouvelles, je tue le temps et trompe mon impatience en me baladant vers Las Puntas. 
 
 Las Puntas, LE coin photogénique de l’île avec ses falaises, ses “Roques de Salmor”, et “l’Hotel le plus petit du Monde”. 
 
 Confirmation de Renan : le vent est là. Rendez-vous à 12h en face de l’Ayuntamiento.
 
-[
-photo full-screen : attente sur le banc en face de l’ayuntamiento
-]
+
+	photo full-screen : attente sur le banc en face de l’ayuntamiento
+	
+![](http://s18.postimg.org/dolb2bbyx/GOPR6519.jpg)
 
 12h40 : La punto de Renan arrive en trombe, on embarque.
 
-[
-trace GPS Punto de Renan
-]
+
+	trace GPS Punto de Renan
+
 
 Dans la punto déglinguée, bien tassés : Renan, 2 parapentes, 2 parapentistes tchèques surexcités, moi, pas hyper à l’aise.
 On trace donc vers le haut de la crête en fond de seconde dans les virages.
 
-Pendant cette petite demi-heure, je tente de comprendre la conversation en espagnol, mais je ne capte pas grand chose, à part “loco, loco, loco”, donc visiblement la conversation porte sur qui est le plus cinglé d’entre eux. Ca met bien en condition. 
+Pendant cette petite demi-heure, je tente de comprendre la conversation en espagnol, mais je ne capte pas grand chose, à part “loco, loco, loco”, donc visiblement la conversation porte sur qui est le plus cinglé d’entre eux. Ça met bien en condition. 
 
 Arrivés en haut (1400m), c’est sans chichis. On surplombe l’intégralité du Golfo, mais il faut de l’imagination puisque un épais voile de brume le dissimule. On décolle au bout de 10 minutes.
 
-[
-trace GPS parapente + timelapse
-]
 
-On passe rapidement le mur de brouillard. Et là, le gigantesque Golfo s’étale sous mes vieilles running. C’est absolument incroyable.
+	trace GPS parapente + timelapse
 
-Il n’y a à peu près rien en savoir pour faire du parapente en biplace : il suffit de savoir courir (quelques mètres). Ensuite il faut s’assoir. Et zou.
 
-Par contre, même à la latitude du Sahara, à 8 degrés C et 60km/h, on a vite un peu froid. Nota bene pour la prochaine : penser aux gants.
+On passe rapidement le mur de brouillard. Et là, le gigantesque Golfo s’étale sous mes vieilles running. C’est somptueux.
+
+Il n’y a à peu près rien en savoir pour faire du parapente en biplace : il suffit de savoir courir (quelques mètres). Ensuite il faut s’assoir. Et zou. Par contre, même à la latitude du Sahara, à 8 degrés C et 60km/h, on a vite un peu froid. Nota bene pour la prochaine : penser aux gants.
 
 Passé le choc de l’immensité, on se met à regarder les détails. Ici, une chèvre accrochée à la montagne. Là, un petit bois de chataîgners sans feuilles, seule réminiscence de l’hiver.
 
@@ -331,11 +341,11 @@ Son truc à lui, c’est le parapente acrobatique, dont il me donnera un petit a
 
 Un petit essai aux commandes, puis on arrive à la fin de vol d’une petite heure (il est possible de rester en l’air plus de cinq heures sur El Hierro).
 
-Mon vol se terminera sur les genoux, ruinant ma paire de jeans et ma crédibilité (apparement j’aurais oublié de courir à l’atterrissage). Mais, quelle expérience ! Je quitterais Renan, émerveille, revigoré, congelé. Et ce sera “Hasta luego”, plus que “Adios”...
+Mon vol se terminera sur les genoux, ruinant ma paire de jeans et ma crédibilité (apparement j’aurais oublié de courir à l’atterrissage). Mais, quelle expérience ! Je quitterais Renan, émerveille, revigoré, congelé. Et ce sera “Hasta luego”, plutôt que “Adios”...
 
-[
-visualisation en 3D du parcours sur un "ruban"
-]
+	
+	visualisation en 3D du parcours sur un "ruban"
+
 
 
 
@@ -345,27 +355,30 @@ visualisation en 3D du parcours sur un "ruban"
 ---
 Jour 6, 29 janvier
 ---
-Prendre de la hauteur
-Faro de Orchilla → Ermita Virgen de los Reyes → [Malpaso (1500m)] Raya de Binto (1442m)
+**Prendre de la hauteur**
+
+*Faro de Orchilla → Ermita Virgen de los Reyes → [Malpaso (1500m)] Raya de Binto (1442m)*
 
 
 Le Malpaso et ses 1500 mètres, point culminant d'El Hierro, ferait ricaner n'importe quel apprenti alpiniste. 
 Il n'empêche. Aujourd'hui je grimpe le Malpaso en partant de la mer (et normalement, j'en redescends). Et même si ce n'est pas l'Everest ou les Drus de Frison-Roche, il faudra affronter le froid et la pluie, 1500m de dénivelé positif, et 30 km de distance.
 
-[oeuilleton Malpaso + altitude]
+
+	"téléscope" Malpaso + altitude
+
 
 Une petite heure de route, sur un mince ruban d'asphalte puis de graviers, avec la belle lumière rose du petit matin, m'amène à l'extrémité Ouest de l'île, sur le phare d'Orchilla. 
 
-[oeuilleton phare]
+	"téléscope" phare
 
 L'extrême occident de l'île, et pendant des siècles, littéralement le bout du monde.
 Le phare d'Orchilla marque l'emplacement du "Meridiano Cero", le point de longitude 0, en vigueur depuis Ptolémée et ce jusqu'en 1884 (adoption du Méridien de Greenwich)
 
 
-[
-dézoom Europe
-affichage successif des 4 méridiens, avec encart de l'année
-]
+
+	dézoom Europe
+	affichage successif des 4 méridiens, avec l'année
+
 
 
 - 2ème siècle av. JC : Ptoléméé : méridien zéro basé sur la position extrème occidentale du monde connu
@@ -375,58 +388,59 @@ Longitudines numeratæ à primo Meridiano per Ins(ulam) Ferri
 - 1667 : Méridien de Picard (Observatoire de Paris). Selon certains, une "ligne occulte", un "axe Maçonnique", voire "le coeur du démon" (http://en.wikipedia.org/wiki/Rose_Line)
 - 1884 : après une rivalité de deux siècle entre le Royaume-Uni et la France, le monde adopte le Méridien de Greenwich (les cartographes français utiliseront encore le méridien de Paris jusqu'à la première gurre mondiale)
 
-[zoom sur El Hierro]
 
-[
-apparition Altimètre (placé directement au bout du tracé)
-]
+	zoom sur El Hierro
+
+---
+
+	apparition Altimètre au bout du tracé
+
 
 Départ sous un soleil de plomb, sur la roche noire et rouge, très sec.
-J'avale les 700 premiers mètres de dénivelé comme un shot de Barraquito canarien, jusqu'à l'Ermita Virgen de Los Reyes. Le chemin est un sentier de pélerinage, parcouru par des centaines de herreños pendant la Bajada de la Virgen. 
+J'avale les 700 premiers mètres de dénivelé comme un shot de Barraquito canarien, jusqu'à l'Ermita Virgen de Los Reyes. Le chemin est un sentier de pélerinage, parcouru par des centaines de herreños pendant la Bajada de la Virgen (descente de la Vierge). 
 
-[video]
+	video: 
+https://www.youtube.com/watch?v=gvNot0kKQAQ
 
 Bien évidemment cet évenement festif et jovial a lieu en été, et là, en janvier, c'est la solitude totale. Après un chouette montée entre prairies et murs de pierres sèches, j'arrive sur la crête de l'île (environ 1000m de haut). Derrière, la Dehesa, désert sauvage de l'Ouest de l'Île. Devant, l'immense crique d'El Golfo. Ici, un vent brutal et chargé d'humidité. La partie difficile de la rando s'annonce et il semble que la Virgen de Los Reyes ne soit pas avec moi.
 
-[photos galère]
+	photos galère
 
 Le vent humide et glacial aura rapidement raison de mon peu de volonté, et mon épopée s'arrêtera au Raya de Binto (1442m), presque aussi haut que le Malpaso, donc sur du plat, mais tellement loin : encore quelques kilomètres sur la crête lunaire et battue par les vents.
 
-[oeuilleton Raya de Binto/Malpaso]
+	"téléscope" Raya de Binto et Malpaso
  
-Je savoure ma quasi victoire sur le sommet de l'île pendant environ huit secondes, puis j'entame ma redescente. Alors c'est sûr après on philosophe, on fait le malin, on se dit que c'est le lot du randonneur, mais sur le moment on se demande vraiment ce qu'on fout là. Gris uniforme du brouillard, basalte noir et humide sous les pieds, la goutte au nez, tout seule.
+Je savoure ma quasi victoire sur le sommet de l'île pendant environ huit secondes, puis j'entame ma redescente. Alors c'est sûr après on philosophe, on fait le malin, on se dit que c'est le lot du randonneur, mais sur le moment on se demande vraiment ce qu'on fout là. Gris uniforme du brouillard, basalte noir et humide sous les pieds, la goutte au nez, tout seul.
  
 
-[début streetview]
+	début du timelapse
 
 En redescendant, ce nuage poisseux d'humidité et de froid me poursuit. 
-il me faudra atteindre l'ermitage pour retrouver un coin de bleu, et quasiment la côte pour retrouver de la chaleur.
+Il me faudra atteindre l'ermitage pour retrouver un coin de bleu, et quasiment la côte pour retrouver de la chaleur.
 Les chèvres, en bas, se foutent bien de ma gueule.
 
 
 Retour par la route d'El Julan, l'incroyable pinède sauvage d'El Hierro. Un immense espace vide de toute population, mais le berceau des herreños primitifs.
 
 
-[
-Le GR131 à El Hierro → Le GR 131 aux Canaries → 
-http://www.senderosgr.es/SenderosDetalle.aspx?IdSendero=127 → 
-Sentier européen (E7 http://en.wikipedia.org/wiki/E7_European_long_distance_path)
-]
+
+	Le GR131 à El Hierro → Le GR 131 aux Canaries → 
+	http://www.senderosgr.es/SenderosDetalle.aspx?IdSendero=127 → 
+	Sentier européen (E7 http://en.wikipedia.org/wiki/E7_European_long_distance_path)
+
 
 
 
 ---
 Jour 7, 30 janvier
 ---
-Prendre le départ
+**Prendre le départ**
 
+*El Hierro → La Gomera*
  
-[
-photos objets fétiches du séjour : casquette, Tomtom, Gopro, boîte de haricots...
+	
+	photos objets fétiches du séjour : casquette, Tomtom, Gopro, boîte de haricots...
 
-[
-Fondu au blanc
-] 
 
 
 	
