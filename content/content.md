@@ -1,14 +1,19 @@
 El Hierro - L'Île de fer
-Sous l'eau, sur terre, et en l'air
+===
+*Sous l'eau, sur terre, et en l'air*
 
-[
-quelques photos full screen de l'Île
-]
+	
+	écran de titre
+	quelques photos full screen de l'Île
+
+---
+
+	texte avec photos intégrées
 
 
 El Hierro est une île dont j'avais décidé de tomber amoureux avant même d'en fouler le sol.  Un roc perdu au milieu de l'Atlantique Nord,  difficile d'accès, battu par les vents. Un petit paradis d'écologie réaliste : l'île sera bientôt la première au monde à être autonome en énergie. 
 
-Comme tout le monde, je cherche mon île déserte. El Hierro paraît être la candidate idéale.
+Comme tout le monde, je cherche mon île déserte. El Hierro paraissait être la candidate idéale.
 
 El Hierro c’est aussi un monument de la nature. Une crête qui culmine à 1500m au dessus de l’océan, un immense demi-cratère, des pentes abrupts de basalt hérissées de cônes volcaniques. Et donc, une topographie tortueuse qui est un peu le point de départ de ce que vous avez sous les yeux : un webdoc cartographique.
 
@@ -16,58 +21,59 @@ El Hierro est un volcan, pas si éteint que ça, qui insuffle son intensité à 
 
 Je vous raconte dans ce petit carnet de voyage les six jours effrénés que je passé sur El Hierro, à tenter d'en arpenter chaque centimètre. Six jours comme une grande respiration, une grande bouffée d'oxygène et de soleil.
 
-[
-quelques photos full screen de l'Île
-fin des photos, slide au dessus de la carte par le haut
-vue sur l'Europe Paris → Barcelone → Santa Cruz de Tenerife
-trajet en avion 
-Quelques photos de SC
-trajet en avion (ligne plus fine)
-]
 
-[ 
-slide au dessus de la carte par le bas
-photo full screen +titre
-] 
+	quelques photos full screen de l'Île
+	fin des photos, slide au dessus de la carte par le haut
+	sur la carte vue sur l'Europe Paris → Barcelone → Santa Cruz de Tenerife
+	trajet en avion 
+	Quelques photos de SC
+	trajet en avion (ligne plus fine)
+
 ---
+
+	slide au dessus de la carte par le bas
+	photo full screen +titre
+
+
 Jour 1, 24 janvier
 ---
 **Prendre la mesure**
-Valverde → El Pinar → Tacoronte
 
-[
-texte d’intro
-]
+*Valverde → El Pinar → Tacoronte*
+
+
+	texte d’intro
+
 Les herreños prennent l’avion comme on prend le métro. À la fraiche. Tout le monde se connaît, on se fait la bise entre hôtesses et passagers... Et tout le monde reste décontracté et rigolard quand le petit ATR-72 tangue sérieusement. Tellement canarien.
 
-[ 
-apparition de la carte
-]
+ 
+	 slide au dessus de la carte par le haut
+
 
 Pour ce premier jour, j’avalerais une sérieuse quantité de bitume des lacets de l’île - pour l’instant en voiture. Histoire d’avoir une idée de ou je mets les pieds.
 
-[
-début trace GPS
-scroll -> passage d’une photo géolocalisée à une autre
-]
+
+	début trace GPS
+	scroll -> passage d’une photo géolocalisée à une autre
+
 
 Pas de bain de foule pour le moment. À Valverde, la petite capitale, les rues sont totalement désertes à 15h. Ce qui est commun en Espagne, mais avec le vent qui souffle dans les mignonnes petites rues pavées, ça fait toujours son effet.
 
 Impressionant parc éolien près de Valverde, dans un vent qui me fait chanceller. Ces éoliennes sont la pièce maîtresse du projet “Gorona del Viento”, qui vise à faire d’El Hierro la première île autonome en énergie au monde.
 
-[
-Gorona del Viento -> animation sur la carte
-]
+
+	Gorona del Viento -> animation sur la carte
+
 
 Le procédé, dit “hydro-éolien” est une expérimentation à grande échelle. Lors de grands vents, une partie de l’énergie éolienne est utilisée pour pomper de l’eau de mer dans un réservoir situé à quelques centaines de mètres de hauteur.
 
 Ce réservoir est une réserve d’énergie hydraulique, activée lors d’absence de vent. L’ensemble permet, en théorie, une fourniture d’électricité stable aux habitants.
 
 
-[
-retour à la trace GPS
-scroll -> passage d’une photo géolocalisée à une autre
-]
+
+	retour à la trace GPS
+	scroll -> passage d’une photo géolocalisée à une autre
+
 
 À San Andrès (1050m d’altitude), on se trouve surpris, de trouver des arbres sans feuilles. Et puis on se rappelle qu’on est en Janvier, qu’on est entouré d’une brume épaisse, et que les panneaux sur la route recommandent la vigilance (“attention, route de montagne”)
 
@@ -79,43 +85,42 @@ Un reservoir d’essence presque vide coupera court à cette journée : comme l�
 
 Retour donc par le centre, et ses forêts luxuriante de lauriers primitifs, dans une brume épaisse et une solitude vaguement angoissante.
 
-[
-Carte isochrone (depuis Valverde/depuis Frontera...)
-]
+
+	Carte isochrone (depuis Valverde/depuis Frontera...)
+
 
 Une idée des (longues) distances à parcourir sur ce petit bout de terre.
 
-
-
-[ 
-slide au dessus de la carte par le bas
-photo full screen +titre
-] 
 ---
+
+
+	slide au dessus de la carte par le bas
+	photo full screen +titre
+
 Jour 2, 25 janvier
 ---
 **Prendre froid**
 Sabinosa → El Sabinar →  Punta del Verodal → Arenas Blancas
 
 
-[
-trace GPS (trajet en voiture jusqu’à Sabinosa)
-]
+	slide au dessus de la carte par le haut
+	trace GPS (trajet en voiture jusqu’à Sabinosa)
+
 
 Sabinosa, adorable petit village perché, a des allures de bout du monde au bout du monde. Comme beaucoup d’endroits sur El Hierro. 
 
-[
-telescope sur Sabinosa
-avec coordonnées GPS ( 27°44′50″N 18°05′48″O )
-]
+
+	"telescope" sur Sabinosa
+	avec coordonnées GPS (genre 27°44′50″N 18°05′48″O)
+
 
 Ses 300 âmes sont les plus occidentales de tout l’archipel des Canaries, dans une zone d’El Hierro quasiment pas habitée.
 Ce sera le point de départ de ma première aventure à pied sur l’île.
 
-[
-début de la trace GPS à pied
-scroll -> passage d’une photo géolocalisée à une autre
-]
+
+	début de la trace GPS à pied
+	scroll -> passage d’une photo géolocalisée à une autre
+
 
 La première partie : le camino de la Dehesa, sur le flanc nord. Première grimpette de 700m sous une pluie fine et dans la brume, sur un étroit sentier fendant une quasi-jungle. 
 
@@ -123,18 +128,19 @@ La première partie : le camino de la Dehesa, sur le flanc nord. Première grimp
 
 J’y croise la seule présence humaine du parcours. Un trailer hyper équipé et complètement congelé. 
 
-[
-Photo plein écran du trailer avec citation: 
-“Olà. Puta frio ! “
-]
+
+![](http://i57.tinypic.com/2v9dt00.jpg)
+
+	“Olà. Puta frio ! “
+
 
 Pour le reste, le comité d’accueil consiste en quelques moutons joufflus, qui servent de perchoirs à une armée de corbeaux.  Qui daigneront à peine, à mon approche, s’envoler paresseusement dans la brume, en ne manquant pas de me signaler bruyamment que je n’ai rien à faire là.
 
 J’apprendrais plus tard que le chemin emprunté fait partie du parcours du “Maraton del Méridiano”, version locale des mythiques 42km. Un tracé assurément moins “roulant” que nos petites courses dans le Bois de Vincennes.
 
-[
-tracé du marathon sur la carte
-]
+
+	tracé du marathon sur la carte
+
 
 [ 
 suite trace GPS
@@ -228,6 +234,8 @@ Charco Manso  → La Restinga  → Bahia de Naos
 [
 montrer la tâche de CO2 (photo satellite wiki) - évolution dans le temps?
 http://es.wikipedia.org/wiki/Erupci%C3%B3n_de_El_Hierro_de_2011
+
+http://www.digital-geography.com/how-to-find-geospatial-data-for-spain/
 
 http://www.ign.es/ign/resources/volcanologia/jpg/HI_SIS_eventos_2011-2015.jpg
 
