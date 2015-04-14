@@ -23,12 +23,13 @@
 
 
 Map {
-  background-color: @land;
+  background-color: #fff;
 }
 
 // Mapbox Terrain global landcover //
 
 #landcover {
+  /*
   [class='wood'] { polygon-fill: @wood; }
   [class='scrub'] { polygon-fill: @scrub; }
   [class='grass'] { polygon-fill: @grass; }
@@ -44,6 +45,7 @@ Map {
     [zoom>=16] { polygon-opacity: 0.4; }
     [zoom>=17] { polygon-opacity: 0.2; }
   }
+  */
 }
 
 // OSM landuse & landcover //
@@ -200,7 +202,7 @@ Map {
 // Multiple copies of the same layer have been made, each with
 // unique classes and positions in the stack. This is done by
 // editing the layers list in <project.yml>.
-
+/*
 #contour::line[index!=-1] {
   line-color: #000;
   line-opacity: 0.1;
@@ -226,9 +228,10 @@ Map {
     text-halo-rasterizer: fast;
   }
 }
+*/
 
 // Water Features //
-
+/*
 #water {
   polygon-clip: false;
   polygon-fill: @water_dark;
@@ -243,7 +246,7 @@ Map {
     [zoom<6] { polygon-gamma: 0.4; }
   }
 }
-
+*/
 #waterway {
   [type='river'],
   [type='canal'] {
@@ -314,7 +317,8 @@ Map {
     [zoom>=17] { line-width: 2; }
   }
   polygon-clip: false;
-  polygon-fill: @land * 0.95;
+  //polygon-fill: @land * 0.95;
+  polygon-fill: #aaa;
   [zoom>=16] {
     polygon-geometry-transform: translate(-0.5,-1.2);
   }
@@ -357,6 +361,7 @@ Map {
       polygon-fill:@land;
     }
   }
+  /*
   [class='cliff'][zoom>=12] {
     line-color: #987;
     a/line-color: #987;
@@ -364,6 +369,7 @@ Map {
     a/line-dasharray: 0,7,1,7;
     a/line-offset: -2;
   }
+  */
 }
 
 // Political boundaries //
@@ -394,56 +400,5 @@ Map {
 }
 
 
-
- #landcover[class='scrub'] {
-
-  ::line11 {
-    line-width: 26;
-    line-color: #000;
-  } 
-  ::line10 {
-    line-width: 25;
-    line-color: #FFF;
-  } 
-  ::line9 {
-    line-width: 19;
-    line-color: #000;
-  } 
-  ::line8 {
-    line-width: 18;
-    line-color: #FFF;
-  } 
-  ::line7 {
-    line-width: 13;
-    line-color: #000;
-  } 
-  ::line6 {
-    line-width: 12;
-    line-color: #FFF;
-  }   
-  ::line5 {
-    line-width: 8;
-    line-color: #000;
-  } 
-  ::line4 {
-    line-width: 7;
-    line-color: #FFF;
-  }   
-  ::line3 {
-    line-width: 4;
-    line-color: #000;
-  } 
-  ::line2 {
-    line-width: 3;
-    line-color: #fff;
-  }
-  ::line1 {
-    line-width: 1;
-    line-color: #000;
-  }
-  ::fill {
-    polygon-fill: #FF0000
-   }
-}
 
 /**/

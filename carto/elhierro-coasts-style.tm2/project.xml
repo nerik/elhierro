@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map[]>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" background-color="#bccbff">
+
+<Parameters>
+  <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
+  <Parameter name="center">-18.1599,27.732,15</Parameter>
+  <Parameter name="format">png8:m=h</Parameter>
+  <Parameter name="maxzoom">18</Parameter>
+  <Parameter name="minzoom">0</Parameter>
+  <Parameter name="name"><![CDATA[elhierro-coasts]]></Parameter>
+  <Parameter name="source"><![CDATA[mapbox:///lrqdo.7e9a6dea]]></Parameter>
+</Parameters>
+
+
+<Style name="elhierro-coasts" filter-mode="first">
+  <Rule>
+    <PolygonSymbolizer fill="#ffffff" />
+  </Rule>
+</Style>
+<Layer name="elhierro-coasts"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>elhierro-coasts</StyleName>  </Layer>
+
+<Style name="elhierro-lines-line6" filter-mode="first">
+  <Rule>
+    <LineSymbolizer offset="39" stroke-width="0.2" stroke="#0000ff" stroke-opacity="0.8" />
+  </Rule>
+</Style>
+<Style name="elhierro-lines-line5" filter-mode="first">
+  <Rule>
+    <LineSymbolizer offset="30" stroke-width="0.4" stroke="#0000ff" stroke-opacity="0.8" />
+  </Rule>
+</Style>
+<Style name="elhierro-lines-line4" filter-mode="first">
+  <Rule>
+    <LineSymbolizer offset="22" stroke-width="0.6" stroke="#0000ff" stroke-opacity="0.8" />
+  </Rule>
+</Style>
+<Style name="elhierro-lines-line3" filter-mode="first">
+  <Rule>
+    <LineSymbolizer offset="15" stroke-width="0.8" stroke="#0000ff" stroke-opacity="0.8" />
+  </Rule>
+</Style>
+<Style name="elhierro-lines-line2" filter-mode="first">
+  <Rule>
+    <LineSymbolizer offset="9" stroke-width="1" stroke="#0000ff" stroke-opacity="0.8" />
+  </Rule>
+</Style>
+<Style name="elhierro-lines-line1" filter-mode="first">
+  <Rule>
+    <LineSymbolizer offset="4" stroke-width="1.2" stroke="#0000ff" stroke-opacity="0.8" />
+  </Rule>
+</Style>
+<Style name="elhierro-lines" filter-mode="first">
+  <Rule>
+    <LineSymbolizer stroke-width="2" stroke="#0000ff" stroke-opacity="0.8" />
+  </Rule>
+</Style>
+<Layer name="elhierro-lines"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>elhierro-lines</StyleName>
+    <StyleName>elhierro-lines-line1</StyleName>
+    <StyleName>elhierro-lines-line2</StyleName>
+    <StyleName>elhierro-lines-line3</StyleName>
+    <StyleName>elhierro-lines-line4</StyleName>
+    <StyleName>elhierro-lines-line5</StyleName>
+    <StyleName>elhierro-lines-line6</StyleName>  </Layer>
+
+</Map>

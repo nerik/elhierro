@@ -1,0 +1,25 @@
+_prefs: 
+  mapid: lrqdo.2f512fdf
+  saveCenter: true
+_properties: {}
+attribution: ''
+bounds: 
+  - -180
+  - -85.0511
+  - 180
+  - 85.0511
+center: 
+  - -18.1599
+  - 27.732
+  - 15
+description: ''
+format: "png8:m=h"
+interactivity_layer: ''
+layers: null
+maxzoom: 18
+minzoom: 0
+name: elhierro-coasts
+source: "mapbox:///lrqdo.7e9a6dea"
+styles: 
+  - style.mss
+template: ''
