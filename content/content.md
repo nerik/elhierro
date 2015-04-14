@@ -47,7 +47,7 @@ Jour 1, 24 janvier
 Les herreños prennent l’avion comme on prend le métro. À la fraiche. Tout le monde se connaît, on se fait la bise entre hôtesses et passagers... Et tout le monde reste décontracté et rigolard quand le petit ATR-72 tangue sérieusement. Tellement canarien.
 
  
-	 slide au dessus de la carte par le haut
+	 slide au dessus de la carte par le bas
 
 
 Pour ce premier jour, j’avalerais une sérieuse quantité de bitume des lacets de l’île - pour l’instant en voiture. Histoire d’avoir une idée de ou je mets les pieds.
