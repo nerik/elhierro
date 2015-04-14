@@ -21,6 +21,7 @@
 
 // Background //
 
+
 Map {
   background-color: @land;
 }
@@ -390,6 +391,59 @@ Map {
     [zoom>=8] { line-width: 2; }
     [zoom>=12] { line-width: 3; }
   }
+}
+
+
+
+ #landcover[class='scrub'] {
+
+  ::line11 {
+    line-width: 26;
+    line-color: #000;
+  } 
+  ::line10 {
+    line-width: 25;
+    line-color: #FFF;
+  } 
+  ::line9 {
+    line-width: 19;
+    line-color: #000;
+  } 
+  ::line8 {
+    line-width: 18;
+    line-color: #FFF;
+  } 
+  ::line7 {
+    line-width: 13;
+    line-color: #000;
+  } 
+  ::line6 {
+    line-width: 12;
+    line-color: #FFF;
+  }   
+  ::line5 {
+    line-width: 8;
+    line-color: #000;
+  } 
+  ::line4 {
+    line-width: 7;
+    line-color: #FFF;
+  }   
+  ::line3 {
+    line-width: 4;
+    line-color: #000;
+  } 
+  ::line2 {
+    line-width: 3;
+    line-color: #fff;
+  }
+  ::line1 {
+    line-width: 1;
+    line-color: #000;
+  }
+  ::fill {
+    polygon-fill: #FF0000
+   }
 }
 
 /**/
