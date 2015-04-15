@@ -1,0 +1,42 @@
+$bg: #fdf6e9;
+
+body {
+	background-color: $bg;
+}
+
+
+
+.main {
+	position: relative;
+}
+
+.overlay, .title, .fullpage {
+	position: relative;
+	z-index: 2;
+}
+
+.back 	{ z-index: 0; }
+#map 	{ z-index: 1; }
+.front 	{ z-index: 2; }
+
+.title {
+	img {
+		width: 100%;
+	}
+
+	h1 {
+		position: absolute;
+  		margin-top: -50%;
+	}
+}
+
+.fullpage {
+	background-color: $bg;
+	padding: 50px 80px 100px;
+	line-height: 3rem;
+}
+
+.geocodedImages {
+	position: fixed;
+	display: none;
+}

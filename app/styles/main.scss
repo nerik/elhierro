@@ -1,10 +1,10 @@
 @import 'leaflet';
+@import 'style';
 
 body {
 	// overflow:hidden;
 	width:100%;
 	margin: 0;
-	background-color: #fff9d2;
 }
 
 #map {
@@ -13,13 +13,6 @@ body {
 	position: fixed;
 }
 
-
-.main {
-	position: relative;
-  	width: 100px;
-  	left: 50px;
-  	margin-bottom: 1000px;
-}
 
 .timelapse {
 	position: fixed;
