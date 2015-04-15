@@ -1,0 +1,2 @@
+ogr2ogr -clipsrc -21 24 -15 30 elhierro-lines.shp lines.shp 
+ogr2ogr -clipsrc -21 24 -15 30 elhierro-coasts.shp land_polygons.shp
