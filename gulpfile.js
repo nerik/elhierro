@@ -70,7 +70,6 @@ gulp.task('foo', function () {
 
         };
     }
-    // exec('togeojson raw/gpx_corrected/6/1_feet.gpx | ./scripts/geojson.js | topojson -p -q 1e5 > test4.topo')
     
 })
 gulp.task('js', function() {
