@@ -1,11 +1,11 @@
 Map {
-  background-color: #bccbff;
+  //background-color: #bccbff;
   }
 
 @line : #0000FF;
 @op: .8;
-@rOffset: 2;
-@rWidth: 2;
+@rOffset: 1;
+@rWidth: 1;
 
 #elhierro-lines {
   line-width: 1*@rWidth;
