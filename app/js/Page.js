@@ -1,10 +1,48 @@
 var _ = require('underscore');
 var getXHRPromise = require('./utils').getXHRPromise;
 var L = require('leaflet/dist/leaflet-src');
-
+var $ = require('jquery');
 
 class Page  {
-	constructor(map) {
+	constructor(index) {
+		this.data = {};
+		this.data.index = index;
+
+		this.fetchDataFromDom();
+		this.loadData();
+	}
+
+	fetchDataFromDom() {
+		this.data.gpstrace = [];
+		$('[data-gpstrace]').each( (i, el) => { 
+			this.data.gpstrace.push(  $(el).data('gpstrace')  ); 
+		} );
+
+		this.data.gpstrace = _.uniq(this.data.gpstrace);
+	}
+
+	loadData() {
+		console.log(this);
+		var gpstracesPromises = this.data.gpstrace.map( gps => getXHRPromise(`./data/${this.data.index}/${gps}.topojson` ) );
+
+		Promise.all(gpstracesPromises).then( data => {
+			console.log(data);
+
+			var colors  = ['red', 'green', 'blue']
+
+			for (var i = 0; i < data.length; i++) {
+				var topo = data[i];
+				var geo = topojson.feature(topo, topo.objects.stdin);
+				var coords = geo.features[0].geometry.coordinates.map( coord => [coord[1], coord[0]] );
+				L.polyline(coords, {color: colors[i]}).addTo(this.map)
+			};
+		});
+	}
+
+	test(map) {
+		this.map = map;
+		return;
+
 
 
 		var testCoords, testPath, testPath2;
@@ -183,9 +221,8 @@ class Page  {
 			timelapseLow.style.display = 'none';
 		}
 
-
-
 	}
+
 }
 
 module.exports = Page;
