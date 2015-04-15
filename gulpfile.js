@@ -3,6 +3,7 @@
 var gulp      = require('gulp'),
 fs            = require('fs'),
 path          = require('path'),
+exec          = require('child_process').exec,
 gulpif        = require('gulp-if'),
 sass          = require('gulp-sass'),
 browserify    = require('gulp-browserify'),
@@ -18,16 +19,60 @@ mergeStream   = require('merge-stream');
 
 var config = {
     dist: './dist',
+    debug: true,
     pages: [
-        {}, {}, {}, {}, {}, {}, 
+        {}, 
+        {}, 
+        {}, 
+        {
+            slug: 'jour3-risco-de-los-herrenos-las-playas--isora',
+            title: 'Jour 3',
+            gps: [
+                { n: '0_car' },
+                { n: '1_feet', props: 'coordTimes,altitudes' },
+                { n: '2_taxi' }
+            ]
+        },
+        {}, 
+        {}, 
         {
             slug: 'jour6-faro-de-orchilla--malpaso',
             title: 'Jour 6'
-        }
+        },
+        {}
     ]
 };
 
+gulp.task('foo', function () {
+    for (var i = 0; i < config.pages.length; i++) {
+        var page = config.pages[i];
 
+        if (!page.gps) continue;
+
+        for (var j = 0; j < page.gps.length; j++) {
+            var gps = page.gps[j];
+
+            var topoJsonProps = (gps.props) ? '-p '+ gps.props : '';
+
+            var pipes = [
+                'togeojson raw/gpx_corrected/'+i+'/'+gps.n + '.gpx',
+                './scripts/geojson.js',
+                'topojson -q 1e5 ' + topoJsonProps           
+            ];
+
+            var dest = path.join('./dist/data', ''+i, gps.n + '.topojson' );
+
+            var cmd = pipes.join(' | ') + ' > ' + dest;
+
+            console.log(cmd);
+
+            exec ( cmd );
+
+        };
+    }
+    // exec('togeojson raw/gpx_corrected/6/1_feet.gpx | ./scripts/geojson.js | topojson -p -q 1e5 > test4.topo')
+    
+})
 gulp.task('js', function() {
     return browserify({
         entries: './app/js/main.js',
@@ -72,13 +117,15 @@ gulp.task('html', function(){
         if (!page.slug) continue;
 
         var content = fs.readFileSync('./app/html/'+i+'.html').toString();
+        var slug = (config.debug) ? i : page.slug;
 
         var stream = gulp.src('./app/html/index.html')
         .pipe(template({
             pageTitle: page.title,
             content: content
         }))
-        .pipe(gulp.dest( path.join( config.dist, page.slug ) ) );
+        .pipe(rename(slug+'.html'))
+        .pipe(gulp.dest( config.dist ) );
 
         mergedStreams.add(stream);
     };
