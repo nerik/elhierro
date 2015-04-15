@@ -15,7 +15,7 @@ El Hierro est une île dont j'avais décidé de tomber amoureux avant même d'en
 
 Comme tout le monde, je cherche mon île déserte. El Hierro paraissait être la candidate idéale.
 
-El Hierro c’est aussi un monument de la nature. Une crête qui culmine à 1500m au dessus de l’océan, un immense demi-cratère, des pentes abrupts de basalt hérissées de cônes volcaniques. Et donc, une topographie tortueuse qui est un peu le point de départ de ce que vous avez sous les yeux : un webdoc cartographique.
+El Hierro c’est aussi un monument de la nature. Une crête qui culmine à 1500m au dessus de l’océan, un immense demi-cratère, des pentes abruptes de basalt hérissées de cônes volcaniques. Et donc, une topographie tortueuse qui est un peu le point de départ de ce que vous avez sous les yeux : un webdoc cartographique.
 
 El Hierro est un volcan, pas si éteint que ça, qui insuffle son intensité à celui qui y met le pied, qui plonge au large de ses côtes, qui survole ses flancs abrupts.
 
@@ -44,13 +44,13 @@ Jour 1, 24 janvier
 
 	texte d’intro
 
-Les herreños prennent l’avion comme on prend le métro. À la fraiche. Tout le monde se connaît, on se fait la bise entre hôtesses et passagers... Et tout le monde reste décontracté et rigolard quand le petit ATR-72 tangue sérieusement. Tellement canarien.
+Les "herreños" prennent l’avion comme on prend le métro. À la fraîche. Tout le monde se connaît, on se fait la bise entre hôtesses et passagers... Et tout le monde reste décontracté et rigolard quand le petit ATR-72 tangue sérieusement. Tellement canarien.
 
  
-	 slide au dessus de la carte par le haut
+	 slide au dessus de la carte par le bas
 
 
-Pour ce premier jour, j’avalerais une sérieuse quantité de bitume des lacets de l’île - pour l’instant en voiture. Histoire d’avoir une idée de ou je mets les pieds.
+Pour ce premier jour, j’avalerai une sérieuse quantité de bitume des lacets de l’île - pour l’instant en voiture. Histoire d’avoir une idée d'où je mets les pieds.
 
 
 	début trace GPS
@@ -75,11 +75,11 @@ Ce réservoir est une réserve d’énergie hydraulique, activée lors d’absen
 	scroll -> passage d’une photo géolocalisée à une autre
 
 
-À San Andrès (1050m d’altitude), on se trouve surpris, de trouver des arbres sans feuilles. Et puis on se rappelle qu’on est en Janvier, qu’on est entouré d’une brume épaisse, et que les panneaux sur la route recommandent la vigilance (“attention, route de montagne”)
+À San Andrès (1050m d’altitude), on se trouve surpris de trouver des arbres sans feuilles. Et puis on se rappelle qu’on est en janvier, qu’on est entouré d’une brume épaisse, et que les panneaux sur la route recommandent la vigilance (“attention, route de montagne”).
 
 On redescend doucement vers El Pinar, dans les splendides forêts de pins moussues. Le printemps en janvier, luxe ultime des Canaries, avec ses amandiers en fleurs.
 
-Et puis c’est l’extrême Sud de l’île, les petites criques sauvages de Tacoronte. Les eaux sont riches en faune, la surface compte quelques spécimens de hippies allemands, qui reste encore une espèce rare sur El Hierro (mais prolifère sur la Gomera voisine)
+Et puis c’est l’extrême Sud de l’île, les petites criques sauvages de Tacoronte. Les eaux sont riches en faune, la surface compte quelques spécimens de hippies allemands, qui reste encore une espèce rare sur El Hierro (mais prolifère sur la Gomera voisine).
 
 Un reservoir d’essence presque vide coupera court à cette journée : comme l’île ne compte que 3 stations services, mieux vaut rester prudent. 
 
@@ -123,7 +123,7 @@ Ce sera le point de départ de ma première aventure à pied sur l’île.
 	scroll -> passage d’une photo géolocalisée à une autre
 
 
-La première partie : le camino de la Dehesa, sur le flanc nord. Première grimpette de 700m sous une pluie fine et dans la brume, sur un étroit sentier fendant une quasi-jungle. 
+La première partie : le camino de la Dehesa, sur le flanc nord. Première grimpette de 700m sous une pluie fine et dans la brume, sur un étroit sentier fendant(?) une quasi-jungle. 
 
 À l’arrivée au sommet, sur la crête, la récompense consiste en un froid glacial, pas prévu malgré mon expérience des climats canariens (pourtant simple : chaud en bas, froid en haut).
 
@@ -137,7 +137,7 @@ J’y croise la seule présence humaine du parcours. Un trailer hyper équipé e
 
 Pour le reste, le comité d’accueil consiste en quelques moutons joufflus, qui servent de perchoirs à une armée de corbeaux.  Qui daigneront à peine, à mon approche, s’envoler paresseusement dans la brume, en ne manquant pas de me signaler bruyamment que je n’ai rien à faire là.
 
-J’apprendrais plus tard que le chemin emprunté fait partie du parcours du “Maraton del Méridiano”, version locale des mythiques 42km. Un tracé assurément moins “roulant” que nos petites courses dans le Bois de Vincennes.
+J’apprendrai plus tard que le chemin emprunté fait partie du parcours du “Maraton del Méridiano”, version locale des mythiques 42km. Un tracé assurément moins “roulant” que nos petites courses dans le Bois de Vincennes.
 
 
 	tracé du marathon sur la carte
@@ -148,7 +148,7 @@ J’apprendrais plus tard que le chemin emprunté fait partie du parcours du “
 	début du premier timelapse
 
 
-En redescendant sur le versant Sud-Ouest, le brouillard se lève et je me retrouve subitement dans un monde radicalement différent, faits de barrancos de roches rouges, de sécheresse et de genevriers tordus par le vent.
+En redescendant sur le versant Sud-Ouest, le brouillard se lève et je me retrouve subitement dans un monde radicalement différent, fait de barrancos de roches rouges, de sécheresse et de genevriers tordus par le vent.
 
 
 À partir du moment ou le chemin cesse d’exister, j’utilise une technique professionnelle d’orientation complexe, trop longue à expliquer ici mais qu’on pourrait résumer par “si ça descend, c’est bon” aka “plein pot dans l’barranco”.
@@ -188,9 +188,9 @@ Au bout, la route s’arrête brusquement et mon petit périple commence. Sous u
 	scroll -> passage d’une photo géolocalisée à une autre
 
 
-L’ascenscion est difficile. Un petit kilomètre vertical sur un mince sentier pas toujours facile à identifier, très raide. Mais l’endroit est à couper le souffle. Aride et vertigineux.
+L’ascension est difficile. Un petit kilomètre vertical sur un mince sentier pas toujours facile à identifier, très raide. Mais l’endroit est à couper le souffle. Aride et vertigineux.
 
-Certains passage sont ensevelis sous des éboulis. Je suis content d’avoir à monter cette partie plutôt qu’a la descendre, et aussi un poil inquiet pour la redescente à venir - par l’autre côté du golfe.
+Certains passages sont ensevelis sous des éboulis. Je suis content d’avoir à monter cette partie plutôt que d'avoir à la descendre, et aussi un poil inquiet pour la redescente à venir - par l’autre côté du golfe.
 
 La montée se casse subitement et devient plus douce, la pente aride fait place à une version canarienne du jardin d’Eden, faite de petits murs de pierre basaltique, d’un tapis de verdure luxuriant, de pins, d’amandiers en fleurs. Le tout baigné d’un soleil froid et d'une quiétude apaisante.
 
@@ -211,7 +211,7 @@ Après une petite sueur froide, je contemple mes options :
 
 1. tenter de passer quand même : les éboulis seront moins un problème que de rester sur le sentier; je risque de finir en roulant; ``` affichage chemin hypothétique sur la carte ```
 
-2. retour par ou je suis arrivé : pas très motivant, dangereux en descente et à la tombée de la nuit;  ``` affichage chemin hypothétique sur la carte ```
+2. retour par où je suis arrivé : pas très motivant, dangereux en descente et à la tombée de la nuit;  ``` affichage chemin hypothétique sur la carte ```
 
 3. faire un grand détour par un autre sentier et un très long bout de route. Dont un passage dans un tunnel interdit au piétons ``` affichage chemin hypothétique sur la carte ```
 
@@ -223,7 +223,7 @@ Dans la précipitation, l’option 3 semble viable. Je pars donc en flèche avec
 	trace GPS avec "contre la montre". Puis arrivée à La Cuesta.
 
 
-Il me faut 30 minutes et l’arrivée d’un gros nuage bien menaçant, pour réaliser l’ineptie de mon projet. Je finirais donc par appeler un taxi, au milieu de nulle part. J’arriverais donc à bon port, mais avec un porte monnaie allégé et surtout un orgueil d’aventurier en herbe mis à mal. Un aventurier bourgeois somme toute.
+Il me faut 30 minutes et l’arrivée d’un gros nuage bien menaçant pour réaliser l’ineptie de mon projet. Je finirais donc par appeler un taxi, au milieu de nulle part. J’arriverais donc à bon port, mais avec un porte-monnaie allégé et surtout un orgueil d’aventurier en herbe mis à mal. Un aventurier bourgeois somme toute.
 
 	
 	trace GPS taxi, puis voiture
@@ -285,7 +285,7 @@ Jour 5, 28 janvier
 
 *El Golfo*
 
-Conditions climatiques et topologie idéales : El Hierro est un petit paradis du parapente ; un des rares endroits au monde où on peut voler au bord de la mer. 
+Conditions climatiques et topologie idéales : El Hierro est un petit paradis du parapente; un des rares endroits au monde où on peut voler au bord de la mer. 
 
 Un joyeux petit monde de casse-cous se retrouve donc tous les ans en mai sur l’île, et ça donne ça :
 
@@ -293,7 +293,7 @@ Un joyeux petit monde de casse-cous se retrouve donc tous les ans en mai sur l�
 https://www.youtube.com/watch?v=abhQlcOjNCc
 
 
-Difficile de résister. Je suis donc en contact avec avec Andrès du club Guelillas, et attends depuis mon arrivée les conditions de vent nécéssaires pour voler en biplace. La veille au soir, SMS d’Andrès : “Creo es posible volar mañana. Estas disponible? “
+Difficile de résister. Je suis donc en contact avec Andrès du club Guelillas, et attends depuis mon arrivée les conditions de vent nécessaires pour voler en biplace. La veille au soir, SMS d’Andrès : “Creo es posible volar mañana. Estas disponible? “
 
 	
 	début trace à pied GPS Las Puntas
@@ -321,27 +321,27 @@ On trace donc vers le haut de la crête en fond de seconde dans les virages.
 
 Pendant cette petite demi-heure, je tente de comprendre la conversation en espagnol, mais je ne capte pas grand chose, à part “loco, loco, loco”, donc visiblement la conversation porte sur qui est le plus cinglé d’entre eux. Ça met bien en condition. 
 
-Arrivés en haut (1400m), c’est sans chichis. On surplombe l’intégralité du Golfo, mais il faut de l’imagination puisque un épais voile de brume le dissimule. On décolle au bout de 10 minutes.
+Arrivés en haut (1400m), c’est sans chichis. On surplombe l’intégralité du Golfo, mais il faut de l’imagination puisqu'un épais voile de brume le dissimule. On décolle au bout de 10 minutes.
 
 
 	trace GPS parapente + timelapse
 
 
-On passe rapidement le mur de brouillard. Et là, le gigantesque Golfo s’étale sous mes vieilles running. C’est somptueux.
+On passe rapidement le mur de brouillard. Et là, le gigantesque Golfo s’étale sous mes vieilles running (baskets ?). C’est somptueux.
 
-Il n’y a à peu près rien en savoir pour faire du parapente en biplace : il suffit de savoir courir (quelques mètres). Ensuite il faut s’assoir. Et zou. Par contre, même à la latitude du Sahara, à 8 degrés C et 60km/h, on a vite un peu froid. Nota bene pour la prochaine : penser aux gants.
+Il n’y a à peu près rien à savoir pour faire du parapente en biplace : il suffit de savoir courir (quelques mètres). Ensuite il faut s’assoir. Et zou. Par contre, même à la latitude du Sahara, à 8 degrés C° et 60km/h, on a vite un peu froid. Nota bene pour la prochaine : penser aux gants.
 
 Passé le choc de l’immensité, on se met à regarder les détails. Ici, une chèvre accrochée à la montagne. Là, un petit bois de chataîgners sans feuilles, seule réminiscence de l’hiver.
 
 On longe la crête jusqu’à son extrémité nord, puis demi-tour avec le petit village de Sabinosa en ligne de mire.
 
-Comme finalement, il n’ya pas tant à faire sur un parapente, on taille le bout de gras avec Renan. C’est un argentin échoué à El Hierro depuis quelques années. Il vit de son sport, passe l’hiver ici, puis passe la saison des compétitions en Europe continentale.
+Comme finalement, il n’y a pas tant à faire sur un parapente, je taille le bout de gras avec Renan. C’est un argentin échoué à El Hierro depuis quelques années. Il vit de son sport, passe l’hiver ici, puis passe la saison des compétitions en Europe continentale.
 
 Son truc à lui, c’est le parapente acrobatique, dont il me donnera un petit avant-goût. 
 
 Un petit essai aux commandes, puis on arrive à la fin de vol d’une petite heure (il est possible de rester en l’air plus de cinq heures sur El Hierro).
 
-Mon vol se terminera sur les genoux, ruinant ma paire de jeans et ma crédibilité (apparement j’aurais oublié de courir à l’atterrissage). Mais, quelle expérience ! Je quitterais Renan, émerveille, revigoré, congelé. Et ce sera “Hasta luego”, plutôt que “Adios”...
+Mon vol se terminera sur les genoux, ruinant ma paire de jeans et ma crédibilité (apparemment j’aurais oublié de courir à l’atterrissage). Mais, quelle expérience ! Je quitterais Renan, émerveille, revigoré, congelé. Et ce sera “Hasta luego”, plutôt que “Adios”...
 
 	
 	visualisation en 3D du parcours sur un "ruban"
@@ -361,7 +361,7 @@ Jour 6, 29 janvier
 
 
 Le Malpaso et ses 1500 mètres, point culminant d'El Hierro, ferait ricaner n'importe quel apprenti alpiniste. 
-Il n'empêche. Aujourd'hui je grimpe le Malpaso en partant de la mer (et normalement, j'en redescends). Et même si ce n'est pas l'Everest ou les Drus de Frison-Roche, il faudra affronter le froid et la pluie, 1500m de dénivelé positif, et 30 km de distance.
+Il n'empêche. Aujourd'hui je grimpe le Malpaso en partant de la mer (et normalement, j'en redescends). Et même si ce n'est pas l'Everest ou les Drus de Frison-Roche, il faudra affronter le froid et la pluie, 1500 m de dénivelé positif, et 30 km de distance.
 
 
 	"téléscope" Malpaso + altitude
@@ -402,7 +402,7 @@ J'avale les 700 premiers mètres de dénivelé comme un shot de Barraquito canar
 	video: 
 https://www.youtube.com/watch?v=gvNot0kKQAQ
 
-Bien évidemment cet évenement festif et jovial a lieu en été, et là, en janvier, c'est la solitude totale. Après un chouette montée entre prairies et murs de pierres sèches, j'arrive sur la crête de l'île (environ 1000m de haut). Derrière, la Dehesa, désert sauvage de l'Ouest de l'Île. Devant, l'immense crique d'El Golfo. Ici, un vent brutal et chargé d'humidité. La partie difficile de la rando s'annonce et il semble que la Virgen de Los Reyes ne soit pas avec moi.
+Bien évidemment cet évenement festif et jovial a lieu en été, et là, en janvier, c'est la solitude totale. Après une chouette montée entre prairies et murs de pierres sèches, j'arrive sur la crête de l'île (environ 1000 m de haut). Derrière, la Dehesa, désert sauvage de l'Ouest de l'Île. Devant, l'immense crique d'El Golfo. Ici, un vent brutal et chargé d'humidité. La partie difficile de la rando s'annonce et il semble que la Virgen de Los Reyes ne soit pas avec moi.
 
 	photos galère
 
