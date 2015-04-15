@@ -1,6 +1,8 @@
 'use strict';
 
 var gulp      = require('gulp'),
+fs            = require('fs'),
+path          = require('path'),
 gulpif        = require('gulp-if'),
 sass          = require('gulp-sass'),
 browserify    = require('gulp-browserify'),
@@ -8,12 +10,21 @@ babelify      = require('babelify'),
 browserify    = require('browserify'),
 rename        = require('gulp-rename'),
 browserSync   = require('browser-sync'),
-buffer = require('vinyl-buffer'),
-sourcemaps = require('gulp-sourcemaps'),
-source        = require('vinyl-source-stream');
+buffer        = require('vinyl-buffer'),
+sourcemaps    = require('gulp-sourcemaps'),
+source        = require('vinyl-source-stream'),
+template      = require('gulp-template'),
+mergeStream   = require('merge-stream');
 
 var config = {
-    dist: './dist'
+    dist: './dist',
+    pages: [
+        {}, {}, {}, {}, {}, {}, 
+        {
+            slug: 'jour6-faro-de-orchilla--malpaso',
+            title: 'Jour 6'
+        }
+    ]
 };
 
 
@@ -53,8 +64,27 @@ gulp.task('cssToSass', function () {
 });
 
 gulp.task('html', function(){
-    return gulp.src('./app/index.html')
-        .pipe(gulp.dest(config.dist));
+    var mergedStreams = mergeStream();
+
+    for (var i = 0; i < config.pages.length; i++) {
+        var page = config.pages[i];
+
+        if (!page.slug) continue;
+
+        var content = fs.readFileSync('./app/html/'+i+'.html').toString();
+
+        var stream = gulp.src('./app/html/index.html')
+        .pipe(template({
+            pageTitle: page.title,
+            content: content
+        }))
+        .pipe(gulp.dest( path.join( config.dist, page.slug ) ) );
+
+        mergedStreams.add(stream);
+    };
+
+
+    return mergedStreams;
 });
 
 gulp.task('data', function(){
@@ -81,5 +111,5 @@ gulp.task('serve', ['build'], function() {
     gulp.watch("app/**/*.html", ['html']);
     gulp.watch("app/data/*", ['data']);
 
-    gulp.watch(config.dist+"/**/*").on('change', browserSync.reload);
+    gulp.watch(config.dist+"/**/*.js").on('change', browserSync.reload);
 });
