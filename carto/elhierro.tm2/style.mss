@@ -23,7 +23,7 @@
 
 
 Map {
-  background-color: #fff;
+  background-color: #888;
 }
 
 // Mapbox Terrain global landcover //
@@ -183,25 +183,28 @@ Map {
       [zoom>=17][zoom<=18] { polygon-opacity: 0.02; }
       [zoom>=18] { polygon-opacity: 0.01; }
     }
+    
     [class='highlight'] {
-      polygon-fill: #ffd;
+      polygon-fill: #FFF;
       polygon-opacity: 0.2;
       [zoom>=15][zoom<=16] { polygon-opacity: 0.15; }
       [zoom>=17][zoom<=18] { polygon-opacity: 0.10; }
       [zoom>=18] { polygon-opacity: 0.05; }
     }
   }
+  /*
   ::1 { image-filters: agg-stack-blur(2,2); }
   ::2 { image-filters: agg-stack-blur(8,8); }
   ::3 { image-filters: agg-stack-blur(16,16); }
   ::4 { image-filters: agg-stack-blur(32,32); }
+  */
 }
 
 // Elevation contours & labels //
 
 // Multiple copies of the same layer have been made, each with
 // unique classes and positions in the stack. This is done by
-// editing the layers list in <project.yml>.
+// editi/*ng the layers list in <project.yml>.
 /*
 #contour::line[index!=-1] {
   line-color: #000;
@@ -309,19 +312,23 @@ Map {
 // Buildings //
 
 #building {
+  /*
   ::shadow[zoom>=16] {
     line-clip: false;
     line-join: round;
     line-cap: round;
     line-color: fadeout(#000, 85%);
     [zoom>=17] { line-width: 2; }
-  }
-  polygon-clip: false;
+  }*/
+  //polygon-clip: false;
   //polygon-fill: @land * 0.95;
-  polygon-fill: #aaa;
-  [zoom>=16] {
+  polygon-fill: #f0f;
+  [zoom=13] {
+    polygon-fill: #f0f;
+    }
+  /*[zoom>=16] {
     polygon-geometry-transform: translate(-0.5,-1.2);
-  }
+  }*/
 }
 
 #barrier_line {

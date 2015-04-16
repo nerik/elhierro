@@ -291,7 +291,7 @@
     [ldir='NW'] { shield-text-dx: -3; shield-text-dy: -3; }
   }
 }
-
+/*
 // For medium to high zoom levels we do away with the dot
 // and center place labels on their point location.
 #place_label[type='city'][zoom>=8][zoom<=15][localrank<=3] {
@@ -471,7 +471,7 @@
   }
 }
 
-
+*/
 // =====================================================================
 // WATER LABELS
 // =====================================================================
