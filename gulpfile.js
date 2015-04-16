@@ -68,10 +68,11 @@ gulp.task('foo', function () {
 
             exec ( cmd );
 
-        };
+        }
     }
     
-})
+});
+
 gulp.task('js', function() {
     return browserify({
         entries: './app/js/main.js',
@@ -115,10 +116,12 @@ gulp.task('html', function(){
 
         if (!page.slug) continue;
 
+        console.log(i)
+
         var content = fs.readFileSync('./app/html/'+i+'.html').toString();
         var slug = (config.debug) ? i : page.slug;
 
-        var stream = gulp.src('./app/html/index.html')
+        var stream = gulp.src('./app/html/layout.html')
         .pipe(template({
             pageTitle: page.title,
             content: content
@@ -127,18 +130,13 @@ gulp.task('html', function(){
         .pipe(gulp.dest( config.dist ) );
 
         mergedStreams.add(stream);
-    };
+    }
 
 
     return mergedStreams;
 });
 
-gulp.task('data', function(){
-    return gulp.src('./app/data/**/*')
-        .pipe(gulp.dest(config.dist+'/data'));
-});
-
-gulp.task('build', ['sass','js','html', 'data'], function () {
+gulp.task('build', ['sass','js','html'], function () {
 
 });
 
@@ -154,8 +152,7 @@ gulp.task('serve', ['build'], function() {
 
     gulp.watch("app/styles/**/*.scss", ['sass']);
     gulp.watch("app/js/**/*.js", ['js']);
-    gulp.watch("app/**/*.html", ['html']);
-    gulp.watch("app/data/*", ['data']);
+    gulp.watch("app/html/**/*.html", ['html']);
 
     gulp.watch(config.dist+"/**/*.js").on('change', browserSync.reload);
 });
