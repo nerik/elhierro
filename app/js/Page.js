@@ -1,9 +1,10 @@
 var _ = require('underscore');
-var getXHRPromise = require('./utils').getXHRPromise;
 var L = require('leaflet/dist/leaflet-src');
 var $ = require('jquery');
 
-class Page  {
+import * as utils from './utils';
+
+export default class Page  {
 	constructor(index) {
 		this.data = {};
 		this.data.index = index;
@@ -23,7 +24,7 @@ class Page  {
 
 	loadData() {
 		console.log(this);
-		var gpstracesPromises = this.data.gpstrace.map( gps => getXHRPromise(`./data/${this.data.index}/${gps}.topojson` ) );
+		var gpstracesPromises = this.data.gpstrace.map( gps => utils.load(`./data/${this.data.index}/${gps}.topojson` ) );
 
 		Promise.all(gpstracesPromises).then( data => {
 			console.log(data);
@@ -49,9 +50,9 @@ class Page  {
 
 
 		Promise.all([
-			getXHRPromise('./data/6/0_car_topo.json'),
-			getXHRPromise('./data/6/1_feet_test_topo.json'),
-			// getXHRPromise('./data/6/2_car.json')
+			utils.load('./data/6/0_car_topo.json'),
+			utils.load('./data/6/1_feet_test_topo.json'),
+			// utils.load('./data/6/2_car.json')
 		]).then( data => {
 			//invert lat/lon manually :/
 
@@ -224,5 +225,3 @@ class Page  {
 	}
 
 }
-
-module.exports = Page;

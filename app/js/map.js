@@ -7,6 +7,7 @@ var map = L.map('map', {
 	maxZoom: 20,
 	scrollWheelZoom: false
 });
+export default map;
 
 L.tileLayer('https://{s}.tiles.mapbox.com/v3/{key}/{z}/{x}/{y}.png', {
 	key: 'lrqdo.2f512fdf',
@@ -19,4 +20,3 @@ L.tileLayer('https://{s}.tiles.mapbox.com/v3/{key}/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-module.exports = map;
