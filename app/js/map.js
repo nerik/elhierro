@@ -10,6 +10,9 @@ var map = L.map('map', {
 	scrollWheelZoom: false
 });
 
+require('leaflet-hash');
+var hash = new L.Hash(map);
+
 
 L.tileLayer('https://{s}.tiles.mapbox.com/v3/{key}/{z}/{x}/{y}.png', {
 	key: 'lrqdo.2f512fdf',
@@ -41,11 +44,19 @@ var MapWrapper = {
 		}
 	},
 
-	updateGPS: function (name, r) {
+	updateGPS: function (name, r, follow) {
 		// console.log(name, r);
 		var gps = gpsCollection[name];
-		gps.polyline.setLatLngs( gps.coords.slice(0, Math.floor(r*gps.coords.length) ) );
+		var lastCoordIndex = Math.floor(r*gps.coords.length);
+		gps.polyline.setLatLngs( gps.coords.slice(0, lastCoordIndex ) );
 
+		if (follow) {
+			map.setView( gps.coords[lastCoordIndex] );
+		}
+	},
+
+	setView(coords) {
+		map.setView( [coords[1],coords[2]], coords[0]);
 	},
 
 	map: map

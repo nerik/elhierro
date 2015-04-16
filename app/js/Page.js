@@ -5,8 +5,6 @@ var Backbone = require('backbone');
 
 import * as utils from './utils';
 
-const DATA_ATTR_FLOATS = ['gpstracestart','gpstraceend'];
-
 export default class Page  {
 	constructor(index) {
 		this.data = {};
@@ -26,15 +24,19 @@ export default class Page  {
 			var scrollBlock = {
 				start: y,
 				end: y+el.innerHeight(),
-				data: utils.parseDataAttrFloats( el.data(), DATA_ATTR_FLOATS )
+				data: utils.parseDataAttrFloats( el.data() )
 			};
+
+			_.each(scrollBlock.data, (v,k) => {
+		        if ( _.contains(['gpstracestart','gpstraceend'], k) ) scrollBlock.data[k] = parseFloat(v);
+		        if (k === 'mapview') scrollBlock.data[k] = scrollBlock.data[k].split('/').map( parseFloat );
+		    });
 
 			this.data.scrollBlocks.push(scrollBlock);
 			// console.log(y)
 		} );
 
 		this.data.scrollBlocks = _.sortBy(this.data.scrollBlocks, s => s.start);
-		// console.log(this.data.scrollBlocks);
 
 		//get all gps traces for preloading
 		this.data.gpstrace = [];
@@ -83,7 +85,6 @@ export default class Page  {
 			var b = this.data.scrollBlocks[i];
 
 			if (y >= b.start && y < b.end) {
-				// console.log(s.data)
 				var r = (y - b.start) / (b.end - b.start);
 
 				b.r = r;
@@ -91,7 +92,8 @@ export default class Page  {
 				this.trigger('scrollblock:scroll', b);
 
 				if (i !== this._currentScrollBlockIndex) {
-					console.log('enter:',b.data.gpstrace,down)
+					// console.log('enter:',b.data.gpstrace,down)
+
 					this.trigger('scrollblock:enter', b, down);
 				}
 
@@ -100,7 +102,7 @@ export default class Page  {
 
 			} else {
 				if (i === this._currentScrollBlockIndex) {
-					console.log('leave:',b.data.gpstrace,down)
+					// console.log('leave:',b.data.gpstrace,down)
 					this.trigger('scrollblock:leave', b, down);
 				}
 			}

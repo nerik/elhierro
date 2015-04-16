@@ -20,6 +20,7 @@ page.on('scrollblock:scroll', block => {
 
 page.on('scrollblock:enter', (block, down) => {
 	if (block.data.gpstrace) updateGPS( block, (down) ? -1 : 1 );
+	if (block.data.mapview) map.setView(block.data.mapview)
 });
 page.on('scrollblock:leave', (block, down) => {
 	if (block.data.gpstrace) updateGPS(block, (down) ? 1 : -1 );
@@ -37,7 +38,5 @@ function updateGPS(block, startOrEnd) {
 		r = (startOrEnd===-1) ? start : end;
 	}  
 
-	console.log(r)
-
-	map.updateGPS(block.data.gpstrace, r);
+	map.updateGPS(block.data.gpstrace, r, !_.isUndefined(block.data.gpstracefollow) );
 }
