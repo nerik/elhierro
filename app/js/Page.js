@@ -1,10 +1,11 @@
-var _ = require('underscore');	
+var _ = require('underscore');
 var L = require('leaflet/dist/leaflet-src');
 var $ = require('jquery');
 var Backbone = require('backbone');
 
 import * as utils from './utils';
 
+const DATA_ATTR_FLOATS = ['gpstracestart','gpstraceend'];
 
 export default class Page  {
 	constructor(index) {
@@ -25,7 +26,7 @@ export default class Page  {
 			var scrollBlock = {
 				start: y,
 				end: y+el.innerHeight(),
-				data: el.data()
+				data: utils.parseDataAttrFloats( el.data(), DATA_ATTR_FLOATS )
 			};
 
 			this.data.scrollBlocks.push(scrollBlock);
@@ -39,6 +40,7 @@ export default class Page  {
 		this.data.gpstrace = [];
 		$('[data-gpstrace]').each( (i, el) => { 
 			this.data.gpstrace.push(  $(el).data('gpstrace')  ); 
+
 		} );
 
 		this.data.gpstrace = _.uniq(this.data.gpstrace);
@@ -72,6 +74,10 @@ export default class Page  {
 		// console.log(window.scrollY);
 
 		var y = window.scrollY + window.innerHeight;
+		var delta = y - this._prevY;
+		var down = delta > 0;
+		this._prevY = y;
+		var isInBlock = false;
 
 		for (var i = 0; i < this.data.scrollBlocks.length; i++) {
 			var b = this.data.scrollBlocks[i];
@@ -83,8 +89,23 @@ export default class Page  {
 				b.r = r;
 
 				this.trigger('scrollblock:scroll', b);
+
+				if (i !== this._currentScrollBlockIndex) {
+					console.log('enter:',b.data.gpstrace,down)
+					this.trigger('scrollblock:enter', b, down);
+				}
+
+				isInBlock = true;
+				this._currentScrollBlockIndex = i;
+
+			} else {
+				if (i === this._currentScrollBlockIndex) {
+					console.log('leave:',b.data.gpstrace,down)
+					this.trigger('scrollblock:leave', b, down);
+				}
 			}
 		}
+		if (!isInBlock) this._currentScrollBlockIndex = -1;
 	}
 
 

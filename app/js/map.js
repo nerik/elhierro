@@ -34,7 +34,7 @@ var MapWrapper = {
 			var coords = geo.features[0].geometry.coordinates.map( coord => [coord[1], coord[0]] );
 			var name = names[i];
 			gpsCollection[name] = {
-				polyline: L.polyline(coords, {color: colors[i]}).addTo(map),
+				polyline: L.polyline([], {color: colors[i]}).addTo(map),
 				coords: coords
 			};
 
@@ -42,6 +42,7 @@ var MapWrapper = {
 	},
 
 	updateGPS: function (name, r) {
+		// console.log(name, r);
 		var gps = gpsCollection[name];
 		gps.polyline.setLatLngs( gps.coords.slice(0, Math.floor(r*gps.coords.length) ) );
 

@@ -1,5 +1,6 @@
 window.$ = require('jquery');
 
+var _ = require('underscore');
 
 import Page from './Page';
 import map from './map';
@@ -14,15 +15,29 @@ page.test(map.map);
 page.on('load:gps', (names, topoJsonData) => map.initGPS(names, topoJsonData) );
 
 page.on('scrollblock:scroll', block => {
-	// console.log(block);
-	if (block.data.gpstrace) {
-		var start = (block.data.gpstracestart) ? block.data.gpstracestart : 0;
-		var end = 	(block.data.gpstraceend) ? 	 block.data.gpstraceend : 1;
-
-		var delta = end - start;
-		var r = (block.r * delta) + start;
-		console.log(r);
-		map.updateGPS(block.data.gpstrace, r);
-	}
+	if (block.data.gpstrace) updateGPS(block);	
 });
 
+page.on('scrollblock:enter', (block, down) => {
+	if (block.data.gpstrace) updateGPS( block, (down) ? -1 : 1 );
+});
+page.on('scrollblock:leave', (block, down) => {
+	if (block.data.gpstrace) updateGPS(block, (down) ? 1 : -1 );
+});
+
+function updateGPS(block, startOrEnd) {
+	var start = (block.data.gpstracestart) ? block.data.gpstracestart : 0;
+	var end = 	(block.data.gpstraceend) ? 	 block.data.gpstraceend : 1;
+
+	var r;
+	if (_.isUndefined(startOrEnd)) {
+		var delta = end - start;
+		r = (block.r * delta) + start;
+	} else {
+		r = (startOrEnd===-1) ? start : end;
+	}  
+
+	console.log(r)
+
+	map.updateGPS(block.data.gpstrace, r);
+}
