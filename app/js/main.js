@@ -20,7 +20,7 @@ page.on('scrollblock:scroll', block => {
 
 page.on('scrollblock:enter', (block, down) => {
 	if (block.data.gpstrace) updateGPS( block, (down) ? -1 : 1 );
-	if (block.data.mapview) map.setView(block.data.mapview)
+	if (block.data.mapview) map.setView(block.data.mapview);
 });
 page.on('scrollblock:leave', (block, down) => {
 	if (block.data.gpstrace) updateGPS(block, (down) ? 1 : -1 );

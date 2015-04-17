@@ -1,6 +1,6 @@
 var L = require('leaflet/dist/leaflet-src');
-
-
+var turf_centroid = require('turf-centroid');
+var turf_polygon = require('turf-polygon');
 
 var map = L.map('map', {
 	center: [27.7460, -18.08],
@@ -13,6 +13,9 @@ var map = L.map('map', {
 require('leaflet-hash');
 var hash = new L.Hash(map);
 
+map.on('click', function  (e) {
+	console.log(e.latlng.lat+'/'+e.latlng.lng);
+});
 
 L.tileLayer('https://{s}.tiles.mapbox.com/v3/{key}/{z}/{x}/{y}.png', {
 	key: 'lrqdo.2f512fdf',
@@ -51,11 +54,18 @@ var MapWrapper = {
 		gps.polyline.setLatLngs( gps.coords.slice(0, lastCoordIndex ) );
 
 		if (follow) {
-			map.setView( gps.coords[lastCoordIndex] );
+			var meanCoords = gps.coords.slice( Math.max(0, lastCoordIndex-50), lastCoordIndex );
+			meanCoords.push([ meanCoords[0][0], meanCoords[0][1] ] );
+			var polygon = turf_polygon([
+			  meanCoords
+			]);
+			var centroid = turf_centroid(polygon);
+			map.panTo( centroid.geometry.coordinates, {animate: false});
 		}
 	},
 
 	setView(coords) {
+		console.log('setView', coords)
 		map.setView( [coords[1],coords[2]], coords[0]);
 	},
 

@@ -47,6 +47,16 @@ export default class Page  {
 
 		this.data.gpstrace = _.uniq(this.data.gpstrace);
 
+		//set fixed to stay elements and add placeholders in the doc flow
+		$('[data-fixed]').each( (i, el) => {
+
+			$('<div class="fixed">').insertBefore( $(el) )
+				.attr('class', $(el).attr('class') )
+				.addClass('fixed')
+				.html( $(el).html() );
+			$(el).addClass('placeholder');
+		});
+
 		//preload timelapse spritesheets...
 
 
@@ -95,6 +105,8 @@ export default class Page  {
 					// console.log('enter:',b.data.gpstrace,down)
 
 					this.trigger('scrollblock:enter', b, down);
+
+					//add show class 
 				}
 
 				isInBlock = true;
