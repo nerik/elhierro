@@ -10,6 +10,8 @@ export default class Page  {
 		this.data = {};
 		this.data.index = index;
 
+		this._currentScrollBlockIndexes = [];
+
 		this.setupFromDom();
 		this.loadData();
 	}
@@ -24,19 +26,58 @@ export default class Page  {
 			var scrollBlock = {
 				start: y,
 				end: y+el.innerHeight(),
-				data: utils.parseDataAttrFloats( el.data() )
+				data: utils.parseDataAttrFloats( el.data() ),
+				el: el
 			};
 
+			//format/parse properties on the data object
 			_.each(scrollBlock.data, (v,k) => {
+				if (v === '') scrollBlock.data[k] = true;
 		        if ( _.contains(['gpstracestart','gpstraceend'], k) ) scrollBlock.data[k] = parseFloat(v);
 		        if (k === 'mapview') scrollBlock.data[k] = scrollBlock.data[k].split('/').map( parseFloat );
 		    });
+			
+			if (scrollBlock.data.fixed) {
+				var placeholder = el;
 
-			this.data.scrollBlocks.push(scrollBlock);
-			// console.log(y)
+				//give uid to story children
+				if (scrollBlock.data.fixed === 'story') {
+					placeholder.children('[data-trigger]').each( (j,el) => {
+						el.id = 'placeholder_'+i+'_'+j;
+					} );
+				}
+
+				var fixed = $('<div class="fixed">').insertAfter( placeholder )
+							.attr('class', placeholder.attr('class') )
+							.addClass('fixed')
+							.html( $(placeholder).html() );
+
+				if (scrollBlock.data.fixed === 'story') {
+					fixed.addClass('fixed-story');
+					
+					fixed.children('[data-trigger]').each( (j,el) => {
+						el.id = el.id.replace('placeholder_','');
+					} );
+
+					placeholder.addClass('fixed-story-placeholder');
+				}
+
+				placeholder.addClass('fixed-placeholder');
+			}	
+
+
+			if (el.parent('[data-fixed=story]').length) {
+				scrollBlock.data.storychild = true;
+			}
+
+
+			this.data.scrollBlocks.push(scrollBlock);		
+
 		} );
 
 		this.data.scrollBlocks = _.sortBy(this.data.scrollBlocks, s => s.start);
+
+
 
 		//get all gps traces for preloading
 		this.data.gpstrace = [];
@@ -47,17 +88,8 @@ export default class Page  {
 
 		this.data.gpstrace = _.uniq(this.data.gpstrace);
 
-		//set fixed to stay elements and add placeholders in the doc flow
-		$('[data-fixed]').each( (i, el) => {
-
-			$('<div class="fixed">').insertBefore( $(el) )
-				.attr('class', $(el).attr('class') )
-				.addClass('fixed')
-				.html( $(el).html() );
-			$(el).addClass('placeholder');
-		});
-
 		//preload timelapse spritesheets...
+		
 
 
 	}
@@ -101,25 +133,37 @@ export default class Page  {
 
 				this.trigger('scrollblock:scroll', b);
 
-				if (i !== this._currentScrollBlockIndex) {
+				if ( !_.contains(this._currentScrollBlockIndexes, i) ) {
 					// console.log('enter:',b.data.gpstrace,down)
+					this._currentScrollBlockIndexes.push(i);
 
 					this.trigger('scrollblock:enter', b, down);
 
-					//add show class 
+					//show next element, a fixed element corresponding to this placeholder
+					if (b.data.fixed) b.el.next('.fixed').addClass('show');
+
+					if (b.data.storychild) {
+						var id = b.el.attr('id').replace('placeholder_','');
+						var fixedStoryChild = $('#'+id);
+						fixedStoryChild.siblings('[data-trigger]').removeClass('show');
+						fixedStoryChild.addClass('show');
+					}
 				}
 
-				isInBlock = true;
-				this._currentScrollBlockIndex = i;
+				isInBlock = true;				
 
 			} else {
-				if (i === this._currentScrollBlockIndex) {
+				if ( _.contains(this._currentScrollBlockIndexes, i) ) {
 					// console.log('leave:',b.data.gpstrace,down)
+					this._currentScrollBlockIndexes = _.without(this._currentScrollBlockIndexes, i);
+
 					this.trigger('scrollblock:leave', b, down);
+
+					b.el.next('.fixed').removeClass('show');
 				}
 			}
 		}
-		if (!isInBlock) this._currentScrollBlockIndex = -1;
+		// if (!isInBlock) this._currentScrollBlockIndex = -1;
 	}
 
 

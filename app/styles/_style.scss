@@ -10,9 +10,14 @@ body {
 
 		border: 2px solid red;
 
-		&.placeholder {
+		&.fixed-placeholder {
 			border-style: dashed;
+
+			* {
+				opacity: .4;
+			}
 		}
+
 	}
 
 	.fixed {
@@ -20,11 +25,13 @@ body {
 	}
 }
 
+
+
 .main {
 	position: relative;
 }
 
-.overlay, .title, .fullpage, .placeholder {
+.overlay, .title, .fullpage, .fixed-placeholder {
 	position: relative;
 	z-index: 2;
 }
@@ -58,17 +65,35 @@ body {
 	line-height: 3rem;
 }
 
-.placeholder > * {
+body:not(.debug) .fixed-placeholder {
 	visibility: hidden;
 }
+
+
+
 
 .fixed {
 	position: fixed;
 	z-index: 3;
+	display: none;
 
 	&.fixed-bottomLeft {
 		bottom: 50px;
 		left: 50px;
+	}
+
+	&.show {
+		display: block;
+	}
+}
+
+.fixed-story {
+	& > * {
+		display: none;
+
+		&.show {
+			display: block;
+		}
 	}
 }
 
