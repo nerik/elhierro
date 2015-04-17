@@ -99,10 +99,8 @@ export default class Page  {
 		var gpstracesPromises = this.data.gpstrace.map( gps => utils.load(`./data/${this.data.index}/${gps}.topojson` ) );
 
 		Promise.all(gpstracesPromises).then( data => {
-			console.log(data);
 
 			this.trigger('load:gps', this.data.gpstrace, data.slice(0, gpstracesPromises.length) );
-
 
 			this._start();
 		});

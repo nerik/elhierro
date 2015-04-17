@@ -1,0 +1,20 @@
+.gps path {
+	stroke: #fa4861;
+	stroke-width: 10px;
+	stroke-linecap: butt;
+	stroke-opacity: .5;
+};
+
+.gps--car path {
+ 	stroke-dasharray: 8,2;
+}
+
+.gps--para path {
+	stroke-linecap: round;
+  	stroke-dasharray: .1,10;
+}
+
+.gps--old path {
+	stroke: #bc8e96;
+	stroke-opacity: .4;
+}

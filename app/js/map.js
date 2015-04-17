@@ -1,4 +1,5 @@
 var L = require('leaflet/dist/leaflet-src');
+var _ = require('underscore');
 var turf_centroid = require('turf-centroid');
 var turf_polygon = require('turf-polygon');
 
@@ -28,7 +29,7 @@ L.tileLayer('https://{s}.tiles.mapbox.com/v3/{key}/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 var gpsCollection = {};
-// var gpsCoords = [];
+var gpsArray = [];
 
 var MapWrapper = {
 	initGPS: function(names, topoJsonData) {
@@ -39,19 +40,32 @@ var MapWrapper = {
 			var geo = topojson.feature(topo, topo.objects.stdin);
 			var coords = geo.features[0].geometry.coordinates.map( coord => [coord[1], coord[0]] );
 			var name = names[i];
+
+			var polyline = L.polyline([], {color: colors[i]}).addTo(map);
+
+			//not so sure why className or $.className is not working here :/ 
+			var transportMode = name.match(/\d_(.+)/)[1];
+			var styleName = ( _.contains(['taxi', 'andrescar'], transportMode) ) ? 'car' : transportMode;
+			$(polyline._container).attr('class','gps gps--'+styleName);
+
 			gpsCollection[name] = {
-				polyline: L.polyline([], {color: colors[i]}).addTo(map),
+				name: name,
+				polyline: polyline,
 				coords: coords
 			};
+
+			gpsArray.push(gpsCollection[name]);
+
 
 		}
 	},
 
 	updateGPS: function (name, r, follow) {
-		// console.log(name, r);
 		var gps = gpsCollection[name];
 		var lastCoordIndex = Math.floor(r*gps.coords.length);
 		gps.polyline.setLatLngs( gps.coords.slice(0, lastCoordIndex ) );
+
+
 
 		if (follow) {
 			var meanCoords = gps.coords.slice( Math.max(0, lastCoordIndex-50), lastCoordIndex );
@@ -64,8 +78,23 @@ var MapWrapper = {
 		}
 	},
 
+	updateGPSStatuses: function(currentlyEntering) {
+		console.log(currentlyEntering)
+
+		for (var i = 0; i < gpsArray.length; i++) {
+			var gps = gpsArray[i];
+			var classes = $(gps.polyline._container).attr('class').split(' ');
+			if (currentlyEntering === gps.name) {
+				classes = _.without( classes, 'gps--old' );
+			} else {
+				classes.push('gps--old');
+			}
+			classes = _.uniq(classes);
+			$(gps.polyline._container).attr('class', classes.join(' ') );
+		}
+	},
+
 	setView(coords) {
-		console.log('setView', coords)
 		map.setView( [coords[1],coords[2]], coords[0]);
 	},
 
