@@ -27,3 +27,7 @@ export function parseDataAttrFloats (data, keys) {
 
     return data;
 }
+
+export function swapLL(coordinates) {
+    return [coordinates[1], coordinates[0]];
+}

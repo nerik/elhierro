@@ -1,3 +1,9 @@
+
+.leaflet-div-icon {
+	background: transparent;
+	border: 0;
+}
+
 .gps path {
 	stroke: #fa4861;
 	stroke-width: 10px;
@@ -17,4 +23,12 @@
 .gps--old path {
 	stroke: #bc8e96;
 	stroke-opacity: .4;
+}
+
+.picto path {
+	fill: #fa4861;
+}
+
+.picto {
+	transform: scale(1.5);
 }
