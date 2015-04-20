@@ -15,6 +15,7 @@ buffer        = require('vinyl-buffer'),
 sourcemaps    = require('gulp-sourcemaps'),
 source        = require('vinyl-source-stream'),
 template      = require('gulp-template'),
+_             = require('underscore'),
 mergeStream   = require('merge-stream');
 
 var config = {
@@ -43,7 +44,7 @@ var config = {
     ]
 };
 
-gulp.task('foo', function () {
+gulp.task('topojson', function () {
     for (var i = 0; i < config.pages.length; i++) {
         var page = config.pages[i];
 
@@ -64,7 +65,7 @@ gulp.task('foo', function () {
 
             var cmd = pipes.join(' | ') + ' > ' + dest;
 
-            console.log(cmd);
+            console.log(cmd); 
 
             exec ( cmd );
 
@@ -111,15 +112,16 @@ gulp.task('cssToSass', function () {
 gulp.task('html', function(){
     var mergedStreams = mergeStream();
 
-    for (var i = 0; i < config.pages.length; i++) {
-        var page = config.pages[i];
+    for (var pageIndex = 0; pageIndex < config.pages.length; pageIndex++) {
+        var page = config.pages[pageIndex];
 
         if (!page.slug) continue;
 
-        console.log(i)
+        var content = fs.readFileSync('./app/html/'+pageIndex+'.html').toString();
 
-        var content = fs.readFileSync('./app/html/'+i+'.html').toString();
-        var slug = (config.debug) ? i : page.slug;
+        content = injectGeocodedMetas(content, pageIndex);
+
+        var slug = (config.debug) ? pageIndex : page.slug;
 
         var stream = gulp.src('./app/html/layout.html')
         .pipe(template({
@@ -156,3 +158,36 @@ gulp.task('serve', ['build'], function() {
 
     gulp.watch(config.dist+"/**/*.js").on('change', browserSync.reload);
 });
+
+//use geocoded_photos.json to generate img tags with coordinates in the html.
+//geocoded_photos.json has been generated with scripts/geocodePhotos.json
+function injectGeocodedMetas (content, pageIndex) {
+    
+    var geocodedImagesRegex = /<!-- GeocodedImages (.+) EndGeocodedImages -->/gi;
+    var geocodedImages = geocodedImagesRegex.exec(content);
+
+    if (geocodedImages) {
+        geocodedImages = geocodedImages[1].split(' ');
+        var geocodedMetas = JSON.parse( fs.readFileSync('./app/data/'+pageIndex+'/geocoded_photos.json').toString() );
+
+        var geocodedImagesHtml = [];
+
+        geocodedImages.forEach(function (img) {
+            var geocodedMeta = _.where(geocodedMetas, {n: img});
+            if (!geocodedMeta || !geocodedMeta.length) {
+                console.log('No geocoded meta found for ' + img);
+            } else {
+                var imgHtml = '<img src="data/'+pageIndex+'/img/medium/'+img+'" data-coords="'+ geocodedMeta[0].c +'">';
+                geocodedImagesHtml.push(imgHtml);
+            }
+        });
+
+        geocodedImagesHtml = geocodedImagesHtml.join('\n');
+
+        content = content.replace(geocodedImagesRegex, geocodedImagesHtml);
+    }
+
+    return content;
+
+
+}

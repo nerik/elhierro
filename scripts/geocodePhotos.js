@@ -70,7 +70,7 @@ function readGPX (err, result) {
 					var m = moment(trkpt.time[0]);
 					// console.log ( m.format('x') );
 					gpxPoints.push( [
-						[trkpt.$.lat, trkpt.$.lon],
+						trkpt.$.lat +',' + trkpt.$.lon,
 						parseInt(m.format('x'))
 					] );
 				}
@@ -99,7 +99,7 @@ images.forEach( function (imagePath) {
 	var d = {
 		n: imagePath,
 		t: imgDate,
-		tf: moment(imgDate).format("dddd, MMMM Do YYYY, h:mm:ss a")
+		tf: moment(imgDate).format("dddd, MMMM Do YYYY, HH:mm:ss")
 	};
 
 	finalData.push(d);
@@ -120,15 +120,3 @@ images.forEach( function (imagePath) {
 	}
 });
 process.stdout.write(JSON.stringify(finalData));
-
-// var nonGeocodedImages = _.difference(images, geocodedImages);
-
-// nonGeocodedImages.forEach( function (imagePath) {
-// 	finalData.push({
-
-// 	});
-// });
-
-// function function_name (argument) {
-// 	// body...
-// }

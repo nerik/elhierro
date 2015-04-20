@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 //node scripts/timelapses.js -s raw/photos/6/timelapse -o dist/data/6/timelapse --dry hi,low
+//node scripts/timelapses.js -s app/data/3/img -o dist/data/3/img --dry low --preserveFilenames
 
 var argv = require('yargs').argv;
 var fs = require('fs');	
@@ -11,6 +12,7 @@ var sourcePath = argv.s;
 var outputPath = argv.o;
 var startIndex = argv.start || 0;
 var dryRun = (argv.dry) ? argv.dry.split(',') : false;
+var preserveFilenames = argv.preserveFilenames;
 
 var sourceFiles = fs.readdirSync(sourcePath);
 sourceFiles.sort( function (fileA, fileB) {
@@ -42,10 +44,10 @@ function _makeImagesFromSource (targetPath, resize, quality) {
 
 	for (var i = startIndex; i < endIndex; i++) {
 		var file = sourceFiles[i];
-		var outputFileName = ''+i;
+		var outputFileName = (preserveFilenames) ? file : ''+i+'.jpg';
 
 		var sourceFile = path.resolve(path.join(sourcePath, file));
-		var outputFile = path.resolve(path.join(outputPath, targetPath, outputFileName+'.jpg'));
+		var outputFile = path.resolve(path.join(outputPath, targetPath, outputFileName));
 		var cmd = 'convert ' + sourceFile
 					+ ' -resize ' + (resize*100) + '% '
 					+ ' -quality '+ quality + ' ' 
@@ -81,7 +83,7 @@ function makeSpritesheets() {
 			+ ' -tile ' + gridCols + 'x' + gridRows
 			+ ' -quality 50 '
 			+ ' ' + outputFile;
-		console.log(cmd)
+		console.log(cmd);
 		if (!dryRun || dryRun.indexOf('low') === -1) execSync(cmd);
 
 	}
