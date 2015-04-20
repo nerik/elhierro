@@ -92,7 +92,7 @@ var MapWrapper = {
 		gps.polyline.setLatLngs( gps.coords.slice(0, lastCoordIndex ) );
 
 		//calculate loction of picto
-		var bearingStartCoord = gps.coords[Math.max(0, lastCoordIndex-30)];
+		var bearingStartCoord = gps.coords[Math.max(0, lastCoordIndex-100)];
 		var bearingEndCoord = gps.coords[lastCoordIndex];
 		var bearingStart = turf_point( utils.swapLL(bearingStartCoord) );
 		var bearingEnd = turf_point( utils.swapLL(bearingEndCoord) );
@@ -103,7 +103,8 @@ var MapWrapper = {
 		console.log(dest.geometry.coordinates);
 
 
-		gps.picto.setLatLng( utils.swapLL(dest.geometry.coordinates) );
+		// gps.picto.setLatLng( utils.swapLL(dest.geometry.coordinates) );
+		gps.picto.setLatLng( bearingEndCoord );
 		var pictoTransform = `rotate(${bearing}deg)`;
 
 		$(gps.pictoInner).css('transform', pictoTransform);

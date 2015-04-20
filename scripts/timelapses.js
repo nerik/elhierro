@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+
+//node scripts/timelapses.js -s raw/photos/6/timelapse -o dist/data/6/timelapse --dry hi,low
+
 var argv = require('yargs').argv;
 var fs = require('fs');	
 var path = require('path');
@@ -81,7 +84,7 @@ function makeSpritesheets() {
 		console.log(cmd)
 		if (!dryRun || dryRun.indexOf('low') === -1) execSync(cmd);
 
-	};
+	}
 
 }
 
