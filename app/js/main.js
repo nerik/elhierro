@@ -1,6 +1,7 @@
 window.$ = require('jquery');
 
 var _ = require('underscore');
+var L = require('leaflet/dist/leaflet-src');
 
 import Page from './Page';
 import map from './map';
@@ -43,3 +44,15 @@ function updateGPS(block, startOrEnd) {
 
 	map.updateGPS(block.data.gpstrace, r, !_.isUndefined(block.data.gpstracefollow) );
 }
+
+$('.geocodedImages img').each(function(index, el) {
+	console.log(el);
+
+	var coords = $(el).data('coords');
+	$(el).addClass('geocoded');
+
+	var m = new L.Marker(coords.split(',') ).
+		bindPopup(el).
+		addTo(map.map);
+
+});

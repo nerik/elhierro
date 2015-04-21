@@ -1,5 +1,21 @@
 // Common Colors //
 
+
+@bg: #fde7b9;
+@red: #fa4861;
+@emerald: #4bc8b3;
+@night: #2c4164;
+
+@bg_dark: #897e65;
+@red_dark: #982636;
+@emerald_dark: #1c7a6b;
+
+@bg_light: #fdf6e9;
+@red_light: #ffb4be;
+@emerald_light: #bfeae3;
+@night_light: #545c8f;
+
+
 @land: #f4efe1;
 @water: #cdd;
 @water_dark: #185869;  // for the inline/shadow
@@ -23,7 +39,7 @@
 
 
 Map {
-  background-color: #888;
+  //background-color: @bg;
 }
 
 // Mapbox Terrain global landcover //
@@ -174,7 +190,7 @@ Map {
     polygon-clip: false;
     image-filters-inflate: true;
     [class='shadow'] {
-      polygon-fill: #216;
+      polygon-fill: @night;
       polygon-comp-op: multiply;
       [zoom>=0][zoom<=3] { polygon-opacity: 0.10; }
       [zoom>=4][zoom<=5] { polygon-opacity: 0.08; }
@@ -205,33 +221,40 @@ Map {
 // Multiple copies of the same layer have been made, each with
 // unique classes and positions in the stack. This is done by
 // editi/*ng the layers list in <project.yml>.
-/*
-#contour::line[index!=-1] {
-  line-color: #000;
-  line-opacity: 0.1;
-  line-width: 1.2;
+
+#contour::line[index!=-1][zoom>=12] {
+  line-color: @night;
+  line-opacity: 0.05;
+  line-width: 1;
   [index>=5] {
-    line-opacity: 0.2;
-    line-width: 1.2;
+    line-opacity: 0.1;
+    line-width: 1;
+  }
+  [zoom>=14] {
+    line-opacity: 0.1;
+    line-width: 1;
+    [index>=5] {
+      line-opacity: 0.2;
+      line-width: 1;
+    }
   }
 }
 
 #contour::label {
-  [zoom<=12][index>=5],
-  [zoom>=13][zoom<=15][index=10],
+  [zoom=15][index=10],
   [zoom>=16][index>=5] {
     text-name: "[ele]+' m'";
     text-face-name: 'Open Sans Regular';
     text-placement: line;
     text-size: 10;
-    text-fill: #666;
+    text-fill: @night;
     text-avoid-edges: true;
-    text-halo-fill: fadeout(@crop,80%);
+    text-halo-fill: fadeout(@bg,80%);
     text-halo-radius: 2;
     text-halo-rasterizer: fast;
   }
 }
-*/
+
 
 // Water Features //
 /*
@@ -253,7 +276,7 @@ Map {
 #waterway {
   [type='river'],
   [type='canal'] {
-    line-color: mix(@water,@water_dark,60);
+    line-color: @emerald;
     line-width: 0.5;
     [zoom>=12] { line-width: 1; }
     [zoom>=14] { line-width: 2; line-cap: round; line-smooth: 0.5; }
@@ -384,7 +407,7 @@ Map {
 #admin {
   line-join: round;
   line-color: #88a;
-  [maritime=1] { line-color: darken(@water, 3%); }
+  [maritime=1] { line-opacity: 0 }
   // Countries
   [admin_level=2] {
     [zoom=2] { line-width: 0.4; }

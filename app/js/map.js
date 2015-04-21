@@ -9,6 +9,8 @@ var turf_destination = require('turf-destination');
 
 import * as utils from './utils';
 
+L.Icon.Default.imagePath = './images/'
+
 var map = L.map('map', {
 	center: [27.7460, -18.08],
 	zoom: 13,
