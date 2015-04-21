@@ -1,7 +1,13 @@
 
 body {
-	background-color: $bg;
-	font-family: "neutonlight";
+	background-color: $bg_light;
+	font-size: 120%;
+	font-family: "neutonextralight";
+}
+
+p {
+	line-height: 2.6rem;
+	color: $night;
 }
 
 .debug {
@@ -25,16 +31,50 @@ body {
 	}
 }
 
-
-.overlay {
-	width: 250px;
-	line-height: 3rem;
+.overlayContainer {
+		background-color: $bg_light;
 }
 
+.overlayContainer, .fullpage {
+	box-shadow: 0px 0px 20px rgba($night, .2);
+}
+
+.concealed {
+	opacity: 0;
+
+	&.concealed--revealed {
+		@include transition(opacity 1.0s linear);
+		opacity: 1;
+	}
+}
+
+
+
+
+.overlay-inner {
+	padding: 2rem;
+
+	.illu {
+		width: 100%;
+	}
+}
+
+.illu {
+	border-radius: 999px;
+}
+
+
 .fullpage {
-	background-color: $bg;
-	padding: 50px 80px 100px;
-	line-height: 3rem;
+	background-color: $bg_light;
+	
+	.fullpage-text {
+		padding: 50px 80px 100px;
+	}
+	
+
+	img {
+		width: 100%;
+	}
 }
 
 .title {
@@ -54,7 +94,7 @@ body {
 	  	height: 100%;
 	  	position: absolute;
 	  	top: 0;
-	  	opacity: 1;
+	  	opacity: .5;
 
 		&.title-overlay--ready {
 			@include transition(opacity 2.0s linear);
@@ -83,5 +123,4 @@ body {
 		font-size: 1.4rem;
 	}
 }
-
 

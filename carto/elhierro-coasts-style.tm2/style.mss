@@ -3,6 +3,7 @@ Map {
 }
 
 @bg: #fde7b9;
+@bg_light: #fdf6e9;
 @emerald: #4bc8b3;
 @line : @emerald;
 @op: 1;
@@ -58,5 +59,5 @@ Map {
  }
 
 #elhierro-coasts {
-  polygon-fill: @bg;
+  polygon-fill: @bg_light;
 }

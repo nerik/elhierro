@@ -9,7 +9,7 @@ var turf_destination = require('turf-destination');
 
 import * as utils from './utils';
 
-L.Icon.Default.imagePath = './images/'
+L.Icon.Default.imagePath = './images/';
 
 var map = L.map('map', {
 	center: [27.7460, -18.08],
@@ -46,6 +46,7 @@ var gpsTpl = {
 
 var gpsCollection = {};
 var gpsArray = [];
+var geocodedImagesIds = [];
 
 var MapWrapper = {
 	initGPS: function(names, topoJsonData) {
@@ -100,9 +101,9 @@ var MapWrapper = {
 		var bearingEnd = turf_point( utils.swapLL(bearingEndCoord) );
 		var bearing = turf_bearing(bearingStart, bearingEnd);
 
-		var dest = turf_destination(bearingEnd, .5, bearing, 'kilometers');
+		var dest = turf_destination(bearingEnd, 0.5, bearing, 'kilometers');
 
-		console.log(dest.geometry.coordinates);
+		// console.log(dest.geometry.coordinates);
 
 
 		// gps.picto.setLatLng( utils.swapLL(dest.geometry.coordinates) );
@@ -123,7 +124,7 @@ var MapWrapper = {
 	},
 
 	updateGPSStatuses: function(currentlyEntering) {
-		console.log(currentlyEntering)
+		// console.log(currentlyEntering)
 
 		for (var i = 0; i < gpsArray.length; i++) {
 			var gps = gpsArray[i];
@@ -140,6 +141,43 @@ var MapWrapper = {
 
 	setView(coords) {
 		map.setView( [coords[1],coords[2]], coords[0]);
+	},
+
+	showGeocodedImages: function(el) {
+
+		var images = [];
+
+		el.find('.geocodedImages img').each( (index, img) => {
+
+			var src = img.getAttribute('src');
+
+			//check that marker hasnt been already added
+			if ( !_.contains( geocodedImagesIds, src ) ) {
+				geocodedImagesIds.push(src);
+				images.push(img);
+			}
+
+			// geocodedImagesIds.push
+			// _.delay(showMarker, index*150, img)
+		});
+
+		//since $.each doesn't guarantee order, sort by src, allowing animation in the right order
+		images = _.sortBy( images, img => {
+			return img.getAttribute('src');
+		} );
+
+		images.forEach((img, index) => {
+			_.delay(showMarker, index*50, img);
+		});
+
+		function showMarker( img) {
+			var coords = $(img).data('coords');
+			$(img).addClass('geocoded');
+
+			var m = new L.Marker(coords.split(',') ).
+				bindPopup(img).
+				addTo(map);
+		}
 	},
 
 	map: map

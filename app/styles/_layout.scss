@@ -1,11 +1,9 @@
 
-
-
 .main {
 	position: relative;
 }
 
-.overlay, .title, .fullpage, .fixed-placeholder {
+.overlayContainer, .title, .fullpage, .fixed-placeholder {
 	position: relative;
 	z-index: 2;
 }
@@ -15,23 +13,21 @@
 #map 	{ z-index: 1; }
 .front 	{ z-index: 2; }
 
-.title {
-	img {
-		width: 100%;
-	}
 
-	h1 {
-		position: absolute;
-  		margin-top: -50%;
-	}
-}
 
 body:not(.debug) .fixed-placeholder {
 	visibility: hidden;
 }
 
 
+.overlayContainer--left, .overlayContainer--right {
+	width: 300px;
+	// min-width: 300px;
+}
 
+.overlayContainer--right {
+	left: calc(100% - 300px);
+}
 
 .fixed {
 	position: fixed;

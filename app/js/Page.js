@@ -146,6 +146,10 @@ export default class Page  {
 						fixedStoryChild.siblings('[data-trigger]').removeClass('show');
 						fixedStoryChild.addClass('show');
 					}
+
+					if (b.data.revealparent) {
+						b.el.parent('.concealed').addClass('concealed--revealed');
+					}
 				}
 
 				isInBlock = true;				
@@ -158,6 +162,10 @@ export default class Page  {
 					this.trigger('scrollblock:leave', b, down);
 
 					b.el.next('.fixed').removeClass('show');
+
+					if (b.data.revealparent) {
+						// b.el.parent('.concealed').removeClass('concealed--revealed');
+					}
 				}
 			}
 		}

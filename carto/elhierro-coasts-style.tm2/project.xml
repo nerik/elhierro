@@ -60,7 +60,7 @@
 
 <Style name="elhierro-coasts" filter-mode="first">
   <Rule>
-    <PolygonSymbolizer fill="#fde7b9" />
+    <PolygonSymbolizer fill="#fdf6e9" />
   </Rule>
 </Style>
 <Layer name="elhierro-coasts"

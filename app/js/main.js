@@ -25,6 +25,8 @@ page.on('scrollblock:enter', (block, down) => {
 		map.updateGPSStatuses( block.data.gpstrace );
 	}
 	if (block.data.mapview) map.setView(block.data.mapview);
+
+	if (block.data.geocodedimages) map.showGeocodedImages( block.el );
 });
 page.on('scrollblock:leave', (block, down) => {
 	if (block.data.gpstrace) updateGPS(block, (down) ? 1 : -1 );
@@ -44,15 +46,3 @@ function updateGPS(block, startOrEnd) {
 
 	map.updateGPS(block.data.gpstrace, r, !_.isUndefined(block.data.gpstracefollow) );
 }
-
-$('.geocodedImages img').each(function(index, el) {
-	console.log(el);
-
-	var coords = $(el).data('coords');
-	$(el).addClass('geocoded');
-
-	var m = new L.Marker(coords.split(',') ).
-		bindPopup(el).
-		addTo(map.map);
-
-});

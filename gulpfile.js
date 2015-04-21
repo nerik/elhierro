@@ -143,7 +143,20 @@ gulp.task('fonts', function() {
         .pipe( gulp.dest(config.dist+'/fonts') );
 });
 
-gulp.task('build', ['sass','js','html', 'fonts'], function () {
+gulp.task('illu', function() {
+    var mergedStreams = mergeStream();
+
+    for (var pageIndex = 0; pageIndex < config.pages.length; pageIndex++) {
+        var stream = gulp.src('app/data/'+pageIndex+'/illu/**/*')
+            .pipe( gulp.dest(config.dist+'/data/'+pageIndex+'/illu') );
+
+        mergedStreams.add(stream);
+    }
+    return mergedStreams;
+
+});
+
+gulp.task('build', ['sass','js','html', 'fonts', 'illu'], function () {
 
 });
 
@@ -161,7 +174,7 @@ gulp.task('serve', ['build'], function() {
     gulp.watch("app/js/**/*.js", ['js']);
     gulp.watch("app/html/**/*.html", ['html']);
 
-    gulp.watch(config.dist+"/**/*.js").on('change', browserSync.reload);
+    gulp.watch(config.dist+"/**/*.{js,html,css}").on('change', browserSync.reload);
 });
 
 //use geocoded_photos.json to generate img tags with coordinates in the html.
