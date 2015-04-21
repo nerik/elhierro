@@ -14,19 +14,33 @@
 
 // Name field to use. Language options:
 // name (local), name_en, name_fr, name_es, name_de
-@name: '[name]';
+@name: '[name_es]';
+
 
 // set up font sets for various weights and styles
 @sans_lt:           "Open Sans Regular","Arial Unicode MS Regular";
 @sans_lt_italic:    "Open Sans Italic","Arial Unicode MS Regular";
-@sans:              "Open Sans Semibold","Arial Unicode MS Regular";
+//@sans:              "Open Sans Semibold","Arial Unicode MS Regular";
+@sans:              "Open Sans Regular";
 @sans_bold:         "Open Sans Bold","Arial Unicode MS Regular";
 @sans_italic:       "Open Sans Semibold Italic","Arial Unicode MS Regular";
 @sans_bold_italic:  "Open Sans Bold Italic","Arial Unicode MS Regular";
+@lulo_bold:         "Open Sans Regular";
+@lulo_light:        "Open Sans Regular";
 
+/*
+@sans_lt:           "Open Sans Regular","Arial Unicode MS Regular";
+@sans_lt_italic:    "Open Sans Italic","Arial Unicode MS Regular";
+@sans:              "Asap Regular";
+@sans_bold:         "Open Sans Bold","Arial Unicode MS Regular";
+@sans_italic:       "Open Sans Semibold Italic","Arial Unicode MS Regular";
+@sans_bold_italic:  "Open Sans Bold Italic","Arial Unicode MS Regular";
+@lulo_bold:         "Lulo Clean One Bold";
+@lulo_light:        "Lulo Clean One";
+*/
 // We set up a default halo color for places so you can edit them all
 // at once or override each individually:
-@place_halo:        fadeout(#fff,80);
+@place_halo:        fadeout(@bg,80);
 @country_text:      @land * 0.2;
 @country_halo:      @place_halo;
 @state_text:        #666;
@@ -41,7 +55,7 @@
 @other_text:        lighten(#4a4032,20);
 @other_halo:        @place_halo;
 @locality_text:     #aaa;
-@locality_halo:     @land;
+@locality_halo:     @bg;
 // Also used for other small places: hamlets, suburbs, localities:
 @village_text:      #888;
 @village_halo:      @place_halo;
@@ -54,8 +68,8 @@
 
 #marine_label {
   text-name: @name;
-  text-face-name: @sans_lt_italic;
-  text-fill: mix(@water_dark,@water,25);
+  text-face-name: @lulo_bold;
+  text-fill: @emerald;
   text-wrap-width: 80;
   text-wrap-before: true;
   [placement='point'] {
@@ -67,61 +81,61 @@
   }
   [labelrank=1] {
     [zoom=3] {
-      text-size: 20;
+      text-size: 10;
       text-character-spacing: 8;
       text-line-spacing: 16;
     }
     [zoom=4] {
-      text-size: 25;
+      text-size: 12;
       text-character-spacing: 16;
       text-line-spacing: 24;
     }
     [zoom=5] {
-      text-size: 30;
+      text-size: 14;
       text-character-spacing: 20;
       text-line-spacing: 32;
     }
   }
   [labelrank=2] {
     [zoom=3] {
-      text-size: 13;
+      text-size: 6;
       text-character-spacing: 1;
       text-line-spacing: 6;
     }
     [zoom=4] {
-      text-size: 14;
+      text-size: 7;
       text-character-spacing: 2;
       text-line-spacing: 8;
     }
     [zoom=5] {
-      text-size: 20;
+      text-size: 10;
       text-character-spacing: 4;
       text-line-spacing: 8;
     }
     [zoom=6] {
-      text-size: 24;
+      text-size: 12;
       text-character-spacing: 5;
       text-line-spacing: 10;
     }
   }
   [labelrank=3] {
     [zoom=3] {
-      text-size: 12;
+      text-size: 6;
       text-character-spacing: 2;
       text-line-spacing: 3;
     }
     [zoom=4] {
-      text-size: 13;
+      text-size: 7;
       text-character-spacing: 3;
       text-line-spacing: 8;
     }
     [zoom=5] {
-      text-size: 15;
+      text-size: 8;
       text-character-spacing: 4;
       text-line-spacing: 8;
     }
     [zoom=6] {
-      text-size: 18;
+      text-size: 9;
       text-character-spacing: 5;
       text-line-spacing: 10;
     }
@@ -129,20 +143,20 @@
   [labelrank=4][zoom=4],
   [labelrank=5][zoom=5],
   [labelrank=6][zoom=6] {
-    text-size: 12;
+    text-size: 6;
     text-character-spacing: 2;
     text-line-spacing: 6;
   }
   [labelrank=4][zoom=5],
   [labelrank=5][zoom=6],
   [labelrank=6][zoom=7] {
-    text-size: 14;
+    text-size: 7;
     text-character-spacing: 3;
     text-line-spacing: 8;
   }
   [labelrank=4][zoom=6],
   [labelrank=5][zoom=7] {
-    text-size: 16;
+    text-size: 8;
     text-character-spacing: 4;
     text-line-spacing: 1;
   }
@@ -291,7 +305,7 @@
     [ldir='NW'] { shield-text-dx: -3; shield-text-dy: -3; }
   }
 }
-/*
+
 // For medium to high zoom levels we do away with the dot
 // and center place labels on their point location.
 #place_label[type='city'][zoom>=8][zoom<=15][localrank<=3] {
@@ -405,7 +419,7 @@
 
 #place_label[type='village'][zoom>=10][zoom<=17] {
   text-name: @name;
-  text-face-name: @sans;
+  text-face-name: @lulo_light;
   text-placement: point;
   text-fill: @town_text;
   text-size: 11;
@@ -471,7 +485,7 @@
   }
 }
 
-*/
+
 // =====================================================================
 // WATER LABELS
 // =====================================================================

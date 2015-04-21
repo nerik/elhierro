@@ -15,6 +15,13 @@
 @emerald_light: #bfeae3;
 @night_light: #545c8f;
 
+@bg_darkmedium: #d8c4a0;
+@bg_darkmedium2: #baa88c ;
+
+@road_primary: #ffc673;
+@road_secondary: #fff066;
+
+@pines: #8eb767;
 
 @land: #f4efe1;
 @water: #cdd;
@@ -40,19 +47,28 @@
 
 Map {
   //background-color: @bg;
+  font-directory: url("fonts/"); 
 }
 
 // Mapbox Terrain global landcover //
 
 #landcover {
-  /*
-  [class='wood'] { polygon-fill: @wood; }
-  [class='scrub'] { polygon-fill: @scrub; }
-  [class='grass'] { polygon-fill: @grass; }
-  [class='crop'] { polygon-fill: @crop; }
-  [class='snow'] { polygon-fill: @snow; }
+  
+  [class='wood'] { 
+    polygon-fill: @pines; 
+    polygon-opacity: .3;
+  }
+  ::pines[class='wood'] {
+    polygon-pattern-opacity: .75;
+    polygon-pattern-file: url("img/pines-01.png"); 
+    
+  }
+ // [class='scrub'] { polygon-fill: #ff0; }
+  //[class='grass'] { polygon-fill: #f0f; }
+  //[class='crop'] { polygon-fill: #0f0; }
   // fade out stronger classes at high zooms,
   // let more detailed OSM data take over a bit:
+  /*
   [class='wood'][zoom>=14],
   [class='scrub'][zoom>=15],
   [class='grass'][zoom>=16] {
@@ -65,7 +81,7 @@ Map {
 }
 
 // OSM landuse & landcover //
-
+/*
 #landuse {
   // The ::cover attachments fade in and become solid, overriding
   // any underlying shaped in the #landcover layer.
@@ -89,6 +105,7 @@ Map {
     [class='rock'] { polygon-fill: @rock; }
   }
 }
+
 
 #landuse::use {
   // The ::use attachement is multuplied over #landcover and
@@ -176,7 +193,7 @@ Map {
   [class='pier'] {
     polygon-fill: @land;
   }
-}
+}*/
 
 // Hillshading //
 
@@ -230,14 +247,7 @@ Map {
     line-opacity: 0.1;
     line-width: 1;
   }
-  [zoom>=14] {
-    line-opacity: 0.1;
-    line-width: 1;
-    [index>=5] {
-      line-opacity: 0.2;
-      line-width: 1;
-    }
-  }
+  
 }
 
 #contour::label {
@@ -274,21 +284,16 @@ Map {
 }
 */
 #waterway {
-  [type='river'],
-  [type='canal'] {
-    line-color: @emerald;
-    line-width: 0.5;
-    [zoom>=12] { line-width: 1; }
-    [zoom>=14] { line-width: 2; line-cap: round; line-smooth: 0.5; }
-    [zoom>=16] { line-width: 3; }
-  }
   [type='stream'] {
-    line-color: mix(@water,@water_dark,60);
-    line-width: 0.25;
-    [zoom>=14] { line-width: 1; line-smooth: 0.5; }
-    [zoom>=16] { line-width: 1.5; line-cap: round; }
-    [zoom>=18] { line-width: 2; }
+    line-color: @emerald;
+    line-width: 1.5;
+    line-dasharray: 1,3;
+    line-cap: round;
+    [zoom>=14] { line-width: 1.5; line-smooth: 0.5; }
+    [zoom>=16] { line-width: 2; line-cap: round; }
+    [zoom>=18] { line-width: 3; }
   }
+
 }
 
 
@@ -335,23 +340,27 @@ Map {
 // Buildings //
 
 #building {
-  /*
+  
   ::shadow[zoom>=16] {
     line-clip: false;
     line-join: round;
     line-cap: round;
-    line-color: fadeout(#000, 85%);
+    line-color: fadeout(#000, 80%);
     [zoom>=17] { line-width: 2; }
-  }*/
-  //polygon-clip: false;
-  //polygon-fill: @land * 0.95;
-  polygon-fill: #f0f;
-  [zoom=13] {
-    polygon-fill: #f0f;
-    }
-  /*[zoom>=16] {
-    polygon-geometry-transform: translate(-0.5,-1.2);
-  }*/
+  }
+  polygon-clip: false;
+  [zoom>=14][zoom<16] {
+    polygon-fill: @bg_darkmedium;
+    line-color: @bg_darkmedium;
+    line-width: 2;
+  }
+  [zoom>=16] {
+    polygon-fill: @bg_darkmedium2;
+    line-width: 0;
+  }
+  [zoom>=16] {
+    polygon-geometry-transform: translate(-0.5,-0.5);
+  }
 }
 
 #barrier_line {

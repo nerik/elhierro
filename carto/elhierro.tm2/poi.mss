@@ -5,7 +5,7 @@
 // Airports and rail stations are styled separately from other POIs
 // because we use different fields to set their icon images.
 
-#poi_label[type!='Aerodrome'][type!='Rail Station'][type!='hole'] {
+#poi_label[type!='Aerodrome'][name!='El Hierro'] {
   ::icon {
     [zoom<14],
     [zoom>=14][scalerank=1][localrank<=1],
@@ -59,41 +59,7 @@
   }
 }
 
-// Rail Stations _______________________________________________________
 
-#poi_label[type='Rail Station'][network!=null][scalerank=1][zoom>=14],
-#poi_label[type='Rail Station'][network!=null][scalerank=2][zoom>=15],
-#poi_label[type='Rail Station'][network!=null][scalerank=3][zoom>=16] {
-  marker-file: url("img/rail/[network]-12.svg");
-  marker-height: 12;
-  marker-allow-overlap: false;
-  [zoom=16] {
-    marker-file: url("img/rail/[network]-18.svg");
-    marker-height: 18;
-  }
-  [zoom>16] {
-    marker-file: url("img/rail/[network]-12.svg");
-    marker-height:24;
-  }
-  [zoom>15] {
-    text-name: @name;
-    text-face-name: @sans;
-    text-fill: #888;
-    text-halo-fill: #fff;
-    text-halo-radius: 1.5;
-    text-halo-rasterizer: fast;
-    text-size: 11;
-    text-wrap-width: 80;
-    text-placement-type: simple;
-    text-dx: 11; text-dy: 11;
-    text-placements: "S,N,E,W";
-    [zoom>=17] {
-      text-size: 12;
-      text-halo-radius: 2;
-      text-dx: 15; text-dy: 15;
-    }
-  }
-}
 
 // Airports ____________________________________________________________
 
@@ -141,22 +107,3 @@
     text-wrap-width: 120;
   }
 }
-
-// Golf holes __________________________________________________________
-
-#poi_label[type='hole'][zoom>=16] {
-  text-avoid-edges: false;
-  text-name: @name;
-  text-character-spacing: 0.25;
-  text-placement: point;
-  text-face-name: @sans;
-  text-fill: darken(#cdb,50);
-  text-size: 10;
-  text-halo-fill: @road_halo;
-  text-halo-radius: 1.5;
-  text-halo-rasterizer: fast;
-  [zoom>=17] { text-size: 12; }
-  [zoom>=18] { text-size: 14; }
-}
-
-/**/
