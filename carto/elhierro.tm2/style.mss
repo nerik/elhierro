@@ -46,7 +46,7 @@
 
 
 Map {
-  //background-color: @bg;
+  //background-color: @bg_light;
   font-directory: url("fonts/"); 
 }
 
@@ -257,9 +257,10 @@ Map {
     text-face-name: 'Open Sans Regular';
     text-placement: line;
     text-size: 10;
+    text-opacity: .4;
     text-fill: @night;
     text-avoid-edges: true;
-    text-halo-fill: fadeout(@bg,80%);
+    text-halo-fill: fadeout(@bg_light,80%);
     text-halo-radius: 2;
     text-halo-rasterizer: fast;
   }

@@ -97,7 +97,7 @@ p {
 	  	opacity: .5;
 
 		&.title-overlay--ready {
-			@include transition(opacity 2.0s linear);
+			@include transition(opacity 5.0s linear);
 			opacity: .2;
 		}
 	}

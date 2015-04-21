@@ -198,13 +198,6 @@
       line-dasharray: 2,1;
     }
   }
-  [class='major_rail'] {
-    line-width: 0.8;
-    line-color: #c8c4c0;
-    hatch/line-width: 3;
-    hatch/line-color: #c8c4c0;
-    hatch/line-dasharray: 1,15;
-  }
 }
 
 #bridge[class='aerialway'][zoom>=13] {
@@ -244,22 +237,3 @@
     [zoom>17] { line-dasharray: 3, 80; }
   }
 }
-
-#bridge[class='golf'][zoom>=16] {
-  // golf hole ways are only in the bridge layer 
-  // to keep them above everything else
-  ::case {
-    line-color: green;
-    line-opacity: 0.25;
-    line-width: 1.6;
-    [zoom>=17] { line-width: 2.2; }
-    [zoom>=18] { line-width: 3; }
-  }
-  ::fill {
-    line-color: #666;
-    line-width: 0.6;
-    [zoom>=17] { line-width: 1; }
-    [zoom>=18] { line-width: 1.2; }
-  }
-}
-

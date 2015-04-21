@@ -37,7 +37,7 @@
 
 // We set up a default halo color for places so you can edit them all
 // at once or override each individually:
-@place_halo:        fadeout(@bg,80);
+@place_halo:        fadeout(@bg_light,30);
 @country_text:      @land * 0.2;
 @country_halo:      @place_halo;
 @state_text:        #666;
@@ -47,9 +47,9 @@
 @town_text:         lighten(#4a4032,10);
 @town_halo:         @place_halo;
 @poi_text:          @poi_text;  
-@road_text:         #4a4032;
+@road_text:         @bg_dark;
 @road_halo:         #fff;
-@other_text:        lighten(#4a4032,20);
+@other_text:        @bg_dark;
 @other_halo:        @place_halo;
 @locality_text:     #aaa;
 @locality_halo:     @bg;
@@ -464,18 +464,18 @@
   [type='hamlet'],
   [type='neighbourhood'] {
     text-name: @name;
-    text-face-name: @sans_lt;
+    text-face-name: @lulo_light;
     text-placement: point;
     text-fill: @other_text;
-    text-size: 11;
-    text-halo-fill: @other_halo;
-    text-halo-radius: 1.5;
+    text-size: 9;
+    text-halo-fill: @town_halo;
+    text-halo-radius: 2.5;
     text-halo-rasterizer: fast;
     text-wrap-width: 60;
     text-wrap-before: true;
     text-min-distance: 4;
     text-line-spacing: -2;
-    [zoom>=14] { text-size: 12; text-wrap-width: 80; }
+    [zoom>=14] { text-size: 10; text-wrap-width: 80; }
     [zoom>=16] { text-size: 14; text-wrap-width: 100; }
     [zoom>=17] { text-size: 16; text-wrap-width: 130; }
     [zoom>=18] { text-size: 18; text-wrap-width: 160; }
@@ -603,7 +603,7 @@
     text-face-name: @sans_lt;
     text-fill: @road_text;
     text-size: 11;
-    text-halo-fill: fadeout(@land,85);
+    text-halo-fill: fadeout(@bg_light,85);
     text-halo-radius: 2;
     text-halo-rasterizer: fast;
     text-min-distance: 200; // only for labels w/ the same name
