@@ -1,0 +1,40 @@
+
+body {
+	background-color: $bg;
+}
+
+.debug {
+	[data-trigger] {
+		background-color: rgba(255,0,0,.2);
+
+		border: 2px solid red;
+
+		&.fixed-placeholder {
+			border-style: dashed;
+
+			* {
+				opacity: .4;
+			}
+		}
+
+	}
+
+	.fixed {
+		background-color: rgba(255,0,255,.2);
+	}
+}
+
+
+.overlay {
+	width: 250px;
+	line-height: 3rem;
+}
+
+
+
+.fullpage {
+	background-color: $bg;
+	padding: 50px 80px 100px;
+	line-height: 3rem;
+}
+
