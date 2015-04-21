@@ -1,9 +1,11 @@
 Map {
-  //background-color: #bccbff;
-  }
+  //background-color: #fde7b9;
+}
 
-@line : #0000FF;
-@op: .8;
+@bg: #fde7b9;
+@emerald: #4bc8b3;
+@line : @emerald;
+@op: 1;
 @rOffset: 1;
 @rWidth: 1;
 
@@ -56,5 +58,5 @@ Map {
  }
 
 #elhierro-coasts {
-  polygon-fill: #fff;
+  polygon-fill: @bg;
 }

@@ -15,7 +15,9 @@ center:
 description: ''
 format: "png8:m=h"
 interactivity_layer: ''
-layers: null
+layers: 
+  - elhierro-lines
+  - elhierro-coasts
 maxzoom: 18
 minzoom: 0
 name: elhierro-coasts

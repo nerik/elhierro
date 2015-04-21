@@ -1,5 +1,5 @@
 // Roads & Railways //
-/*
+
 @case: #fff;
 
 @motorway: #e8b0b0 * 0.9;
@@ -288,4 +288,4 @@
     [zoom>=18] { line-width: 1.2; }
   }
 }
-*/
+
