@@ -1,6 +1,7 @@
 
 body {
 	background-color: $bg;
+	font-family: "neutonlight";
 }
 
 .debug {
@@ -30,11 +31,57 @@ body {
 	line-height: 3rem;
 }
 
-
-
 .fullpage {
 	background-color: $bg;
 	padding: 50px 80px 100px;
 	line-height: 3rem;
 }
+
+.title {
+	text-align: center;
+	color: #fff;
+	font-family: 'neutonextralight';
+	font-style: normal;
+	font-size: 2rem;
+
+	img {
+		width: 100%;
+	}
+
+	.title-overlay {
+	   	background-color: $night;
+	  	width: 100%;
+	  	height: 100%;
+	  	position: absolute;
+	  	top: 0;
+	  	opacity: 1;
+
+		&.title-overlay--ready {
+			@include transition(opacity 2.0s linear);
+			opacity: .2;
+		}
+	}
+
+	h1 {
+		position: absolute;
+  		margin-top: -50%;
+		width: 100%;
+		font-weight: normal;
+	}
+
+	.title-date, .title-place {
+		display: block;
+	}
+
+	.title-date {
+		font-family: 'LuloCleanOne-Bold';
+		font-size: 1.2rem;
+	}
+
+	.title-place {
+		font-family: 'neutonitalic';
+		font-size: 1.4rem;
+	}
+}
+
 

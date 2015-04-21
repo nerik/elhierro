@@ -138,7 +138,12 @@ gulp.task('html', function(){
     return mergedStreams;
 });
 
-gulp.task('build', ['sass','js','html'], function () {
+gulp.task('fonts', function() {
+    return gulp.src('app/fonts/**/*')
+        .pipe( gulp.dest(config.dist+'/fonts') );
+});
+
+gulp.task('build', ['sass','js','html', 'fonts'], function () {
 
 });
 
