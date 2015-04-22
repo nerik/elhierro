@@ -15,37 +15,37 @@
 
 <Style name="elhierro-lines-line6" filter-mode="first">
   <Rule>
-    <LineSymbolizer offset="19.5" stroke-width="0.1" stroke="#4bc8b3" stroke-opacity="1" />
+    <LineSymbolizer offset="19.5" stroke-width="0.1" stroke="#545c8f" stroke-opacity="1" />
   </Rule>
 </Style>
 <Style name="elhierro-lines-line5" filter-mode="first">
   <Rule>
-    <LineSymbolizer offset="15" stroke-width="0.2" stroke="#4bc8b3" stroke-opacity="1" />
+    <LineSymbolizer offset="15" stroke-width="0.2" stroke="#545c8f" stroke-opacity="1" />
   </Rule>
 </Style>
 <Style name="elhierro-lines-line4" filter-mode="first">
   <Rule>
-    <LineSymbolizer offset="11" stroke-width="0.3" stroke="#4bc8b3" stroke-opacity="1" />
+    <LineSymbolizer offset="11" stroke-width="0.3" stroke="#545c8f" stroke-opacity="1" />
   </Rule>
 </Style>
 <Style name="elhierro-lines-line3" filter-mode="first">
   <Rule>
-    <LineSymbolizer offset="7.5" stroke-width="0.4" stroke="#4bc8b3" stroke-opacity="1" />
+    <LineSymbolizer offset="7.5" stroke-width="0.4" stroke="#545c8f" stroke-opacity="1" />
   </Rule>
 </Style>
 <Style name="elhierro-lines-line2" filter-mode="first">
   <Rule>
-    <LineSymbolizer offset="4.5" stroke-width="0.5" stroke="#4bc8b3" stroke-opacity="1" />
+    <LineSymbolizer offset="4.5" stroke-width="0.5" stroke="#545c8f" stroke-opacity="1" />
   </Rule>
 </Style>
 <Style name="elhierro-lines-line1" filter-mode="first">
   <Rule>
-    <LineSymbolizer offset="2" stroke-width="0.6" stroke="#4bc8b3" stroke-opacity="1" />
+    <LineSymbolizer offset="2" stroke-width="0.6" stroke="#545c8f" stroke-opacity="1" />
   </Rule>
 </Style>
 <Style name="elhierro-lines" filter-mode="first">
   <Rule>
-    <LineSymbolizer stroke-width="1" stroke="#4bc8b3" stroke-opacity="1" />
+    <LineSymbolizer stroke-width="1" stroke="#545c8f" stroke-opacity="1" />
   </Rule>
 </Style>
 <Layer name="elhierro-lines"

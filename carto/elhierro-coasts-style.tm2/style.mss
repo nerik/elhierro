@@ -5,7 +5,9 @@ Map {
 @bg: #fde7b9;
 @bg_light: #fdf6e9;
 @emerald: #4bc8b3;
-@line : @emerald;
+@night_light: #545c8f;
+
+@line : @night_light;
 @op: 1;
 @rOffset: 1;
 @rWidth: 1;
