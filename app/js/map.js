@@ -19,6 +19,7 @@ var map = L.map('map', {
 	scrollWheelZoom: false
 });
 
+
 require('leaflet-hash');
 var hash = new L.Hash(map);
 
@@ -81,11 +82,12 @@ var MapWrapper = {
 			};
 
 			gpsArray.push(gpsCollection[name]);
-
-
-
-
 		}
+		
+		//inject svg patterns
+		$('.leaflet-overlay-pane svg').prepend( $('.js-tpl-svg-patterns').html() );
+
+
 	},
 
 	updateGPS: function (name, r, follow) {

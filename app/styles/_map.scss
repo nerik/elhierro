@@ -20,6 +20,10 @@
   	stroke-dasharray: .1,10;
 }
 
+.gps--plane path {
+	stroke: url("#hatch_diagonal");
+}
+
 .gps--old path {
 	stroke: #bc8e96;
 	stroke-opacity: .4;
