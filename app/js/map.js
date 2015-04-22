@@ -117,8 +117,10 @@ var MapWrapper = {
 			var classes = $(gps.polyline._container).attr('class').split(' ');
 			if (currentlyEntering === gps.name) {
 				classes = _.without( classes, 'gps--old' );
+				gps.picto._icon.style.display = 'block';
 			} else {
 				classes.push('gps--old');
+				gps.picto._icon.style.display = 'none';
 			}
 			classes = _.uniq(classes);
 			$(gps.polyline._container).attr('class', classes.join(' ') );
