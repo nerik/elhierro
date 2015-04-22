@@ -36,43 +36,6 @@ export default class Page  {
 		        if ( _.contains(['gpstracestart','gpstraceend'], k) ) scrollBlock.data[k] = parseFloat(v);
 		        if (k === 'mapview') scrollBlock.data[k] = scrollBlock.data[k].split('/').map( parseFloat );
 		    });
-			
-			if (scrollBlock.data.fixed) {
-				var placeholder = el;
-
-				//give uid to story children
-				if (scrollBlock.data.fixed === 'story') {
-					placeholder.children('[data-trigger]').each( (j,el) => {
-						el.id = 'placeholder_'+i+'_'+j;
-					} );
-				}
-
-				//create fixed element
-				var fixed = $('<div class="fixed">').insertAfter( placeholder )
-							.attr('class', placeholder.attr('class') )
-							.addClass('fixed')
-							.html( $(placeholder).html() );
-
-				if (scrollBlock.data.fixed === 'story') {
-					fixed.addClass('fixed-story');
-					
-					//use id of the placeholder children, without prefix
-					fixed.children('[data-trigger]').each( (j,el) => {
-						el.id = el.id.replace('placeholder_','');
-						$(el).css('margin','');
-					} );
-
-					placeholder.addClass('fixed-story-placeholder');
-				}
-
-				placeholder.addClass('fixed-placeholder');
-			}	
-
-			if (el.parent('[data-fixed=story]').length) {
-				//flag as storychild to trigger stuff on scroll listener
-				scrollBlock.data.storychild = true;
-			}
-
 
 			this.data.scrollBlocks.push(scrollBlock);		
 
@@ -142,14 +105,6 @@ export default class Page  {
 
 					//show next element, a fixed element corresponding to this placeholder
 					if (b.data.fixed) b.el.next('.fixed').addClass('show');
-
-					if (b.data.storychild) {
-						//find fixed story chil corresponding to placeholdr story child
-						var id = b.el.attr('id').replace('placeholder_','');
-						var fixedStoryChild = $('#'+id);
-						fixedStoryChild.siblings('[data-trigger]').removeClass('show');
-						fixedStoryChild.addClass('show');
-					}
 
 					if (b.data.revealparent) {
 						b.el.parent('.concealed').addClass('concealed--revealed');

@@ -32,7 +32,7 @@ p {
 }
 
 
-.overlayContainer, .fullpage, .fixed {
+.overlayContainer, .fullpage, .fixed, .storyBlock-inner {
 	background-color: $bg_light;
 	box-shadow: 0px 0px 20px rgba($night, .2);
 }
@@ -75,7 +75,7 @@ p {
 	}
 }
 
-.fixed {
+.storyBlock-inner {
 	padding: 2rem;	
 }
 
