@@ -66,7 +66,6 @@ var MapWrapper = {
 
 
 			var icon = L.divIcon({
-				// html: '<div style="width: 10px; height: 10px; background-color: #ff00ff">x</div>'
 				html: gpsTpl[styleName]()
 			});
 			var picto = L.marker([0,0], {icon:icon});
@@ -156,9 +155,6 @@ var MapWrapper = {
 				geocodedImagesIds.push(src);
 				images.push(img);
 			}
-
-			// geocodedImagesIds.push
-			// _.delay(showMarker, index*150, img)
 		});
 
 		//since $.each doesn't guarantee order, sort by src, allowing animation in the right order
@@ -170,11 +166,15 @@ var MapWrapper = {
 			_.delay(showMarker, index*50, img);
 		});
 
+		var icon = L.divIcon({
+				html: '<div class="geocodedImage"><div class="geocodedImage-inner"></div></div>'
+			});
+
 		function showMarker( img) {
 			var coords = $(img).data('coords');
 			$(img).addClass('geocoded');
 
-			var m = new L.Marker(coords.split(',') ).
+			var m = new L.Marker(coords.split(','), {icon:icon} ).
 				bindPopup(img).
 				addTo(map);
 		}
