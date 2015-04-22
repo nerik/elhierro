@@ -107,7 +107,7 @@ export default class Page  {
 					if (b.data.fixed) b.el.next('.fixed').addClass('show');
 
 					if (b.data.revealparent) {
-						b.el.parent('.concealed').addClass('concealed--revealed');
+						b.el.parents('.concealed').addClass('concealed--revealed');
 					}
 				}
 
