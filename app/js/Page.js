@@ -61,7 +61,6 @@ export default class Page  {
 	}
 
 	loadData() {
-		console.log(this);
 		var gpstracesPromises = this.data.gpstrace.map( gps => utils.load(`./data/${this.data.index}/${gps}.topojson` ) );
 
 		Promise.all(gpstracesPromises).then( data => {

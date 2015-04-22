@@ -10,7 +10,7 @@ import map from './map';
 var page = new Page(3);
 page.test(map.map);
 
-//when at the end of the page : load next page + dependencies + n+2 page intro
+//when at the end of the page : load next page + dependencies (js, spritesheets, images, topjpson) + n+2 page intro
 
 
 page.on('load:gps', (names, topoJsonData) => map.initGPS(names, topoJsonData) );
@@ -46,3 +46,5 @@ function updateGPS(block, startOrEnd) {
 
 	map.updateGPS(block.data.gpstrace, r, !_.isUndefined(block.data.gpstracefollow) );
 }
+
+export default page;
