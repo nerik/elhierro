@@ -68,11 +68,22 @@ p {
 	.fullpage-text {
 		padding: 50px 80px 100px;
 	}
-	
+
+	.fullpage-centered {
+		text-align: center;
+
+		img {
+			max-width: 300px;
+			width: 60%;
+			
+		}
+
+	}
 
 	img {
 		width: 100%;
 	}
+
 }
 
 .storyBlock-inner {

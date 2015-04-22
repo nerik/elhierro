@@ -47,6 +47,13 @@ body:not(.debug) .fixed-placeholder {
 	}
 }
 
+
+.storyBlock--left {
+	left: 50px;
+	width: 50%;
+}
+
+
 .geocodedImages {
 	position: fixed;
 	display: none;
