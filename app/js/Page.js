@@ -47,6 +47,7 @@ export default class Page  {
 					} );
 				}
 
+				//create fixed element
 				var fixed = $('<div class="fixed">').insertAfter( placeholder )
 							.attr('class', placeholder.attr('class') )
 							.addClass('fixed')
@@ -55,8 +56,10 @@ export default class Page  {
 				if (scrollBlock.data.fixed === 'story') {
 					fixed.addClass('fixed-story');
 					
+					//use id of the placeholder children, without prefix
 					fixed.children('[data-trigger]').each( (j,el) => {
 						el.id = el.id.replace('placeholder_','');
+						$(el).css('margin','');
 					} );
 
 					placeholder.addClass('fixed-story-placeholder');
@@ -65,8 +68,8 @@ export default class Page  {
 				placeholder.addClass('fixed-placeholder');
 			}	
 
-
 			if (el.parent('[data-fixed=story]').length) {
+				//flag as storychild to trigger stuff on scroll listener
 				scrollBlock.data.storychild = true;
 			}
 
@@ -141,6 +144,7 @@ export default class Page  {
 					if (b.data.fixed) b.el.next('.fixed').addClass('show');
 
 					if (b.data.storychild) {
+						//find fixed story chil corresponding to placeholdr story child
 						var id = b.el.attr('id').replace('placeholder_','');
 						var fixedStoryChild = $('#'+id);
 						fixedStoryChild.siblings('[data-trigger]').removeClass('show');

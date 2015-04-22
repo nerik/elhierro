@@ -33,10 +33,13 @@ body:not(.debug) .fixed-placeholder {
 	position: fixed;
 	z-index: 3;
 	display: none;
+	overflow: hidden;
 
 	&.fixed-bottomLeft {
 		bottom: 50px;
 		left: 50px;
+		right: 50px;
+		height: 150px;
 	}
 
 	&.show {
@@ -46,10 +49,12 @@ body:not(.debug) .fixed-placeholder {
 
 .fixed-story {
 	& > * {
-		display: none;
+		position: absolute;
+		margin-top: 300px;
 
 		&.show {
-			display: block;
+			margin-top: 0;
+			@include transition(margin-top 0.2s ease-out);
 		}
 	}
 }
