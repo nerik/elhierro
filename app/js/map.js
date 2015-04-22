@@ -4,8 +4,6 @@ var $ = require('jquery');
 var turf_polygon = require('turf-polygon');
 var turf_point = require('turf-point');
 var turf_centroid = require('turf-centroid');
-var turf_bearing = require('turf-bearing');
-var turf_destination = require('turf-destination');
 
 import * as utils from './utils';
 
@@ -65,9 +63,11 @@ var MapWrapper = {
 			var styleName = ( _.contains(['taxi', 'andrescar'], transportMode) ) ? 'car' : transportMode;
 			$(polyline._container).attr('class','gps gps--'+styleName);
 
+			var tplData = { data: {}};
+			if (transportMode==='taxi') tplData.data.taxi = true;
 
 			var icon = L.divIcon({
-				html: gpsTpl[styleName]()
+				html: gpsTpl[styleName](tplData)
 			});
 			var picto = L.marker([0,0], {icon:icon});
 			picto.addTo(this.map);
@@ -95,23 +95,8 @@ var MapWrapper = {
 		var lastCoordIndex = Math.min( Math.floor(r*gps.coords.length), gps.coords.length-1 ) ;
 		gps.polyline.setLatLngs( gps.coords.slice(0, lastCoordIndex ) );
 
-		//calculate loction of picto
-		var bearingStartCoord = gps.coords[Math.max(0, lastCoordIndex-100)];
-		var bearingEndCoord = gps.coords[lastCoordIndex];
-		var bearingStart = turf_point( utils.swapLL(bearingStartCoord) );
-		var bearingEnd = turf_point( utils.swapLL(bearingEndCoord) );
-		var bearing = turf_bearing(bearingStart, bearingEnd);
+		gps.picto.setLatLng( gps.coords[lastCoordIndex] );
 
-		var dest = turf_destination(bearingEnd, 0.5, bearing, 'kilometers');
-
-		// console.log(dest.geometry.coordinates);
-
-
-		// gps.picto.setLatLng( utils.swapLL(dest.geometry.coordinates) );
-		gps.picto.setLatLng( bearingEndCoord );
-		var pictoTransform = `rotate(${bearing}deg)`;
-
-		$(gps.pictoInner).css('transform', pictoTransform);
 
 		if (follow) {
 			var meanCoords = gps.coords.slice( Math.max(0, lastCoordIndex-20), lastCoordIndex );

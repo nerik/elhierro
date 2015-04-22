@@ -21,12 +21,12 @@ body:not(.debug) .fixed-placeholder {
 
 
 .overlayContainer--left, .overlayContainer--right {
-	width: 300px;
+	width: 350px;
 	// min-width: 300px;
 }
 
 .overlayContainer--right {
-	left: calc(100% - 300px);
+	left: calc(100% - 350px);
 }
 
 .fixed {
@@ -55,11 +55,9 @@ body:not(.debug) .fixed-placeholder {
 
 
 .geocodedImages {
-	position: fixed;
 	display: none;
-
-
 }
+
 .geocoded {
-		width :250px;
-	}
+	width :250px;
+}

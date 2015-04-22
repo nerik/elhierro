@@ -127,7 +127,7 @@ gulp.task('html', function(){
         .pipe(template({
             pageTitle: page.title,
             content: content
-        }))
+        }, { evaluate: '' } ))
         .pipe(rename(slug+'.html'))
         .pipe(gulp.dest( config.dist ) );
 

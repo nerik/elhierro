@@ -34,7 +34,39 @@
 }
 
 .picto {
-	transform: scale(1.5);
+	margin-left: -7px;
+	background-color: $bg_light;
+	width: 20px;
+	height: 20px;
+	border-radius: 99px;
+	border: 1px solid rgba($red, .5);
+
+	.picto-inner {
+		transform: scale(.7);
+  		transform-origin: 50% 50%;
+	}
+}
+
+.picto--feet {
+	.picto-inner {
+  		transform-origin: 60% 50%;
+	}
+}
+
+.picto--car {
+	.picto-inner {
+  		transform-origin: 50% 80%;
+	}
+}
+
+.picto-taxiAddon {
+	position: absolute;
+	top: -12px;
+	left: 0;
+	font-family: LuloCleanOne-Bold;
+	text-transform: uppercase;
+	color: red;
+	font-size: 8px;
 }
 
 .geocodedImage {
