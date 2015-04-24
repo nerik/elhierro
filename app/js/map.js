@@ -178,7 +178,10 @@ var MapAPI = {
 				$('body').addClass('isModalOpen');
 				var img = $('<img>');
 				img.attr('src', this.img.attr('src').replace('medium','hi') );
-				$('.modal-inner').html(img);
+				$('.js-modal-img').html(img);
+				var latlng = this.getLatLng().lat + ',' + this.getLatLng().lon;
+				$('.js-modal-coords').html(latlng);
+
 			});
 		}
 	},

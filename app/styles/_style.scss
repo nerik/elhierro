@@ -200,11 +200,20 @@ p {
 .modal {
 	@include transition(all .4s linear);
 	background-color: rgba($night, .8);
+
+	.modal-coords {
+		position: absolute;
+		z-index: 99;
+		bottom: 100px;
+		right: 100px;
+		font-family: LuloCleanOne;
+		color: $red;
+	}
 }
 
 .isModalOpen {
 	.pageWrap {
- 		-webkit-filter: blur(5px) grayscale(50%);
+ 		// -webkit-filter: blur(5px) grayscale(50%);
 	}
 
 	.modal {
