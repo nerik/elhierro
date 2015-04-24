@@ -5,13 +5,13 @@
 
 .overlayContainer, .title, .fullpage, .fixed-placeholder, .storyBlock {
 	position: relative;
-	z-index: 2;
+	z-index: 3;
 }
 
 
-.back 	{ z-index: 0; }
-#map 	{ z-index: 1; }
-.front 	{ z-index: 2; }
+.back 	{ z-index: 1; }
+#map 	{ z-index: 2; }
+.front 	{ z-index: 3; }
 
 
 
@@ -21,12 +21,12 @@ body:not(.debug) .fixed-placeholder {
 
 
 .overlayContainer--left, .overlayContainer--right {
-	width: 350px;
+	width: 400px;
 	// min-width: 300px;
 }
 
 .overlayContainer--right {
-	left: calc(100% - 350px);
+	left: calc(100% - 400px);
 }
 
 .fixed {
@@ -60,4 +60,51 @@ body:not(.debug) .fixed-placeholder {
 
 .geocoded {
 	width :250px;
+}
+
+.imgprv {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+
+	.imgprv-inner {
+		position: absolute;
+		right: 50px;
+		bottom: 100px;
+		width: 400px;	
+	}
+
+	img {
+		width: 100%;
+	}
+
+}
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	pointer-events: none;
+	z-index: 99;
+
+	.modal-inner {
+		left: 10%;
+		position: relative;
+
+		img {
+			width: 80%;
+		}
+	}
+}
+
+.isModalOpen {
+	.modal {
+  		pointer-events: auto;
+  		opacity: 1;
+	}
+
 }

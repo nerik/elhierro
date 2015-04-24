@@ -17,6 +17,7 @@ var map = L.map('map', {
 	scrollWheelZoom: false
 });
 
+L.control.scale({imperial: false, position: 'bottomleft'}).addTo(map);
 
 require('leaflet-hash');
 var hash = new L.Hash(map);
@@ -47,7 +48,7 @@ var gpsCollection = {};
 var gpsArray = [];
 var geocodedImagesIds = [];
 
-var MapWrapper = {
+var MapAPI = {
 	initGPS: function(names, topoJsonData) {
 
 		for (var i = 0; i < topoJsonData.length; i++) {
@@ -156,21 +157,38 @@ var MapWrapper = {
 		});
 
 		var icon = L.divIcon({
-				html: '<div class="geocodedImage"><div class="geocodedImage-inner"></div></div>'
-			});
+			html: '<div class="geocodedImage"><div class="geocodedImage-inner"></div></div>'
+		});
 
-		function showMarker( img) {
+		function showMarker(img) {
 			var coords = $(img).data('coords');
-			$(img).addClass('geocoded');
+			// $(img).addClass('geocoded');
 
 			var m = new L.Marker(coords.split(','), {icon:icon} ).
-				bindPopup(img).
+				// bindPopup(img).
 				addTo(map);
+			m.img = $(img);
+
+			//FIXME memory leak
+			m.on('mouseover', function() {
+				$('.js-imgprv').html(this.img);
+			});
+
+			m.on('click', function() {
+				$('body').addClass('isModalOpen');
+				var img = $('<img>');
+				img.attr('src', this.img.attr('src').replace('medium','hi') );
+				$('.modal-inner').html(img);
+			});
 		}
+	},
+
+	clean: function() {
+		//IMPLEMENT ME :)
 	},
 
 	map: map
 };
 
 
-export default MapWrapper;
+export default MapAPI;

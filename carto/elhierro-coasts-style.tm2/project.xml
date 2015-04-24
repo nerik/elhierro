@@ -4,7 +4,7 @@
 
 <Parameters>
   <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
-  <Parameter name="center">-18.0461,27.7778,13</Parameter>
+  <Parameter name="center">-18.0474,27.7818,13</Parameter>
   <Parameter name="format">png8:m=h</Parameter>
   <Parameter name="maxzoom">18</Parameter>
   <Parameter name="minzoom">0</Parameter>
@@ -15,37 +15,37 @@
 
 <Style name="elhierro-lines-line6" filter-mode="first">
   <Rule>
-    <LineSymbolizer offset="19.5" stroke-width="0.1" stroke="#545c8f" stroke-opacity="1" />
+    <LineSymbolizer offset="24.375" stroke-width="0.15000000000000002" stroke="#bed6e2" stroke-opacity="1" />
   </Rule>
 </Style>
 <Style name="elhierro-lines-line5" filter-mode="first">
   <Rule>
-    <LineSymbolizer offset="15" stroke-width="0.2" stroke="#545c8f" stroke-opacity="1" />
+    <LineSymbolizer offset="18.75" stroke-width="0.30000000000000004" stroke="#bed6e2" stroke-opacity="1" />
   </Rule>
 </Style>
 <Style name="elhierro-lines-line4" filter-mode="first">
   <Rule>
-    <LineSymbolizer offset="11" stroke-width="0.3" stroke="#545c8f" stroke-opacity="1" />
+    <LineSymbolizer offset="13.75" stroke-width="0.44999999999999996" stroke="#bed6e2" stroke-opacity="1" />
   </Rule>
 </Style>
 <Style name="elhierro-lines-line3" filter-mode="first">
   <Rule>
-    <LineSymbolizer offset="7.5" stroke-width="0.4" stroke="#545c8f" stroke-opacity="1" />
+    <LineSymbolizer offset="9.375" stroke-width="0.6000000000000001" stroke="#bed6e2" stroke-opacity="1" />
   </Rule>
 </Style>
 <Style name="elhierro-lines-line2" filter-mode="first">
   <Rule>
-    <LineSymbolizer offset="4.5" stroke-width="0.5" stroke="#545c8f" stroke-opacity="1" />
+    <LineSymbolizer offset="5.625" stroke-width="0.75" stroke="#bed6e2" stroke-opacity="1" />
   </Rule>
 </Style>
 <Style name="elhierro-lines-line1" filter-mode="first">
   <Rule>
-    <LineSymbolizer offset="2" stroke-width="0.6" stroke="#545c8f" stroke-opacity="1" />
+    <LineSymbolizer offset="2.5" stroke-width="0.8999999999999999" stroke="#bed6e2" stroke-opacity="1" />
   </Rule>
 </Style>
 <Style name="elhierro-lines" filter-mode="first">
   <Rule>
-    <LineSymbolizer stroke-width="1" stroke="#545c8f" stroke-opacity="1" />
+    <LineSymbolizer stroke-width="1.5" stroke="#bed6e2" stroke-opacity="1" />
   </Rule>
 </Style>
 <Layer name="elhierro-lines"

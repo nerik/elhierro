@@ -47,4 +47,8 @@ function updateGPS(block, startOrEnd) {
 	map.updateGPS(block.data.gpstrace, r, !_.isUndefined(block.data.gpstracefollow) );
 }
 
+$('.modal').on('click', e => {
+	$('body').removeClass('isModalOpen');
+});
+
 export default page;

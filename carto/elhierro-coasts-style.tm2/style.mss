@@ -1,5 +1,5 @@
 Map {
-  //background-color: #fde7b9;
+  //background-color: @bg_light;
 }
 
 @bg: #fde7b9;
@@ -7,10 +7,10 @@ Map {
 @emerald: #4bc8b3;
 @night_light: #545c8f;
 
-@line : @night_light;
+@line : #bed6e2;
 @op: 1;
-@rOffset: 1;
-@rWidth: 1;
+@rOffset: 1.25;
+@rWidth: 1.5;
 
 #elhierro-lines {
   line-width: 1*@rWidth;

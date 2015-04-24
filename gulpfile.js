@@ -77,7 +77,8 @@ gulp.task('topojson', function () {
 gulp.task('js', function() {
     return browserify({
         entries: './app/js/main.js',
-        debug: true,
+        standalone: 'beep',
+        debug: config.debug,
         transform: [babelify]
     })
     .bundle()
@@ -143,12 +144,18 @@ gulp.task('fonts', function() {
         .pipe( gulp.dest(config.dist+'/fonts') );
 });
 
-gulp.task('illu', function() {
+gulp.task('extra', function() {
     var mergedStreams = mergeStream();
 
+    var stream = gulp.src('app/extra/**/*')
+            .pipe( gulp.dest(config.dist+'/extra') );
+    mergedStreams.add(stream);
+
+    var pageStream;
+
     for (var pageIndex = 0; pageIndex < config.pages.length; pageIndex++) {
-        var stream = gulp.src('app/data/'+pageIndex+'/illu/**/*')
-            .pipe( gulp.dest(config.dist+'/data/'+pageIndex+'/illu') );
+        pageStream = gulp.src('app/data/'+pageIndex+'/extra/**/*')
+            .pipe( gulp.dest(config.dist+'/data/'+pageIndex+'/extra') );
 
         mergedStreams.add(stream);
     }
@@ -156,7 +163,7 @@ gulp.task('illu', function() {
 
 });
 
-gulp.task('build', ['sass','js','html', 'fonts', 'illu'], function () {
+gulp.task('build', ['sass','js','html', 'fonts', 'extra'], function () {
 
 });
 

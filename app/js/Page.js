@@ -74,7 +74,9 @@ export default class Page  {
 	_start() {
 		document.addEventListener( 'scroll', e => this._onScroll() );
 		this._prevY = 0;
+		this._title = $('h1');
 		this._onScroll();
+		$('.title-overlay').addClass('title-overlay--ready');
 	}
 
 	_onScroll() {
@@ -85,6 +87,8 @@ export default class Page  {
 		var down = delta > 0;
 		this._prevY = y;
 		var isInBlock = false;
+		var titleY = -50 - (window.scrollY*0.02);
+		this._title.css('margin-top', titleY + '%' );
 
 		for (var i = 0; i < this.data.scrollBlocks.length; i++) {
 			var b = this.data.scrollBlocks[i];
@@ -121,8 +125,8 @@ export default class Page  {
 
 					b.el.next('.fixed').removeClass('show');
 
-					if (b.data.revealparent) {
-						// b.el.parent('.concealed').removeClass('concealed--revealed');
+					if (b.data.concealparent) {
+						b.el.parents('.concealed').removeClass('concealed--revealed');
 					}
 				}
 			}
