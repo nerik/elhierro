@@ -4,6 +4,7 @@ var $ = require('jquery');
 var turf_polygon = require('turf-polygon');
 var turf_point = require('turf-point');
 var turf_centroid = require('turf-centroid');
+var formatcoords = require('formatcoords');
 
 import * as utils from './utils';
 
@@ -179,7 +180,8 @@ var MapAPI = {
 				var img = $('<img>');
 				img.attr('src', this.img.attr('src').replace('medium','hi') );
 				$('.js-modal-img').html(img);
-				var latlng = this.getLatLng().lat + ',' + this.getLatLng().lon;
+				// var latlng = this.getLatLng().lat + ',' + this.getLatLng().ng;
+				var latlng = formatcoords(this.getLatLng()).format();
 				$('.js-modal-coords').html(latlng);
 
 			});
