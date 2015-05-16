@@ -7,6 +7,7 @@ var argv = require('yargs').argv;
 var fs = require('fs');	
 var path = require('path');
 var execSync = require('child_process').execSync;
+var _ = require('underscore');
 
 var sourcePath = argv.s;
 var outputPath = argv.o;
@@ -18,6 +19,12 @@ var sourceFiles = fs.readdirSync(sourcePath);
 sourceFiles.sort( function (fileA, fileB) {
 	return fs.statSync( path.join(sourcePath, fileA) ).mtime.getTime() - fs.statSync( path.join(sourcePath , fileB) ).mtime.getTime();
 });
+
+//remove non images
+sourceFiles = _.reject (sourceFiles, function (f) {
+	return f.search(/\.jpg$/i) === -1;
+});
+
 
 var endIndex = argv.end || sourceFiles.length;
 var numFiles = endIndex - startIndex;
@@ -66,9 +73,9 @@ function makeSpritesheets() {
 	var targetWidth = 256;
 	var sheetWidth = 2048;
 
-	var targetHeight = targetWidth*.75;
+	var targetHeight = targetWidth*0.75;
 	var gridCols = sheetWidth/targetWidth;
-	var gridRows = Math.floor(gridCols/.75);
+	var gridRows = Math.floor(gridCols/0.75);
 	var spritesInSheet = gridCols * gridRows;
 
 	var numSS = Math.ceil(numFiles/spritesInSheet);

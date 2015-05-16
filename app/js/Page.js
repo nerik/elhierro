@@ -4,6 +4,7 @@ var $ = require('jquery');
 var Backbone = require('backbone');
 
 import * as utils from './utils';
+import Timelapse from './Timelapse';
 
 export default class Page  {
 	constructor(index) {
@@ -112,6 +113,7 @@ export default class Page  {
 					if (b.data.revealparent) {
 						b.el.parents('.concealed').addClass('concealed--revealed');
 					}
+
 				}
 
 				isInBlock = true;				
@@ -132,6 +134,16 @@ export default class Page  {
 			}
 		}
 		// if (!isInBlock) this._currentScrollBlockIndex = -1;
+	}
+
+
+	startTimelapse() {
+		this._timelapse = new Timelapse();
+
+	}	
+
+	updateTimelapse(r) {
+		this._timelapse.update(r);
 	}
 
 
@@ -183,31 +195,6 @@ export default class Page  {
 		// // 						.openOn(map);
 		// // var video = document.querySelector('.video-player');
 
-		// var numImages = 1026;
-		// var targetWidth = 256;
-		// var sheetWidth = 2048;
-
-		// var targetHeight = targetWidth*.75;
-		// var gridCols = sheetWidth/targetWidth;
-		// var gridRows = Math.floor(gridCols/.75);
-		// var spritesInSheet = gridCols * gridRows;
-		// var numSS = Math.ceil(numImages/spritesInSheet);
-
-		// var spritesheets = [];
-		// var currentSpriteSheetIndex, currentSpriteSheetContainer, currentSpriteSheetCoords;
-		// var img;
-
-		// var timelapse = document.querySelector('.timelapse');
-		// var timelapseLow = document.querySelector('.timelapse-low');
-		// var timelapseMedium = document.querySelector('.timelapse-medium');
-
-		// for (var i = 0; i < numSS; i++) {
-		// 	img = document.createElement('div');
-		// 	img.style.backgroundImage = 'url(data/6/timelapse/spritesheet_' + i + '.jpg)'; 
-		// 	img.style.display = 'none'; 
-		// 	spritesheets.push(img);
-		// 	timelapseLow.appendChild(img);
-		// }
 
 
 

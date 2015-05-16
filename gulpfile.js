@@ -38,7 +38,12 @@ var config = {
         {}, 
         {
             slug: 'jour6-faro-de-orchilla--malpaso',
-            title: 'Jour 6'
+            title: 'Jour 6',
+            gps: [
+                { n: '0_car' },
+                { n: '1_feet' },
+                { n: '2_car' }
+            ]
         },
         {}
     ]
@@ -127,6 +132,7 @@ gulp.task('html', function(){
         var stream = gulp.src('./app/html/layout.html')
         .pipe(template({
             pageTitle: page.title,
+            pageIndex: pageIndex,
             content: content
         }, { evaluate: '' } ))
         .pipe(rename(slug+'.html'))

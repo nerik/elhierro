@@ -6,8 +6,8 @@ var L = require('leaflet/dist/leaflet-src');
 import Page from './Page';
 import map from './map';
 
-
-var page = new Page(3);
+var pageIndex = document.body.id;
+var page = new Page(pageIndex);
 page.test(map.map);
 
 //when at the end of the page : load next page + dependencies (js, spritesheets, images, topjpson) + n+2 page intro
@@ -16,23 +16,34 @@ page.test(map.map);
 page.on('load:gps', (names, topoJsonData) => map.initGPS(names, topoJsonData) );
 
 page.on('scrollblock:scroll', block => {
-	if (block.data.gpstrace) updateGPS(block);	
+	if (block.data.gpstrace) {
+		var progress = updateGPS(block);
+		if (block.data.timelapse) {
+			page.updateTimelapse(block, progress);
+		}
+	}	
+	
 });
 
 page.on('scrollblock:enter', (block, down) => {
 	if (block.data.gpstrace) {
-		updateGPS( block, (down) ? -1 : 1 );
+		var progress = updateGPS( block, (down) ? -1 : 1 );
 		map.updateGPSStatuses( block.data.gpstrace );
+
+		if (block.data.timelapse) {
+			page.startTimelapse();
+		}
 	}
 	if (block.data.mapview) map.setView(block.data.mapview);
 
 	if (block.data.geocodedimages) map.showGeocodedImages( block.el );
 });
+
 page.on('scrollblock:leave', (block, down) => {
 	if (block.data.gpstrace) updateGPS(block, (down) ? 1 : -1 );
 });
 
-function updateGPS(block, startOrEnd) {
+function getProgressOnGPSTrack(block, startOrEnd) {
 	var start = (block.data.gpstracestart) ? block.data.gpstracestart : 0;
 	var end = 	(block.data.gpstraceend) ? 	 block.data.gpstraceend : 1;
 
@@ -43,8 +54,13 @@ function updateGPS(block, startOrEnd) {
 	} else {
 		r = (startOrEnd===-1) ? start : end;
 	}  
+	return r;
+}
 
+function updateGPS(block, startOrEnd) {
+	var r = getProgressOnGPSTrack(block, startOrEnd);
 	map.updateGPS(block.data.gpstrace, r, !_.isUndefined(block.data.gpstracefollow) );
+	return r;
 }
 
 $('.modal').on('click', e => {
