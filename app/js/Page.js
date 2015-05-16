@@ -1,5 +1,4 @@
 var _ = require('underscore');
-var L = require('leaflet/dist/leaflet-src');
 var $ = require('jquery');
 var Backbone = require('backbone');
 
@@ -55,9 +54,11 @@ export default class Page  {
 
 		this.data.gpstrace = _.uniq(this.data.gpstrace);
 
-		//preload timelapse spritesheets...
 		
-
+		this.data.timelapse = $('[data-timelapse]').length;
+		if (this.data.timelapse) {
+			$('.js-imgprv').hide();
+		}
 
 	}
 
@@ -70,14 +71,20 @@ export default class Page  {
 
 			this._start();
 		});
+
+
+		//preload timelapse spritesheets...
 	}
 
 	_start() {
-		document.addEventListener( 'scroll', e => this._onScroll() );
 		this._prevY = 0;
 		this._title = $('h1');
-		this._onScroll();
+		
 		$('.title-overlay').addClass('title-overlay--ready');
+
+		if (this.data.timelapse) this._timelapse = new Timelapse();
+		document.addEventListener( 'scroll', e => this._onScroll() );
+		this._onScroll();
 	}
 
 	_onScroll() {
@@ -99,8 +106,6 @@ export default class Page  {
 
 				b.r = r;
 
-				this.trigger('scrollblock:scroll', b);
-
 				if ( !_.contains(this._currentScrollBlockIndexes, i) ) {
 					// console.log('enter:',b.data.gpstrace,down)
 					this._currentScrollBlockIndexes.push(i);
@@ -115,6 +120,8 @@ export default class Page  {
 					}
 
 				}
+				this.trigger('scrollblock:scroll', b);
+
 
 				isInBlock = true;				
 
@@ -132,17 +139,18 @@ export default class Page  {
 					}
 				}
 			}
+
+
 		}
 		// if (!isInBlock) this._currentScrollBlockIndex = -1;
 	}
 
 
 	startTimelapse() {
-		this._timelapse = new Timelapse();
-
+		$('.js-imgprv').show();
 	}	
 
-	updateTimelapse(r) {
+	updateTimelapse(block, r) {
 		this._timelapse.update(r);
 	}
 

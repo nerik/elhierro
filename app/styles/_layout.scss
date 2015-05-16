@@ -67,6 +67,7 @@ body:not(.debug) .fixed-placeholder {
 	height: 100%;
 	width: 100%;
 	top: 0;
+	pointer-events: none;
 
 	.imgprv-inner {
 		position: absolute;

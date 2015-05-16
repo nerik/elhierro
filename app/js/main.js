@@ -19,7 +19,7 @@ page.on('scrollblock:scroll', block => {
 	if (block.data.gpstrace) {
 		var progress = updateGPS(block);
 		if (block.data.timelapse) {
-			page.updateTimelapse(block, progress);
+			page.updateTimelapse(block, block.r);
 		}
 	}	
 	
