@@ -16,8 +16,10 @@
 }
 
 .gps--para path {
-	stroke-linecap: round;
-  	stroke-dasharray: .1,10;
+    stroke-width: 2px;
+    stroke-opacity: 1;
+	// stroke-linecap: round;
+  	// stroke-dasharray: .1,10;
 }
 
 .gps--plane path {

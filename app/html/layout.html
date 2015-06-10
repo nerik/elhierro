@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
 	<title>El Hierro - <%= pageTitle %></title>
 	<link rel="stylesheet" href="main.css">
-	<link rel="stylesheet" href="style.css">
 </head>
 <body class="" id="<%= pageIndex %>">
 	
@@ -19,7 +18,7 @@
 		</div>
 	</div>
 
-	<div class="modal">
+	<div class="modal" id="modal">
 		<div class="modal-coords js-modal-coords"></div>
 		<div class="modal-inner">
 			<div class="js-modal-img">
@@ -74,6 +73,7 @@
 		</pattern>
 	</script>
 		
+	<script src="app/js/vendor/three.min.js"></script>
 	<script src="app/js/main.js"></script>
 
 </body>

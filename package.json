@@ -36,6 +36,7 @@
     "leaflet-hash": "^0.2.1",
     "merge-stream": "^0.1.7",
     "moment": "^2.10.2",
+    "togeojson": "^0.11.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "xml2js": "^0.4.8",

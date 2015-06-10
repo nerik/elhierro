@@ -34,8 +34,19 @@ var config = {
                 { n: '2_taxi' }
             ]
         },
-        {}, 
-        {}, 
+        {
+            slug: 'jour4-charco-manso--la-restinga--Bahia-de-Naos',
+            title: 'Jour 4'
+        }, 
+        {
+            slug: 'jour5-el-golfo',
+            title: 'Jour 5',
+            gps: [
+                { n: '0_feet' },
+                { n: '1_andrescar' },
+                { n: '2_para', props: 'altitudes' }
+            ]
+        }, 
         {
             slug: 'jour6-faro-de-orchilla--malpaso',
             title: 'Jour 6',
@@ -61,9 +72,9 @@ gulp.task('topojson', function () {
             var topoJsonProps = (gps.props) ? '-p '+ gps.props : '';
 
             var pipes = [
-                'togeojson raw/gpx_corrected/'+i+'/'+gps.n + '.gpx',
+                './node_modules/.bin/togeojson raw/gpx_corrected/'+i+'/'+gps.n + '.gpx',
                 './scripts/geojson.js',
-                'topojson -q 1e5 ' + topoJsonProps           
+                './node_modules/.bin/topojson -q 1e5 ' + topoJsonProps           
             ];
 
             var dest = path.join('./dist/data', ''+i, gps.n + '.topojson' );
@@ -82,7 +93,6 @@ gulp.task('topojson', function () {
 gulp.task('js', function() {
     return browserify({
         entries: './app/js/main.js',
-        standalone: 'beep',
         debug: config.debug,
         transform: [babelify]
     })
@@ -95,6 +105,11 @@ gulp.task('js', function() {
         // .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('js-vendor', ['js'], function() {
+    return gulp.src('app/js/vendor/**/*')
+        .pipe( gulp.dest(config.dist+'/app/js/vendor') );
 });
 
 gulp.task('sass', ['cssToSass'], function () {
@@ -169,7 +184,7 @@ gulp.task('extra', function() {
 
 });
 
-gulp.task('build', ['sass','js','html', 'fonts', 'extra'], function () {
+gulp.task('build', ['sass','js','js-vendor','html', 'fonts', 'extra'], function () {
 
 });
 

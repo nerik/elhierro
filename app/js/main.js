@@ -3,17 +3,25 @@ window.$ = require('jquery');
 var _ = require('underscore');
 var L = require('leaflet/dist/leaflet-src');
 
+import CustomPage5 from './pages/5';
 import Page from './Page';
 import map from './map';
 
-var pageIndex = document.body.id;
+var pageIndex = parseInt(document.body.id);
 var page = new Page(pageIndex);
 page.test(map.map);
 
 //when at the end of the page : load next page + dependencies (js, spritesheets, images, topjpson) + n+2 page intro
 
 
-page.on('load:gps', (names, topoJsonData) => map.initGPS(names, topoJsonData) );
+
+page.on('load:gps', (names, topoJsonData) => {
+	map.initGPS(names, topoJsonData);
+	if (pageIndex === 5) {
+		CustomPage5(map);
+	}
+
+});
 
 page.on('scrollblock:scroll', block => {
 	if (block.data.gpstrace) {
@@ -63,8 +71,8 @@ function updateGPS(block, startOrEnd) {
 	return r;
 }
 
-$('.modal').on('click', e => {
-	$('body').removeClass('isModalOpen');
-});
+// $('.modal').on('click', e => {
+// 	$('body').removeClass('isModalOpen');
+// });
 
 export default page;

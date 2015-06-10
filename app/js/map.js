@@ -56,7 +56,7 @@ var MapAPI = {
 		for (var i = 0; i < topoJsonData.length; i++) {
 			var topo = topoJsonData[i];
 			var geo = topojson.feature(topo, topo.objects.stdin);
-			var coords = geo.features[0].geometry.coordinates.map( coord => [coord[1], coord[0]] );
+			var coords = geo.features[0].geometry.coordinates.map( coord => [coord[1], coord[0], coord[2]] );
 			var name = names[i];
 
 			var polyline = L.polyline([]).addTo(map);
@@ -110,6 +110,8 @@ var MapAPI = {
 			var centroid = turf_centroid(polygon);
 			map.panTo( centroid.geometry.coordinates, {animate: false});
 		}
+
+		return gps;
 	},
 
 	updateGPSStatuses: function(currentlyEntering) {
