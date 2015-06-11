@@ -6,6 +6,7 @@ var turf_polygon = require('turf-polygon');
 var turf_point = require('turf-point');
 var turf_centroid = require('turf-centroid');
 var formatcoords = require('formatcoords');
+require('leaflet-graphicscale');
 
 import * as utils from './utils';
 
@@ -18,8 +19,6 @@ var map = L.map('map', {
 	maxZoom: 20,
 	scrollWheelZoom: false
 });
-
-L.control.scale({imperial: false, position: 'bottomleft'}).addTo(map);
 
 require('leaflet-hash');
 var hash = new L.Hash(map);
@@ -38,6 +37,7 @@ L.tileLayer('https://{s}.tiles.mapbox.com/v3/{key}/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
+var graphicScale = L.control.graphicScale().addTo(map);
 
 var gpsTpl = {
 	feet: _.template( $('.js-tpl-gps-feet').html() ),
