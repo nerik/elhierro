@@ -37,7 +37,10 @@ L.tileLayer('https://{s}.tiles.mapbox.com/v3/{key}/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-var graphicScale = L.control.graphicScale().addTo(map);
+var graphicScale = L.control.graphicScale({
+			fill: 'hollow',
+        showSubunits: true
+}).addTo(map);
 
 var gpsTpl = {
 	feet: _.template( $('.js-tpl-gps-feet').html() ),

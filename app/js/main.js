@@ -71,8 +71,8 @@ function updateGPS(block, startOrEnd) {
 	return r;
 }
 
-// $('.modal').on('click', e => {
-// 	$('body').removeClass('isModalOpen');
-// });
+$('.modal').on('click', e => {
+	$('body').removeClass('isModalOpen');
+});
 
 export default page;

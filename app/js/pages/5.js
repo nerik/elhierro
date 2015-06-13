@@ -7,20 +7,54 @@ let mouseXOnMouseDown, mouseX;
 let windowHalfX = window.innerWidth / 2;
 let windowHalfY = window.innerHeight / 2;
 
-let scale = 12;
+let meshScale = 2000;
+let meshScaleAlt = .02;
+let currentScale = 1;
+
+let colorStops = [
+    {
+        r:0,
+        c: new THREE.Color(0xa5e071)
+    },
+    {
+        r: .25,
+        c: new THREE.Color(0xa5e071) 
+    },
+    {
+        r: .6,
+        c: new THREE.Color(0xf2be20)  
+    },
+    {
+        r: 1,
+        c: new THREE.Color(0xa3835d)  
+    }
+];
+
+
 
 function init(map) {
-    var gps = map.updateGPS('2_para',1);
+    let gps = map.updateGPS('2_para',1);
     console.log(gps);
     // return
     $('body').addClass('isModalOpen');
 
+    let width = window.innerWidth;
+    let height = window.innerHeight;
     camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
-    camera.position.z = 1000;
+    // camera = new THREE.OrthographicCamera( width / - 2, width / 2, height / 2, height / - 2, 0, 1000 );;
+
+    var currentCamDistance = 50;
+    camera.position.y = currentCamDistance/2;
+    camera.position.x = currentCamDistance;
+    camera.position.z = currentCamDistance;
+
+    camera.lookAt( new THREE.Vector3(0,0,0))
 
     scene = new THREE.Scene();
 
     buildScene(gps.coords);
+
+        setScale(currentScale);
 
     renderer = new THREE.WebGLRenderer({ antialias: true/*, alpha:true*/ });
     renderer.setClearColor(0x2c4164)
@@ -28,19 +62,19 @@ function init(map) {
 
     document.getElementById('modal').appendChild( renderer.domElement );
 
+    map.map.on('click', function  (e) {
+        $('body').addClass('isModalOpen');
+    });
+
+
+
     initEvents();
 
     animate();
 }
 
 function buildScene(gpsCoords) {
-    let sampleClosedSpline = new THREE.ClosedSplineCurve3([
-        new THREE.Vector3(-40,0, -40),
-        new THREE.Vector3(40,20, -40),
-        new THREE.Vector3(140,0, -40),
-        new THREE.Vector3(40,50, 40),
-        new THREE.Vector3(-40,0, 40),
-    ]);
+
 
     let splineCoords = [];
     let g, lat, lon, alt, v, x, z, y;
@@ -49,6 +83,8 @@ function buildScene(gpsCoords) {
     // var lonMin =  Number.POSITIVE_INFINITY;
     // var latMax =  Number.NEGATIVE_INFINITY;
     // var lonMax =  Number.NEGATIVE_INFINITY;
+    // var altMax = Number.NEGATIVE_INFINITY;
+    // var altMin = Number.POSITIVE_INFINITY;
 
     let latMin = 27.732765;
     let latMax = 27.772151;
@@ -56,6 +92,9 @@ function buildScene(gpsCoords) {
     let lonMax = -17.981946;
     let latAmp = 0.039386000000000365;
     let lonAmp = 0.051719999999999544;
+    let altMin = 231;
+    let altMax = 1345;
+    let altAmp = 1114;
 
     for (var i = 0; i < gpsCoords.length; i++) {
         
@@ -68,10 +107,12 @@ function buildScene(gpsCoords) {
         // if (lon<lonMin) lonMin = lon;
         // if (lat>latMax) latMax = lat;
         // if (lon>lonMax) lonMax = lon;
+        // if (alt<altMin) altMin = alt;
+        // if (alt>altMax) altMax = alt;
 
-        x = (lon - lonMin)*2000;
-        z = (lat - latMin)*2000;
-        y = (alt- 200)/50;
+        x = -(lon - lonMin)*meshScale;
+        z = (lat - latMin)*meshScale;
+        y = (alt- altMin)*meshScaleAlt;
 
         v = new THREE.Vector3(
             x,
@@ -81,17 +122,19 @@ function buildScene(gpsCoords) {
         splineCoords.push(v);
     };
 
-    let spline = new THREE.ClosedSplineCurve3(splineCoords);
+    console.log(altMin, altMax)
 
-    meshContainer = new THREE.Object3D();
-    scene.add( meshContainer );
+    let spline = new THREE.SplineCurve3(splineCoords);
 
     //                                    path, segments, radius, radiusSegments, closed
-    let geometry = new THREE.TubeGeometry(spline, 500, .4, 4, false);
+    let geometry = new THREE.TubeGeometry(spline, 500, .4, 10, false);
 
+    //vertex colors
     let faceIndices = [ 'a', 'b', 'c', 'd' ];
-    let color, f, f2, f3, p, n, vertexIndex;
-    color = new THREE.Color( Math.random()*0xffffff );
+    let f, f2, f3, p, n, vertexIndex;
+    // color = new THREE.Color( Math.random()*0xffffff );
+
+    var yMax = altAmp * meshScaleAlt;
     //tint using vertex colors
     for ( let i = 0; i < geometry.faces.length; i ++ ) {
 
@@ -107,9 +150,11 @@ function buildScene(gpsCoords) {
 
             p = geometry.vertices[ vertexIndex ];
 
-            // color.setHSL( ( p.y / radius + 1 ) / 2, 1.0, 0.5 );
+            let r = Math.min(1, p.y/yMax);
+            // r = .05 + (1-r)*.3;
 
-            f.vertexColors[ j ] = color;
+
+            f.vertexColors[ j ] = getColorAt(r);
 
         }
 
@@ -117,19 +162,52 @@ function buildScene(gpsCoords) {
 
     let materials = [
         new THREE.MeshBasicMaterial( { color: 0xffffff, shading: THREE.FlatShading, vertexColors: THREE.VertexColors } ),
-        new THREE.MeshBasicMaterial( { color: 0x00ff00, shading: THREE.FlatShading, wireframe: true, transparent: true } )
+        // new THREE.MeshBasicMaterial( { color: 0x0, shading: THREE.FlatShading, wireframe: true, transparent: true } )
     ];
 
-    // mesh = new THREE.Mesh(geometry, material);
+    meshContainer = new THREE.Object3D();
+    // meshContainer.position.x = -200;
+    scene.add( meshContainer );
+
+
     mesh = THREE.SceneUtils.createMultiMaterialObject( geometry, materials );
-    mesh.scale.set( scale, scale, scale );
+    mesh.position.x = (lonAmp/2)*meshScale;
+    mesh.position.z = -(latAmp/2)*meshScale;
+    // mesh.scale.set( scale, scale, scale );
 
     meshContainer.add( mesh );
 
+    scene.add(new THREE.AxisHelper(100));
+    scene.add(new THREE.GridHelper(1000,100));
+
+}
+
+function getColorAt(r) {
+    let startColor, endColor, startR, endR;
+    for (let i = 0; i < 3; i++) {
+        if (r <= colorStops[i+1].r) {
+            startColor = colorStops[i].c.clone();
+            endColor = colorStops[i+1].c;
+            startR = colorStops[i].r;
+            endR = colorStops[i+1].r;
+            break;
+        }
+    };    
+
+    let finalR = (r - startR)/(endR - startR);
+
+    return startColor.lerp( endColor, finalR );    
+}
+
+
+function setScale(dist) {
+
+    meshContainer.scale.set( dist, dist, dist );
 }
 
 function initEvents() {
     renderer.domElement.addEventListener( 'mousedown', onDocumentMouseDown, false );
+    renderer.domElement.addEventListener( 'wheel', onDocumentMouseWheel, false );
 }
 
 function onDocumentMouseDown(event) {
@@ -159,6 +237,12 @@ function onDocumentMouseUp(event) {
 
 function onDocumentMouseOut(event) {
     clearEvents();
+}
+
+function onDocumentMouseWheel(event) {
+    console.log(event.wheelDelta);
+    setScale(currentScale += event.wheelDelta/100);
+
 }
 
 function clearEvents(event) {
