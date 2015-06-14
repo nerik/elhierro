@@ -4,12 +4,13 @@ var _ = require('underscore');
 var L = require('leaflet/dist/leaflet-src');
 
 import CustomPage5 from './pages/5';
+import CustomPage4 from './pages/4';
 import Page from './Page';
 import map from './map';
 
 var pageIndex = parseInt(document.body.id);
 var page = new Page(pageIndex);
-page.test(map.map);
+
 
 //when at the end of the page : load next page + dependencies (js, spritesheets, images, topjpson) + n+2 page intro
 
@@ -17,6 +18,9 @@ page.test(map.map);
 
 page.on('load:gps', (names, topoJsonData) => {
 	map.initGPS(names, topoJsonData);
+	if (pageIndex === 4) {
+		CustomPage4(map, page);
+	}
 	if (pageIndex === 5) {
 		CustomPage5(map, page);
 	}

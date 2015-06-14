@@ -1,0 +1,2 @@
+curl 'https://nerik.cartodb.com/api/v1/map/named?api_key=f0cd82cca188ad5ceb4bfbabeb0bd893c13c4e01' -H 'Content-Type: application/json' -d @scripts/cartodb.json
+curl -X POST 'https://nerik.cartodb.com/api/v1/map/named/test2' -H 'Content-Type: application/json'

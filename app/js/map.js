@@ -1,3 +1,4 @@
+
 var L = require('leaflet/dist/leaflet-src');
 var _ = require('underscore');
 var $ = require('jquery');
@@ -7,6 +8,7 @@ var turf_point = require('turf-point');
 var turf_centroid = require('turf-centroid');
 var formatcoords = require('formatcoords');
 require('leaflet-graphicscale');
+require('leaflet-hash');
 
 import * as utils from './utils';
 
@@ -20,7 +22,6 @@ var map = L.map('map', {
 	scrollWheelZoom: false
 });
 
-require('leaflet-hash');
 var hash = new L.Hash(map);
 
 map.on('click', function  (e) {
@@ -37,9 +38,11 @@ L.tileLayer('https://{s}.tiles.mapbox.com/v3/{key}/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
+map.attributionControl.setPrefix('');
+
 var graphicScale = L.control.graphicScale({
-			fill: 'hollow',
-        showSubunits: true
+	fill: 'hollow',
+    showSubunits: true
 }).addTo(map);
 
 var gpsTpl = {
@@ -47,6 +50,8 @@ var gpsTpl = {
 	car: _.template( $('.js-tpl-gps-car').html() ),
 	para: _.template( $('.js-tpl-gps-para').html() )
 };
+
+
 
 
 var gpsCollection = {};
