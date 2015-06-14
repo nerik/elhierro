@@ -45,7 +45,7 @@ var graphicScale = L.control.graphicScale({
 var gpsTpl = {
 	feet: _.template( $('.js-tpl-gps-feet').html() ),
 	car: _.template( $('.js-tpl-gps-car').html() ),
-	para: _.template( $('.js-tpl-gps-feet').html() )
+	para: _.template( $('.js-tpl-gps-para').html() )
 };
 
 
@@ -94,6 +94,10 @@ var MapAPI = {
 		$('.leaflet-overlay-pane svg').prepend( $('.js-tpl-svg-patterns').html() );
 
 
+	},
+
+	getGPS: function(name) {
+		return gpsCollection[name];
 	},
 
 	updateGPS: function (name, r, follow) {

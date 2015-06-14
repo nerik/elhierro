@@ -18,7 +18,7 @@ page.test(map.map);
 page.on('load:gps', (names, topoJsonData) => {
 	map.initGPS(names, topoJsonData);
 	if (pageIndex === 5) {
-		CustomPage5(map);
+		CustomPage5(map, page);
 	}
 
 });

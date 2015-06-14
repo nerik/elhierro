@@ -61,6 +61,12 @@
 	}
 }
 
+.picto--para {
+    .picto-inner {
+        transform-origin: 0% 40%;
+    }
+}
+
 .picto-taxiAddon {
 	position: absolute;
 	top: -12px;

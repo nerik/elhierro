@@ -30,13 +30,22 @@ let colorStops = [
     }
 ];
 
+let initialized;
 
 
-function init(map) {
-    let gps = map.updateGPS('2_para',1);
-    console.log(gps);
-    // return
-    $('body').addClass('isModalOpen');
+
+function init(map, page) {
+    let gps = map.getGPS('2_para');
+
+    page.on('scrollblock:enter', (block) => {
+        if (block.data.three && !initialized) initThree(gps, block.el[0]);
+    });
+}
+
+function initThree(gps, el) {
+
+    initialized = true;
+    // $('body').addClass('isModalOpen');
 
     let width = window.innerWidth;
     let height = window.innerHeight;
@@ -60,11 +69,11 @@ function init(map) {
     renderer.setClearColor(0x2c4164)
     renderer.setSize( window.innerWidth, window.innerHeight );
 
-    document.getElementById('modal').appendChild( renderer.domElement );
+    el.appendChild( renderer.domElement );
 
-    map.map.on('click', function  (e) {
-        $('body').addClass('isModalOpen');
-    });
+    // map.map.on('click', function  (e) {
+    //     $('body').addClass('isModalOpen');
+    // });
 
 
 
@@ -127,7 +136,7 @@ function buildScene(gpsCoords) {
     let spline = new THREE.SplineCurve3(splineCoords);
 
     //                                    path, segments, radius, radiusSegments, closed
-    let geometry = new THREE.TubeGeometry(spline, 500, .4, 10, false);
+    let geometry = new THREE.TubeGeometry(spline, 1000, .2, 10, false);
 
     //vertex colors
     let faceIndices = [ 'a', 'b', 'c', 'd' ];
@@ -161,7 +170,8 @@ function buildScene(gpsCoords) {
     }
 
     let materials = [
-        new THREE.MeshBasicMaterial( { color: 0xffffff, shading: THREE.FlatShading, vertexColors: THREE.VertexColors } ),
+        new THREE.MeshLambertMaterial( { color: 0xffffff, vertexColors: THREE.VertexColors } ),
+        // new THREE.MeshBasicMaterial( { color: 0xffffff, shading: THREE.FlatShading, vertexColors: THREE.VertexColors } ),
         // new THREE.MeshBasicMaterial( { color: 0x0, shading: THREE.FlatShading, wireframe: true, transparent: true } )
     ];
 
@@ -176,6 +186,13 @@ function buildScene(gpsCoords) {
     // mesh.scale.set( scale, scale, scale );
 
     meshContainer.add( mesh );
+
+    var light = new THREE.PointLight( 0xffffff, 1, 300 );
+    light.position.set( 0, 15, 0 );
+    scene.add( light );
+
+    var light2 = new THREE.AmbientLight( 0x909090 ); // soft white light
+    scene.add( light2 );
 
     scene.add(new THREE.AxisHelper(100));
     scene.add(new THREE.GridHelper(1000,100));
@@ -207,7 +224,7 @@ function setScale(dist) {
 
 function initEvents() {
     renderer.domElement.addEventListener( 'mousedown', onDocumentMouseDown, false );
-    renderer.domElement.addEventListener( 'wheel', onDocumentMouseWheel, false );
+    // renderer.domElement.addEventListener( 'wheel', onDocumentMouseWheel, false );
 }
 
 function onDocumentMouseDown(event) {
@@ -256,8 +273,10 @@ function clearEvents(event) {
 function animate() {
  
     requestAnimationFrame( animate.bind(this) );
+    var d = ( targetRotation - meshContainer.rotation.y ) * 0.05;
 
-    meshContainer.rotation.y += ( targetRotation - meshContainer.rotation.y ) * 0.05;
+
+    meshContainer.rotation.y += d;
 
     renderer.render( scene, camera );
 }
