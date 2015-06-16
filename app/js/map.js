@@ -25,7 +25,7 @@ var map = L.map('map', {
 var hash = new L.Hash(map);
 
 map.on('click', function  (e) {
-	console.log(e.latlng.lat+'/'+e.latlng.lng);
+	// console.log(e.latlng.lat+'/'+e.latlng.lng);
 });
 
 L.tileLayer('https://{s}.tiles.mapbox.com/v3/{key}/{z}/{x}/{y}.png', {
@@ -37,6 +37,13 @@ L.tileLayer('https://{s}.tiles.mapbox.com/v3/{key}/{z}/{x}/{y}.png', {
 	key: 'lrqdo.0c289a18',
 	attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+var cartoDBlayergroupid = 'nerik@66d09fe8@3602768f56c8a8b0d5728332f5c83e92:1433778471181.9502';
+// L.tileLayer(`https://nerik.cartodb.com/api/v1/map/${cartoDBlayergroupid}/{z}/{x}/{y}.png?api_key=f0cd82cca188ad5ceb4bfbabeb0bd893c13c4e01`).addTo(map);
+
+// L.tileLayer(`https://nerik.cartodb.com/api/v1/map/${cartoDBlayergroupid}/0/{z}/{x}/{y}.torque.json`).addTo(map);
+
+// https://documentation.cartodb.com/api/v1/map/c01a54877c62831bb51720263f91fb33:0/1/{z}/{x}/{y}.torque.json
 
 map.attributionControl.setPrefix('');
 
