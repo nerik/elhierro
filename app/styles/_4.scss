@@ -1,0 +1,51 @@
+.torque-title {
+    h2 {
+        font-family: LuloCleanOne;
+        color: $red; 
+        font-size: 20px;
+    }
+    
+    padding: 30px 20px;
+
+    img {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .torque-legend {
+        font-size: 12px;
+    }
+}
+
+.torque-arrow {
+    top: 50%;
+    position: fixed;
+}
+
+.torque-arrow-inner {
+    background-color: $red;
+    width: 100px;
+    height: 100px;
+    opacity: .5;
+    margin-top: -65px;
+    margin-left: -50px;
+    transform: rotate(45deg);
+}
+
+.torque-month {
+    height: 33.33%;
+    font-size: 20px;
+    position: relative;
+}
+
+.torque-month-label {
+    font-family: LuloCleanOne;
+    color: $night_light;
+    margin-left: 20px;
+}
+p.torque-event {
+    font-size: 16px;
+    line-height: 16px;
+    margin: 0 30px;
+    position: absolute;
+}

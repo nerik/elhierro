@@ -8,9 +8,9 @@ Map {
 }
 
 #terremotos_1{
-  image-filters: colorize-alpha(blue, cyan, lightgreen, yellow , orange, red);
+  image-filters: colorize-alpha(#2c4164, #4bc8b3, lightgreen, #fff066 , #ffc673, #fa4861);
   marker-file: url(http://s3.amazonaws.com/com.cartodb.assets.static/alphamarker.png);
-  marker-fill-opacity: 0.4*[value];
+  marker-fill-opacity: 0.1*[value];
   marker-width: 35;
 }
 #terremotos_1[frame-offset=1] {

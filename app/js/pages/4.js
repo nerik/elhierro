@@ -4,11 +4,8 @@ require('torque.js');
 let initialized;
 
 function init(map, page) {
-    page.on('scrollblock:enter', (block) => {
-        console.log('enter');
-        if (block.data.torque && !initialized) initTorque(map.map);
-    });
-
+    initTorque(map.map);
+    
     page.on('scrollblock:scroll', block => {
         if (block.data.torque) {
             updateTorque(block.r);
@@ -29,12 +26,13 @@ function initTorque(map) {
     torqueLayer = new L.TorqueLayer({
         user       : 'nerik',
         table      : 'terremotos_1',
-        cartocss   : cartoCss
+        cartocss   : cartoCss,
+        attribution: ['<a href="http://cartodb.com/attributions">CartoDB</a>','<a href="http://www.ign.es/">IGN España</a>']
     });
     torqueLayer.addTo(map);
 
     torqueLayer.on('load', c => {
-        console.log('loade');
+        console.log('loaded');
     });
 }
 
