@@ -6,8 +6,8 @@ path          = require('path'),
 exec          = require('child_process').exec,
 gulpif        = require('gulp-if'),
 sass          = require('gulp-sass'),
-browserify    = require('gulp-browserify'),
 babelify      = require('babelify'),
+browserifyCss = require('browserify-css'),
 browserify    = require('browserify'),
 rename        = require('gulp-rename'),
 browserSync   = require('browser-sync'),
@@ -94,7 +94,7 @@ gulp.task('js', function() {
     return browserify({
         entries: './app/js/main.js',
         debug: config.debug,
-        transform: [babelify]
+        transform: [babelify,browserifyCss]
     })
     .bundle()
     .pipe(source('./app/js/main.js'))
