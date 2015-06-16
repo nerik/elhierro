@@ -20,22 +20,26 @@ export default class Page  {
 		//get scroll points
 		this.data.scrollBlocks = [];
 		$('[data-trigger]').each( (i, el) => {
+			
 			el = $(el);
+
+			var scrollBlockData = utils.parseDataAttrFloats( el.data() );
+			//format/parse properties on the data object
+			_.each(scrollBlockData, (v,k) => {
+				if (v === '') scrollBlockData[k] = true;
+		        if ( _.contains(['gpstracestart','gpstraceend'], k) ) scrollBlockData[k] = parseFloat(v);
+		        if (k === 'mapview') scrollBlockData[k] = scrollBlockData[k].split('/').map( parseFloat );
+		    });
+
 			var y = el.offset().top;
 
 			var scrollBlock = {
 				start: y,
 				end: y+el.innerHeight(),
-				data: utils.parseDataAttrFloats( el.data() ),
+				data: scrollBlockData,
 				el: el
 			};
 
-			//format/parse properties on the data object
-			_.each(scrollBlock.data, (v,k) => {
-				if (v === '') scrollBlock.data[k] = true;
-		        if ( _.contains(['gpstracestart','gpstraceend'], k) ) scrollBlock.data[k] = parseFloat(v);
-		        if (k === 'mapview') scrollBlock.data[k] = scrollBlock.data[k].split('/').map( parseFloat );
-		    });
 
 			this.data.scrollBlocks.push(scrollBlock);		
 
@@ -95,14 +99,22 @@ export default class Page  {
 		var down = delta > 0;
 		this._prevY = y;
 		var isInBlock = false;
+
+		//FIXME : do that constantly??
 		var titleY = -50 - (window.scrollY*0.02);
 		this._title.css('margin-top', titleY + '%' );
 
 		for (var i = 0; i < this.data.scrollBlocks.length; i++) {
 			var b = this.data.scrollBlocks[i];
 
-			if (y >= b.start && y < b.end) {
-				var r = (y - b.start) / (b.end - b.start);
+			var triggerY = y;
+
+			if (b.data.scrolltriggeroffset) {
+				triggerY -= window.innerHeight * b.data.scrolltriggeroffset;
+			}
+
+			if (triggerY >= b.start && triggerY < b.end) {
+				var r = (triggerY - b.start) / (b.end - b.start);
 
 				b.r = r;
 

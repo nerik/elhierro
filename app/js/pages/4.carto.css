@@ -1,6 +1,6 @@
 Map {
--torque-frame-count:64;
--torque-animation-duration:120;
+-torque-frame-count:92;
+-torque-animation-duration:99999;
 -torque-time-attribute:"datetime";
 -torque-aggregation-function:"count(cartodb_id)";
 -torque-resolution:8;

@@ -1,28 +1,47 @@
 var L = require('leaflet/dist/leaflet-src');
 require('torque.js');
 
+let initialized;
+
 function init(map, page) {
-     // define the torque layer style using cartocss
-      var cartoCss = require('./4.carto.css');
+    page.on('scrollblock:enter', (block) => {
+        console.log('enter');
+        if (block.data.torque && !initialized) initTorque(map.map);
+    });
+
+    page.on('scrollblock:scroll', block => {
+        if (block.data.torque) {
+            updateTorque(block.r);
+        }   
         
-      // var map = new L.Map('map', {
-      //   zoomControl: true,
-      //   center: [40, 0],
-      //   zoom: 3
-      // });
+    });
 
-      // L.tileLayer('http://{s}.api.cartocdn.com/base-dark/{z}/{x}/{y}.png', {
-      //   attribution: 'CartoDB'
-      // }).addTo(map);
+}
 
-      var torqueLayer = new L.TorqueLayer({
+let torqueLayer;
+let totalSteps = 92; 
+
+function initTorque(map) {
+    initialized = true;
+
+    let cartoCss = require('./4.carto.css');
+
+    torqueLayer = new L.TorqueLayer({
         user       : 'nerik',
         table      : 'terremotos_1',
         cartocss   : cartoCss
-      });
-      torqueLayer.addTo(map.map);
-      torqueLayer.play()
-  
+    });
+    torqueLayer.addTo(map);
+
+    torqueLayer.on('load', c => {
+        console.log('loade');
+    });
+}
+
+function updateTorque(r) {
+    let s = Math.floor(r * totalSteps);
+    torqueLayer.setStep(s);
+    // torqueLayer.stop()
 }
 
 export default init;
