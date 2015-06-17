@@ -1,0 +1,39 @@
+/** torque visualization */
+
+Map {
+-torque-frame-count:92;
+-torque-animation-duration:9999;
+-torque-time-attribute:"datetime";
+-torque-aggregation-function:"round(avg(mag))";
+-torque-resolution:2;
+-torque-data-aggregation:linear;
+}
+
+#terremotos_1_minmag{
+  /*comp-op: lighter;*/
+  marker-fill-opacity: 0.9;
+  marker-type: ellipse;
+  marker-fill: #982636; 
+  marker-width: 2;
+}
+#terremotos_1_minmag[frame-offset=1] {
+ marker-fill-opacity:0.45; 
+}
+#terremotos_1_minmag[frame-offset=2] {
+ marker-fill-opacity:0.225; 
+}
+#terremotos_1_minmag[frame-offset=3] {
+ marker-fill-opacity:0.15; 
+}
+
+/* marker-width = (value*value)/2 */
+/* TODO Scss loop? */
+#terremotos_1_minmag[value > 2.00] {  marker-width: 2; }
+#terremotos_1_minmag[value > 2.25] {  marker-width: 2.5; }
+#terremotos_1_minmag[value > 2.50] {  marker-width: 3.125; }
+#terremotos_1_minmag[value > 2.75] {  marker-width: 3.78; }
+#terremotos_1_minmag[value > 3.00] {  marker-width: 4.5; }
+#terremotos_1_minmag[value > 3.25] {  marker-width: 5.28; }
+#terremotos_1_minmag[value > 3.50] {  marker-width: 6.125; }
+#terremotos_1_minmag[value > 3.75] {  marker-width: 7; }
+#terremotos_1_minmag[value > 4.00] {  marker-width: 8; }

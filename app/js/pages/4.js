@@ -15,44 +15,58 @@ function init(map, page) {
 
 }
 
-let torqueLayer, torqueLayerStatic;
+let torqueLayers = {};
 let totalSteps = 92; 
 
 function initTorque(map) {
     initialized = true;
   
-
-    let cartoCss = require('./4.carto.css');
-    torqueLayer = new L.TorqueLayer({
+    torqueLayers.heatmap = new L.TorqueLayer({
         user       : 'nerik',
         table      : 'terremotos_1',
-        cartocss   : cartoCss,
+        cartocss   : require('./4_heatmap.carto.css'),
         attribution: ['<a href="http://cartodb.com/attributions">CartoDB</a>','<a href="http://www.ign.es/">IGN España</a>'],
     });
+    torqueLayers.heatmap.addTo(map);
+    $(torqueLayers.heatmap._container).css('opacity','.75');
 
-    torqueLayer.addTo(map);
-    $(torqueLayer._container).css('opacity','.5');
-
-
-    let cartoCssStatic = require('./4static.carto.css');
-    torqueLayerStatic = new L.TorqueLayer({
+    torqueLayers.mag = new L.TorqueLayer({
         user       : 'nerik',
         table      : 'terremotos_1_minmag',
-        cartocss   : cartoCssStatic,
+        cartocss   : require('./4_mag.carto.css'),
     });
-    torqueLayerStatic.addTo(map);
+    torqueLayers.mag.addTo(map);
+
+    // torqueLayers.depth = new L.TorqueLayer({
+    //     user       : 'nerik',
+    //     table      : 'terremotos_1_minmag',
+    //     cartocss   : require('./4_depth.carto.css'),
+    // });
+    // torqueLayers.depth.addTo(map);
 
 
-    torqueLayer.on('load', c => {
-        console.log('loaded');
-    });
+
+    var legend = new L.Control.TorqueLegend({
+        position: 'bottomright',
+    })
+     
+    legend.addTo(map)
+
 }
 
 function updateTorque(r) {
     let s = Math.floor(r * totalSteps);
-    torqueLayer.setStep(s);
-    torqueLayerStatic.setStep(s);
-    // torqueLayer.stop()
+    torqueLayers.heatmap.setStep(s);
+    torqueLayers.mag.setStep(s);
+    // torqueLayers.depth.setStep(s);
 }
+
+L.Control.TorqueLegend = L.Control.extend({
+    onAdd: function (map) {
+        var div = L.DomUtil.create('div');
+        div.innerHTML = require('./4_legend.html');
+        return div;
+    }
+});
 
 export default init;

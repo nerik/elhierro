@@ -49,3 +49,64 @@ p.torque-event {
     margin: 0 30px;
     position: absolute;
 }
+
+
+.torqueLegend {
+    color: $bg_dark;
+}
+
+.torqueLegend-mag {
+    width: 90px;
+    margin-top: 10px;
+}
+
+
+//http://www.colorzilla.com/gradient-editor/
+.torqueLegend-heatmap {
+    width: 200px;    
+    background: #fff066; /* Old browsers */
+    background: -moz-linear-gradient(left, #fff066 0%, #ffc673 50%, #fa4861 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#fff066), color-stop(50%,#ffc673), color-stop(100%,#fa4861)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #fff066 0%,#ffc673 50%,#fa4861 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #fff066 0%,#ffc673 50%,#fa4861 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #fff066 0%,#ffc673 50%,#fa4861 100%); /* IE10+ */
+    background: linear-gradient(to right, #fff066 0%,#ffc673 50%,#fa4861 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff066', endColorstr='#fa4861',GradientType=1 ); /* IE6-9 */
+}
+
+.torqueLegend-title {
+}
+
+.torqueLegend-left, .torqueLegend-right {
+    display: inline-block;
+}
+.torqueLegend-right {
+    float:right;
+}
+
+.torqueLegend-mag-circles {
+    div {
+        display: inline-block;
+        color: $red_dark;
+    }
+
+    p {
+        display: inline-block;
+        background-color: $red_dark;
+        border-radius: 99px;
+        margin: 0;
+    }
+
+    p:nth-child(2) {
+        width: 5px;
+        height: 5px;
+    }
+    p:nth-child(3) {
+        width: 10px;
+        height: 10px;
+    }
+    p:nth-child(4) {
+        width: 17px;
+        height: 17px;
+    }
+}

@@ -10,6 +10,7 @@ babelify      = require('babelify'),
 browserifyCss = require('browserify-css'),
 uglify        = require('gulp-uglify'),
 browserify    = require('browserify'),
+stringify     = require('stringify'),
 rename        = require('gulp-rename'),
 browserSync   = require('browser-sync'),
 buffer        = require('vinyl-buffer'),
@@ -21,7 +22,7 @@ mergeStream   = require('merge-stream');
 
 var config = {
     dist: './dist',
-    debug: false,
+    debug: true,
     pages: [
         {}, 
         {}, 
@@ -95,14 +96,14 @@ gulp.task('js', function() {
     var bundle = browserify({
         entries: './app/js/main.js',
         debug: config.debug,
-        transform: [babelify,browserifyCss]
+        transform: [babelify,browserifyCss,stringify]
     })
     .bundle()
     .pipe(source('./app/js/main.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}));
 
-    if (config.debug) {
+    if (!config.debug) {
         bundle = bundle.pipe(uglify());
     }
 

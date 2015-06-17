@@ -1,0 +1,31 @@
+/** torque visualization */
+
+Map {
+-torque-frame-count:92;
+-torque-animation-duration:9999;
+-torque-time-attribute:"datetime";
+-torque-aggregation-function:"round(avg(prof_km))";
+-torque-resolution:2;
+-torque-data-aggregation:linear;
+}
+
+#terremotos_1_minmag{
+  /*comp-op: lighter;*/
+  marker-fill-opacity: 0.9;
+  marker-type: ellipse; 
+  marker-width: 2;
+}
+#terremotos_1_minmag[frame-offset=1] {
+ marker-fill-opacity:0.45; 
+}
+#terremotos_1_minmag[frame-offset=2] {
+ marker-fill-opacity:0.225; 
+}
+#terremotos_1_minmag[frame-offset=3] {
+ marker-fill-opacity:0.15; 
+}
+
+/* TODO Scss loop? */
+#terremotos_1_minmag[value > 0] {  marker-fill: #FF0000; }
+#terremotos_1_minmag[value > 20] {  marker-fill: #FF00FF; }
+
