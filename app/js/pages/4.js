@@ -20,16 +20,18 @@ let totalSteps = 92;
 
 function initTorque(map) {
     initialized = true;
-
+  
     let cartoCss = require('./4.carto.css');
 
     torqueLayer = new L.TorqueLayer({
         user       : 'nerik',
         table      : 'terremotos_1',
         cartocss   : cartoCss,
-        attribution: ['<a href="http://cartodb.com/attributions">CartoDB</a>','<a href="http://www.ign.es/">IGN España</a>']
+        attribution: ['<a href="http://cartodb.com/attributions">CartoDB</a>','<a href="http://www.ign.es/">IGN España</a>'],
     });
+
     torqueLayer.addTo(map);
+    $(torqueLayer._container).css('opacity','.5');
 
     torqueLayer.on('load', c => {
         console.log('loaded');

@@ -21,7 +21,7 @@ mergeStream   = require('merge-stream');
 
 var config = {
     dist: './dist',
-    debug: true,
+    debug: false,
     pages: [
         {}, 
         {}, 
@@ -92,7 +92,7 @@ gulp.task('topojson', function () {
 });
 
 gulp.task('js', function() {
-    return browserify({
+    var bundle = browserify({
         entries: './app/js/main.js',
         debug: config.debug,
         transform: [babelify,browserifyCss]
@@ -100,12 +100,16 @@ gulp.task('js', function() {
     .bundle()
     .pipe(source('./app/js/main.js'))
     .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
-        // Add transformation tasks to the pipeline here.
-        // .pipe(uglify())
-        // .on('error', gutil.log)
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./dist'));
+    .pipe(sourcemaps.init({loadMaps: true}));
+
+    if (config.debug) {
+        bundle = bundle.pipe(uglify());
+    }
+
+    bundle.pipe(sourcemaps.write('./'))
+            .pipe(gulp.dest('./dist'));
+
+    return bundle;
 });
 
 gulp.task('js-vendor', ['js'], function() {
@@ -200,7 +204,7 @@ gulp.task('serve', ['build'], function() {
     });
 
     gulp.watch("app/styles/**/*.scss", ['sass']);
-    gulp.watch("app/js/**/*.js", ['js']);
+    gulp.watch("app/js/**/*.{js,css}", ['js']);
     gulp.watch("app/html/**/*.html", ['html']);
 
     gulp.watch(config.dist+"/**/*.{js,html,css}").on('change', browserSync.reload);
