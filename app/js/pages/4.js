@@ -15,14 +15,14 @@ function init(map, page) {
 
 }
 
-let torqueLayer;
+let torqueLayer, torqueLayerStatic;
 let totalSteps = 92; 
 
 function initTorque(map) {
     initialized = true;
   
-    let cartoCss = require('./4.carto.css');
 
+    let cartoCss = require('./4.carto.css');
     torqueLayer = new L.TorqueLayer({
         user       : 'nerik',
         table      : 'terremotos_1',
@@ -33,6 +33,16 @@ function initTorque(map) {
     torqueLayer.addTo(map);
     $(torqueLayer._container).css('opacity','.5');
 
+
+    let cartoCssStatic = require('./4static.carto.css');
+    torqueLayerStatic = new L.TorqueLayer({
+        user       : 'nerik',
+        table      : 'terremotos_1_minmag',
+        cartocss   : cartoCssStatic,
+    });
+    torqueLayerStatic.addTo(map);
+
+
     torqueLayer.on('load', c => {
         console.log('loaded');
     });
@@ -41,6 +51,7 @@ function initTorque(map) {
 function updateTorque(r) {
     let s = Math.floor(r * totalSteps);
     torqueLayer.setStep(s);
+    torqueLayerStatic.setStep(s);
     // torqueLayer.stop()
 }
 
