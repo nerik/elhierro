@@ -22,7 +22,7 @@ mergeStream   = require('merge-stream');
 
 var config = {
     dist: './dist',
-    debug: true,
+    debug: false,
     pages: [
         {}, 
         {}, 
