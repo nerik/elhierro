@@ -16,9 +16,9 @@
 <Layer name="elhierro-lines"
   buffer-size="8"
   srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
-    
+
     <Datasource>
-       <Parameter name="file"><![CDATA[/Users/nerik/Downloads/coastlines-split-4326/elhierro-lines.shp]]></Parameter>
+       <Parameter name="file"><![CDATA[/Users/nerik/Sync/taf/elhierro/carto/shp/elhierro-lines.shp]]></Parameter>
        <Parameter name="type"><![CDATA[shape]]></Parameter>
     </Datasource>
   </Layer>
@@ -26,9 +26,9 @@
 <Layer name="elhierro-coasts"
   buffer-size="8"
   srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
-    
+
     <Datasource>
-       <Parameter name="file"><![CDATA[/Users/nerik/Downloads/land-polygons-complete-4326/elhierro-coasts.shp]]></Parameter>
+       <Parameter name="file"><![CDATA[/Users/nerik/Sync/taf/elhierro/carto/shp/elhierro-coasts.shp]]></Parameter>
        <Parameter name="type"><![CDATA[shape]]></Parameter>
     </Datasource>
   </Layer>

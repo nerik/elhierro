@@ -1,0 +1,26 @@
+_prefs: 
+  disabled: []
+  inspector: false
+  mapid: nerik.59d4bc90
+  rev: s-2dc11b49
+  saveCenter: true
+attribution: ''
+center: 
+  - -18.2208
+  - 27.7401
+  - 10
+description: ''
+Layer: 
+  - id: elhierro-lines
+    Datasource: 
+      file: /Users/nerik/Sync/taf/elhierro/carto/shp/elhierro-lines.shp
+      type: shape
+    description: ''
+    fields: 
+      FID: Number
+    properties: 
+      "buffer-size": 8
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+maxzoom: 12
+minzoom: 0
+name: ''

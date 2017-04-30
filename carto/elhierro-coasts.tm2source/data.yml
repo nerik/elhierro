@@ -1,34 +1,34 @@
-_prefs: 
+_prefs:
   disabled: []
   inspector: false
   mapid: lrqdo.7e9a6dea
   rev: s-c12ad7a1
   saveCenter: true
 attribution: OSM
-center: 
+center:
   - -16.3257
   - 27.2595
   - 7
 description: ''
-Layer: 
+Layer:
   - id: elhierro-lines
-    Datasource: 
-      file: /Users/nerik/Downloads/coastlines-split-4326/elhierro-lines.shp
+    Datasource:
+      file: /Users/nerik/Sync/taf/elhierro/carto/shp/elhierro-lines.shp
       type: shape
     description: ''
-    fields: 
+    fields:
       FID: Number
-    properties: 
+    properties:
       "buffer-size": 8
     srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
   - id: elhierro-coasts
-    Datasource: 
-      file: /Users/nerik/Downloads/land-polygons-complete-4326/elhierro-coasts.shp
+    Datasource:
+      file: /Users/nerik/Sync/taf/elhierro/carto/shp/elhierro-coasts.shp
       type: shape
     description: ''
-    fields: 
+    fields:
       FID: Number
-    properties: 
+    properties:
       "buffer-size": 8
     srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
 maxzoom: 16

@@ -29,7 +29,7 @@ map.on('click', function  (e) {
 });
 
 L.tileLayer('https://{s}.tiles.mapbox.com/v3/{key}/{z}/{x}/{y}.png', {
-	key: 'lrqdo.2f512fdf',
+	key: 'nerik.1580561b',
 	attribution: ''
 }).addTo(map);
 
@@ -76,7 +76,7 @@ var MapAPI = {
 
 			var polyline = L.polyline([]).addTo(map);
 
-			//not so sure why className or $.className is not working here :/ 
+			//not so sure why className or $.className is not working here :/
 			var transportMode = name.match(/\d_(.+)/)[1];
 			var styleName = ( _.contains(['taxi', 'andrescar'], transportMode) ) ? 'car' : transportMode;
 			$(polyline._container).attr('class','gps gps--'+styleName);
@@ -101,7 +101,7 @@ var MapAPI = {
 
 			gpsArray.push(gpsCollection[name]);
 		}
-		
+
 		//inject svg patterns
 		$('.leaflet-overlay-pane svg').prepend( $('.js-tpl-svg-patterns').html() );
 

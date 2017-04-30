@@ -3,13 +3,13 @@
 <Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
 
 <Parameters>
+  <Parameter name="attribution"><![CDATA[<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>]]></Parameter>
   <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
-  <Parameter name="center">-18.0773,27.7691,12</Parameter>
+  <Parameter name="center">-17.9572,27.5911,10</Parameter>
   <Parameter name="format">png8:m=h</Parameter>
-  <Parameter name="maxzoom">18</Parameter>
+  <Parameter name="maxzoom">22</Parameter>
   <Parameter name="minzoom">0</Parameter>
-  <Parameter name="name"><![CDATA[elhierro-coasts]]></Parameter>
-  <Parameter name="source"><![CDATA[mapbox:///lrqdo.7e9a6dea]]></Parameter>
+  <Parameter name="source"><![CDATA[mapbox:///nerik.59d4bc90]]></Parameter>
 </Parameters>
 
 
@@ -57,9 +57,5 @@
     <StyleName>elhierro-lines-line4</StyleName>
     <StyleName>elhierro-lines-line5</StyleName>
     <StyleName>elhierro-lines-line6</StyleName>  </Layer>
-
-<Layer name="elhierro-coasts"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-      </Layer>
 
 </Map>
